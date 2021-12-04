@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from "../Services/user.service"
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'user-registration',
@@ -13,7 +14,7 @@ export class UserRegistrationComponent implements OnInit {
   registerForm!: FormGroup;
   registerModel!: UserRegistration;
   isRegistered: boolean = false;
-  constructor(private UserService: UserService, private formBuilder: FormBuilder) {}
+  constructor(private UserService: UserService, private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute) {}
 
   registerUser!: UserRegistration;
   ngOnInit() {
@@ -25,11 +26,14 @@ export class UserRegistrationComponent implements OnInit {
   get f() { return this.registerForm.controls }
 
   Register() {
+    this.router.navigateByUrl('login');
     this.registerModel.email = this.registerForm.get('email')?.value;
     this.registerModel.username = this.registerForm.get('username')?.value;
     this.registerModel.password = this.registerForm.get('password')?.value;
 
-    this.isRegistered = this.UserService.register(this.registerModel)
+    this.isRegistered = this.UserService.register(this.registerModel);
+
+
   }
 
 }
