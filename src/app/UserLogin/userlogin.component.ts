@@ -23,6 +23,6 @@ export class UserLoginComponent implements OnInit {
 
   goToRegistration(){
     //User is not registered and chooses to register via login page
-    this.router.navigateByUrl('./register');
+    this.router.navigateByUrl('/register');
   }
 }
