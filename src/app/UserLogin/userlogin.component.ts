@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -7,7 +8,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./userlogin.component.css']
 })
 export class UserLoginComponent implements OnInit {
-
+  loginForm = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
+  });
   constructor(
     private router: Router,
     private route: ActivatedRoute
