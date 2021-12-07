@@ -12,6 +12,7 @@ export class FiveseesComponent implements OnInit {
   name3 = new FormControl('');
   name4 = new FormControl('');
   name5 = new FormControl('');
+  click = new FormControl('');
   constructor() { }
 
   ngOnInit(): void {
