@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #5C9F97;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: white;
+  color: #5C9F97;
+}
+
+.topnav a.active {
+  background-color: #1AB5C0;
+  color: white;
+}
+.btn-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+  display: block;
+  }  
+  
+.btn{
+	margin: auto;
+	background-color: #5C9F97;
+  color: white;
+  border: 1px solid black;
+  display: block;
+  padding: 10px 24px; 
+  cursor: pointer;
+  width: 50%; 
+  font-family: Arial, Helvetica, sans-serif;
+}
+</style>
+</head>
+
+<body>
+<div class="topnav">
+  <a class="active" href="#home">Home</a>
+  <a href="#news">Logout</a>
+ </div>
+
+<div style="padding-left:16px">
+
+   <div class="btn-container">      
+    <button class="btn"(click)="gotoFiveOne();">5-4-3-2-1</button>
+    <button class="btn"(click)="gotoDeepBreath();">Deep Breathing</button>
+    <button class="btn"(click)="gotoNoteTake();">Note-Taking</button>
+    <button class="btn"(click)="gotoCountGame();">Counting Game</button>  
+    <button class="btn"(click)="gotoCalmMusic();">Calming Music</button>
+   </div> 
+</div>
+</body>
+</html>
