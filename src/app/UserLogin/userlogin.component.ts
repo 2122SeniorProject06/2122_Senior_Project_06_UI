@@ -29,4 +29,8 @@ export class UserLoginComponent implements OnInit {
   goToJournal(){
     this.router.navigateByUrl('/journal');
   }
+
+  goToMainMenu(){
+    this.router.navigateByUrl('/main-menu')
+  }
 }

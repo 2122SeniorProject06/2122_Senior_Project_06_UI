@@ -17,23 +17,26 @@ export class MainmenuComponent implements OnInit {
   ngOnInit() {
   }
 
+  // feature not implemented
   gotoCalmMusic(){
-    this.router.navigateByUrl('./calmmusic-component');
+    this.router.navigateByUrl('/calmmusic');
   }
 
+  //feature not implemented
   gotoCountGame(){
-    this.router.navigateByUrl('./counting-component');
+    this.router.navigateByUrl('./counting');
   }
 
+  //feature not implemented
   gotoDeepBreath(){
-    this.router.navigateByUrl('./deepbreathing-component');
+    this.router.navigateByUrl('/deepbreathing');
   }
 
   gotoFiveOne(){
-    this.router.navigateByUrl('./fivesees');
+    this.router.navigateByUrl('/fivesees');
   }
 
   gotoNoteTake(){
-    this.router.navigateByUrl('./notetaking-component');
+    this.router.navigateByUrl('/journal');
   }
 }

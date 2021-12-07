@@ -26,7 +26,7 @@ export class UserRegistrationComponent implements OnInit {
   get f() { return this.registerForm.controls }
 
   Register() {
-    this.router.navigateByUrl('login');
+    this.goToLogin();
     this.registerModel.email = this.registerForm.get('email')?.value;
     this.registerModel.username = this.registerForm.get('username')?.value;
     this.registerModel.password = this.registerForm.get('password')?.value;
@@ -34,6 +34,9 @@ export class UserRegistrationComponent implements OnInit {
     this.isRegistered = this.UserService.register(this.registerModel);
 
 
+  }
+  goToLogin(){
+    this.router.navigateByUrl('login');
   }
 
 }

@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'shard-ui';
+  title = 'SHARD: Here To Pick Up The Pieces';
 }

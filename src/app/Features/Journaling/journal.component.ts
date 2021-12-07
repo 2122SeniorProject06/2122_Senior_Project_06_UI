@@ -1,27 +1,32 @@
-import { FormsModule, FormGroup, FormControl } from '@angular/forms';
+import { FormsModule, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'journal-feature',
-  templateUrl: './journal.component.html'
+  templateUrl: './journal.component.html',
+  styleUrls: ['./journal.component.css']
 })
 
 export class JournalComponent implements OnInit {
+  journalForm!: FormGroup;
 
-  journalForm = new FormGroup({
-    title: new FormControl(''),
-    subject: new FormControl(''),
-    description: new FormControl(''),
-  });
   constructor(
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder
     ) { }
 
     ngOnInit(): void {
+      this.journalForm = this.formBuilder.group({
+        title: [''],
+        subject: [''],
+        description: ['']
+      });
     }
 
-
+goToMain() {
+  this.router.navigateByUrl('/main-menu');
+}
 
 }

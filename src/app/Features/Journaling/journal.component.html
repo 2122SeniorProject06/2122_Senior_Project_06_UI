@@ -1,16 +1,17 @@
 <div class="journal-wrapper" fxLayout="row" fxLayoutAlign="center center">
-    <form class="user registration">
+    <form class="journal">
         <form>
-          <input type="text" placeholder="Title">
+          <input type="text" placeholder="Title" style="width:525px">
         </form>
 
         <form>
-          <input type="text" placeholder="Subject">
+          <input type="text" placeholder="Subject" style="width: 525px;">
         </form>
 
         <form>
-          <input type="text" placeholder="Description">
+          <input type="text" placeholder="Description" style="height: 360px; width: 525px;">
         </form>
       <button mat-stroked-button color="accent" class="btn-success">Save</button>
+      <button mat-stroked-button color="accent" class="btn-success" (click)="goToMain()">Done</button>
     </form>
 </div>
