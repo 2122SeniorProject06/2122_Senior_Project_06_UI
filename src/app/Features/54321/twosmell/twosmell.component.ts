@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
@@ -9,9 +10,11 @@ import { FormControl } from '@angular/forms';
 export class TwosmellComponent implements OnInit {
   name = new FormControl('');
   name2 = new FormControl('');
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
-
+  goToTaste(){
+    this.router.navigateByUrl('onetast');
+  }
 }
