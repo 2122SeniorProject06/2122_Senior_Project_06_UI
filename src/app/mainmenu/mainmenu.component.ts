@@ -1,3 +1,4 @@
+//Created by Daniela Martinez
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -17,26 +18,23 @@ export class MainmenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  // feature not implemented
   gotoCalmMusic(){
-    this.router.navigateByUrl('/calmmusic');
+    this.router.navigateByUrl('./calmmusic-component');
   }
 
-  //feature not implemented
   gotoCountGame(){
-    this.router.navigateByUrl('./counting');
+    this.router.navigateByUrl('./counting-component');
   }
 
-  //feature not implemented
   gotoDeepBreath(){
-    this.router.navigateByUrl('/deepbreathing');
+    this.router.navigateByUrl('./deepbreathing-component');
   }
 
   gotoFiveOne(){
-    this.router.navigateByUrl('/fivesees');
+    this.router.navigateByUrl('./fivesees');
   }
 
   gotoNoteTake(){
-    this.router.navigateByUrl('/journal');
+    this.router.navigateByUrl('./notetaking-component');
   }
 }
