@@ -6,6 +6,7 @@ export class UserRegistration {
   public username!: string;
   public email!: string;
   public password!: string;
+  public id!: number;
   UserRegistration(Username: string, Email: string, Password: string) {
     this.username = Username;
     this.email = Email;
