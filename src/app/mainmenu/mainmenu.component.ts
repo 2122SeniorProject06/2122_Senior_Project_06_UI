@@ -19,22 +19,22 @@ export class MainmenuComponent implements OnInit {
   }
 
   gotoCalmMusic(){
-    this.router.navigateByUrl('./calmmusic-component');
+    this.router.navigateByUrl('/calmmusic-component');
   }
 
   gotoCountGame(){
-    this.router.navigateByUrl('./counting-component');
+    this.router.navigateByUrl('/counting-component');
   }
 
   gotoDeepBreath(){
-    this.router.navigateByUrl('./deepbreathing-component');
+    this.router.navigateByUrl('/deepbreathing-component');
   }
 
   gotoFiveOne(){
-    this.router.navigateByUrl('./fivesees');
+    this.router.navigateByUrl('/fivesees');
   }
 
   gotoNoteTake(){
-    this.router.navigateByUrl('./notetaking-component');
+    this.router.navigateByUrl('/journal');
   }
 }
