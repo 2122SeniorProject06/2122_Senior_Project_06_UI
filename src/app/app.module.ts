@@ -6,9 +6,12 @@ import { ThreehearComponent } from './Features/54321/threehear/threehear.compone
 import { FourtouchComponent } from './Features/54321/fourtouch/fourtouch.component';
 import { FiveseesComponent } from './Features/54321/fivesees/fivesees.component';
 import { JournalComponent } from './Features/Journaling/journal.component';
+import { ViewOneJournalComponent } from './Features/ViewOneJournal/viewonejournal.component';
 import { UserRegistrationComponent } from './UserRegistration/userregistration.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 import { UserLoginComponent } from './UserLogin/userlogin.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -30,7 +33,8 @@ import { AppComponent } from './app.component';
     FourtouchComponent,
     ThreehearComponent,
     TwosmellComponent,
-    OnetasteComponent
+    OnetasteComponent,
+    ViewOneJournalComponent
 
   ],
   imports: [
@@ -42,6 +46,7 @@ import { AppComponent } from './app.component';
     MatFormFieldModule,
     MatIconModule,
     MatTableModule,
+    MatToolbarModule
 
   ],
   providers: [UserService, JournalService],
