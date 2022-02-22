@@ -11,25 +11,27 @@ import { ThrowStmt } from '@angular/compiler';
   styleUrls: ['./userregistration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
-  registerForm!: FormGroup;
+  form!: FormGroup;
   registerModel!: UserRegistration;
   isRegistered: boolean = false;
   constructor(private UserService: UserService, private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute) {}
 
   registerUser!: UserRegistration;
   ngOnInit() {
-    this.registerForm = this.formBuilder.group({
+    this.form = this.formBuilder.group({
       email: [''],
-      password: ['']
+      password: [''],
+      confirmpassword: ['']
     });
   }
-  get f() { return this.registerForm.controls }
+  get f() { return this.form.controls }
 
   Register() {
     this.goToLogin();
-    this.registerModel.email = this.registerForm.get('email')?.value;
-    this.registerModel.username = this.registerForm.get('username')?.value;
-    this.registerModel.password = this.registerForm.get('password')?.value;
+    this.registerModel.email = this.form.get('email')?.value;
+    this.registerModel.username = this.form.get('username')?.value;
+    this.registerModel.password = this.form.get('password')?.value;
+    this.registerModel.confirmpassword = this.form.get('confirmpassword')?.value;
 
     this.isRegistered = this.UserService.register(this.registerModel);
 

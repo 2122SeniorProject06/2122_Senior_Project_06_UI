@@ -6,11 +6,13 @@ export class UserRegistration {
   public username!: string;
   public email!: string;
   public password!: string;
+  public confirmpassword!: string;
   public id!: number;
-  UserRegistration(Username: string, Email: string, Password: string) {
+  UserRegistration(Username: string, Email: string, Password: string, ConfirmPassword: string) {
     this.username = Username;
     this.email = Email;
     this.password = Password;
+    this.confirmpassword = ConfirmPassword;
   }
 }
 
