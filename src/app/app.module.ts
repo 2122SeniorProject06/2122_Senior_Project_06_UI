@@ -1,3 +1,4 @@
+import { JournalService } from './Services/journal.service';
 import { UserService } from './Services/user.service';
 import { OnetasteComponent } from './Features/54321/onetaste/onetaste.component';
 import { TwosmellComponent } from './Features/54321/twosmell/twosmell.component';
@@ -12,6 +13,9 @@ import { UserLoginComponent } from './UserLogin/userlogin.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon'
+import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,10 +39,12 @@ import { AppComponent } from './app.component';
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatIconModule,
+    MatTableModule,
 
   ],
-  providers: [UserService],
+  providers: [UserService, JournalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
