@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./userlogin.component.css']
 })
 export class UserLoginComponent implements OnInit {
-  loginForm = new FormGroup({
+  form = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
   });
@@ -20,6 +20,9 @@ export class UserLoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  submit() {
+
+  }
 
   goToRegistration(){
     //User is not registered and chooses to register via login page

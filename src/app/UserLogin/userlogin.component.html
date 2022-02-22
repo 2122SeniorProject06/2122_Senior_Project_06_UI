@@ -1,14 +1,27 @@
-<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+<mat-card>
+  <mat-card-title>Log In</mat-card-title>
+<mat-card-content>
+<form [formGroup]="form" (ngSubmit)="submit()">
+<p>
+  <mat-form-field>
+    <input type="text" matInput placeholder="Username" formControlName="username">
+  </mat-form-field>
+</p>
+<p>
+  <mat-form-field>
+    <input type="password" matInput placeholder="Password" formControlName="password">
+  </mat-form-field>
+</p>
 
-  <form class="user-login">
-    <label>Username</label><br>
-    <input type="text" id="username" name="username"><br>
-    <label>Password</label><br>
-    <input type="text" id="password" name="password"><br>
 
-      <button mat-stroked-button color="accent" class="btn-succes" (click)="goToMainMenu()">Log in</button>
-      <button mat-stroked-button color="primary" class="btn-success" (click)="goToRegistration()">Register</button>
-    </form>
+<button class="register" mat-raised-button>Log In</button>
+</form>
+</mat-card-content>
+</mat-card>
+<mat-toolbar>
 
-
-</div>
+<button class="home">
+<mat-icon>home</mat-icon>
+</button>
+<span class="example-spacer"></span>
+</mat-toolbar>
