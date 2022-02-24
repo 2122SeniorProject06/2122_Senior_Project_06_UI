@@ -1,0 +1,56 @@
+mat-grid-tile {
+  background: lightcoral;
+}
+ .title{
+   text-align: left;
+   letter-spacing: .43mm;
+   color: #52688F;
+ }
+
+.reflect {
+  background: #BDC6D9;
+  letter-spacing: 2mm;
+  font-size: large;
+  font-style: bold;
+  color: #52688F;
+}
+
+.focus {
+  background: #E3E7F1;
+  letter-spacing: 2mm;
+  font-size: large;
+  color: #52688F;
+}
+.ground {
+  background: #BDC6D9;
+  letter-spacing: 2mm;
+  font-size: large;
+  color: #52688F;
+
+}
+
+.relax {
+  background: #E3E7F1;
+  letter-spacing: 2mm;
+  font-size: large;
+  color: #52688F;
+}
+.breath {
+  background: #BDC6D9;
+  letter-spacing: 2mm;
+  font-size: large;
+  color: #52688F;
+}
+
+.container {
+
+}
+.card {
+
+  height: 75%;
+  width:75%;
+  text-align:center;
+  position:center;
+  justify-content: center;
+
+}

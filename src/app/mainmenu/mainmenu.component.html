@@ -38,20 +38,20 @@ body {
   justify-content: center;
   margin-top: 16px;
   display: block;
-  }  
-  
+  }
+
 .btn{
 	margin: auto;
 	background-color: #5C9F97;
   color: white;
   border: 1px solid black;
   display: block;
-  padding: 10px 24px; 
+  padding: 10px 24px;
   cursor: pointer;
-  width: 50%; 
+  width: 50%;
   font-family: Arial, Helvetica, sans-serif;
 }
-</style>
+ </style>
 </head>
 
 <body>
@@ -62,13 +62,32 @@ body {
 
 <div style="padding-left:16px">
 
-   <div class="btn-container">      
+   <div class="btn-container">
     <button class="btn"(click)="gotoFiveOne()">5-4-3-2-1</button>
     <button class="btn"(click)="gotoDeepBreath()">Deep Breathing</button>
     <button class="btn"(click)="gotoNoteTake()">Note-Taking</button>
-    <button class="btn"(click)="gotoCountGame()">Counting Game</button>  
+    <button class="btn"(click)="gotoCountGame()">Counting Game</button>
     <button class="btn"(click)="gotoCalmMusic()">Calming Music</button>
-   </div> 
+   </div>
 </div>
 </body>
 </html>
+
+
+
+<div class="container">
+  <h3 class="title">I NEED TO...</h3>
+
+  <mat-card class="card">
+  <mat-grid-list #grid rowHeight="4:1">
+    <mat-grid-tile class="reflect">REFLECT</mat-grid-tile>
+    <mat-grid-tile class="focus">FOCUS</mat-grid-tile>
+    <mat-grid-tile class="ground">GROUND</mat-grid-tile>
+    <mat-grid-tile class="relax">RELAX</mat-grid-tile>
+    <mat-grid-tile class="breath">BREATHE</mat-grid-tile>
+  </mat-grid-list>
+  </mat-card>
+  </div>
+
+
+
