@@ -1,0 +1,94 @@
+<mat-vertical-stepper >
+  <mat-step [stepControl]="formGroup1" label ="Enter five things you can see">
+     
+    <form [formGroup]="formGroup1">
+      
+      <mat-form-field>
+          <input matInput placeholder="Enter five things you see" formControlName = "firstCtrl"required>
+         
+
+
+      </mat-form-field>
+      <div>
+     <button mat-button matStepperNext>Next</button>
+    </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="formGroup2" label = "Enter four things you can touch">
+  
+    <form [formGroup]="formGroup2">
+      <mat-form-field>
+        <input matInput placeholder="Enter four things you can touch" formControlName = "secondCtrl"required>
+
+
+    </mat-form-field>
+    <div>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="thirdFormGroup" label= "Enter three things you can hear">
+    
+    <form [formGroup]="thirdFormGroup">
+      <mat-form-field>
+        <input matInput placeholder="Enter three things you can hear" formControlName = "thirdCtrl"required>
+
+
+    </mat-form-field>
+    <div>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="fourthFormGroup" label = "Enter two things you can smell">
+    
+    <form [formGroup]="fourthFormGroup">
+      <mat-form-field>
+        <input matInput placeholder="Enter two things you can smell" formControlName = "secondCtrl"required>
+      
+
+
+    </mat-form-field>
+    <div>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="fifthFormGroup" label = "Enter one thing you can taste">
+   
+    <form [formGroup]="fifthFormGroup">
+      <mat-form-field>
+        <input matInput placeholder="Enter one things you can taste" formControlName = "firstCtrl"required>
+
+
+    </mat-form-field>
+    </form>
+    <div>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </div>
+    
+
+  </mat-step>
+  
+ 
+</mat-vertical-stepper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      

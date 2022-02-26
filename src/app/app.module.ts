@@ -1,10 +1,5 @@
 import { JournalService } from './Services/journal.service';
 import { UserService } from './Services/user.service';
-import { OnetasteComponent } from './Features/54321/onetaste/onetaste.component';
-import { TwosmellComponent } from './Features/54321/twosmell/twosmell.component';
-import { ThreehearComponent } from './Features/54321/threehear/threehear.component';
-import { FourtouchComponent } from './Features/54321/fourtouch/fourtouch.component';
-import { FiveseesComponent } from './Features/54321/fivesees/fivesees.component';
 import { JournalComponent } from './Features/Journaling/journal.component';
 import { ViewOneJournalComponent } from './Features/ViewOneJournal/viewonejournal.component';
 import { UserRegistrationComponent } from './UserRegistration/userregistration.component';
@@ -23,6 +18,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StepperComponent } from './Features/stepper/stepper.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -30,12 +27,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserLoginComponent,
     UserRegistrationComponent,
     JournalComponent,
-    FiveseesComponent,
-    FourtouchComponent,
-    ThreehearComponent,
-    TwosmellComponent,
-    OnetasteComponent,
-    ViewOneJournalComponent
+    ViewOneJournalComponent,
+    StepperComponent
 
   ],
   imports: [
@@ -48,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatTableModule,
     MatToolbarModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
 
   ],
   providers: [UserService, JournalService],
