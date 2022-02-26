@@ -8,7 +8,7 @@
 /bazel-out
 
 # dependencies
-/node_modules
+**/node_modules
 
 # profiling files
 chrome-profiler-events*.json
@@ -23,7 +23,7 @@ chrome-profiler-events*.json
 *.sublime-workspace
 
 # misc
-/.angular/cache
+**/.angular
 /.sass-cache
 /connect.lock
 /coverage
@@ -40,3 +40,6 @@ Thumbs.db
 **/bin
 **/obj
 **/.vscode
+
+node_modules
+node_modules
