@@ -1,7 +1,7 @@
 import { JournalService } from './../../Services/journal.service';
 import { Component } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableModule, MatCellDef, MatColumnDef, MatTable } from '@angular/material/table';
 
 
 @Component({
@@ -28,9 +28,10 @@ export class ViewJournalComponent  {
     getJournals() {
       this.JournalService.getJournal(this.userId).subscribe(journals => {
         this.journals = journals as JournalModel[];
-        if (this.journals){
-        this.dataSource = new MatTableDataSource<JournalModel>(journals);
+        if (this.journals){//if i receive data
+        this.dataSource = new MatTableDataSource<JournalModel>(this.journals);
         }
+        //add if i don't receive data
       })
     }
 

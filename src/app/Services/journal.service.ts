@@ -1,10 +1,11 @@
+import { environment } from './../../environments/environment';
 import { Injectable } from "@angular/core";
 //why can't you find this model?
-import { JournalModel } from '../../../Models/JournalModel';
+import {JournalModel} from '../../../Models/JournalModel'
 import { Router, ActivatedRoute } from "@angular/router";
 import { HttpClient, HttpHeaderResponse, HttpHeaders } from "@angular/common/http";
 
-
+const url = environment.api;
 @Injectable({
   providedIn: 'root'
 })
@@ -22,20 +23,27 @@ export class JournalService {
 
 getJournal(userId?: number){
 //get all journals based on the user id
-  return this.http.get(journalUrl + '/' + userId,  { responseType: 'json' })
+  return this.http.get(url + '/GetAll?userID=' + userId,  { responseType: 'json' })
 
 }
 
-getJournalById(id: number){
+createJournal(journal: JournalModel){
+  return this.http.post(url + '/Create', journal, this.httpOptions);
+}
+
+getJournalById(id: string){
   //need the journal url
-  return this.http.get(journalUrl + '/' + id, { responseType: 'json'});
+  return this.http.get(url + '/GetJournal?journalID=' + id, { responseType: 'json'});
 
 }
 
-deleteJournalById(id: number){
-  return this.http.delete(journalUrl + '/' + id, this.httpOptions);
+deleteJournalById(id: string){
+  return this.http.delete(url + '/Delete?journalID=' + id, this.httpOptions);
 }
 
+updateJournal(journal: JournalModel){
+  return this.http.put(url + '/Update', journal, this.httpOptions);
+}
 
 
 

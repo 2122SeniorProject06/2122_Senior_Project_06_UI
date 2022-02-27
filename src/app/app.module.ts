@@ -12,7 +12,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon'
-import { MatTableModule, MatCellDef } from '@angular/material/table';
+import { MatTableModule, MatCellDef, MatColumnDef, MatRowDef } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
