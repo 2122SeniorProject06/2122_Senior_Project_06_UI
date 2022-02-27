@@ -1,8 +1,4 @@
-import { OnetasteComponent } from './Features/54321/onetaste/onetaste.component';
-import { TwosmellComponent } from './Features/54321/twosmell/twosmell.component';
-import { ThreehearComponent } from './Features/54321/threehear/threehear.component';
-import { FourtouchComponent } from './Features/54321/fourtouch/fourtouch.component';
-import { FiveseesComponent } from './Features/54321/fivesees/fivesees.component';
+import { StepperComponent } from './Features/Stepper/stepper.component';
 import { JournalComponent } from './Features/Journaling/journal.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -15,11 +11,7 @@ const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo:'login' },
   { path: 'login', component: UserLoginComponent },
   { path: 'main-menu', component: MainmenuComponent },
-  { path: 'fivesees', component: FiveseesComponent},
-  { path: 'fourtouch', component: FourtouchComponent},
-  {path: 'threehear', component: ThreehearComponent},
-  {path: 'twosmell', component: TwosmellComponent},
-  {path: 'onetast', component: OnetasteComponent},
+  { path: 'stepper', component: StepperComponent},
   { path: 'register', component: UserRegistrationComponent },
   { path: 'journal', component: JournalComponent}
 ];
