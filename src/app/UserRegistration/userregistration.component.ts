@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from "../Services/user.service"
-import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'user-registration',
@@ -13,6 +12,7 @@ import { ThrowStmt } from '@angular/compiler';
 export class UserRegistrationComponent implements OnInit {
   form!: FormGroup;
   registerModel!: UserRegistration;
+  confirmedPassword?: string;
   isRegistered: boolean = false;
   constructor(private UserService: UserService, private formBuilder: FormBuilder, private router: Router, private route: ActivatedRoute) {}
 
@@ -27,14 +27,19 @@ export class UserRegistrationComponent implements OnInit {
   get f() { return this.form.controls }
 
   Register() {
-    this.goToLogin();
-    this.registerModel.email = this.form.get('email')?.value;
-    this.registerModel.username = this.form.get('username')?.value;
-    this.registerModel.password = this.form.get('password')?.value;
-    this.registerModel.confirmpassword = this.form.get('confirmpassword')?.value;
 
-    this.isRegistered = this.UserService.register(this.registerModel);
-
+    this.registerModel.Email = this.form.get('email')?.value;
+    this.registerModel.Username = this.form.get('username')?.value;
+    this.registerModel.Password = this.form.get('password')?.value;
+    this.confirmedPassword = this.form.get('confirmpassword')?.value;
+//if the confirmed password is equal to the other password, then we create the user
+    if(this.confirmedPassword == this.registerModel.Password){
+      this.UserService.register(this.registerModel).subscribe((result: any) =>{
+        if(result) {
+          this.goToLogin();
+        }
+      })
+    }
 
   }
   goToLogin(){
