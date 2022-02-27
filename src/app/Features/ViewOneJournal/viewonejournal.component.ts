@@ -5,6 +5,7 @@ import {Component} from '@angular/core';
   selector: 'form-field-theming-example',
   templateUrl: 'viewonejournal.component.html',
   styleUrls: ['viewonejournal.component.css'],
+  providers: [JournalModel]
 })
 export class ViewOneJournalComponent {
 
@@ -14,6 +15,6 @@ export class ViewOneJournalComponent {
   }
 
   clear() {
-  //not needed for this 
+  //not needed for this
   }
 }

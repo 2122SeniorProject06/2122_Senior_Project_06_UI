@@ -8,11 +8,11 @@ import { HttpClient, HttpHeaderResponse, HttpHeaders } from "@angular/common/htt
 @Injectable({
   providedIn: 'root'
 })
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-export class JournalService {
 
+export class JournalService {
+   httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -20,22 +20,20 @@ export class JournalService {
     private httpHeaders: HttpHeaders,
     ) { }
 
-getJournal(journal: JournalModel){
-  //issues here, need the url
-  //need the journalUrl
-  return this.http.get(journalUrl,  { responseType: 'text' })
-  //once api is set up in backend, this function will make an http POST call
+getJournal(userId?: number){
+//get all journals based on the user id
+  return this.http.get(journalUrl + '/' + userId,  { responseType: 'json' })
 
 }
 
 getJournalById(id: number){
   //need the journal url
-  return this.http.get(journalUrl + '/' + id, { responseType: 'text'});
+  return this.http.get(journalUrl + '/' + id, { responseType: 'json'});
 
 }
 
 deleteJournalById(id: number){
-  return this.http.delete(journalUrl + '/' + id, httpOptions);
+  return this.http.delete(journalUrl + '/' + id, this.httpOptions);
 }
 
 

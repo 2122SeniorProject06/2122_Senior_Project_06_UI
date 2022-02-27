@@ -12,14 +12,28 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon'
-import { MatTableModule } from '@angular/material/table';
+import { MatTableModule, MatCellDef } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StepperComponent } from './Features/stepper/stepper.component';
+import { StepperComponent } from './Features/Stepper/stepper.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCommonModule, MatNativeDateModule, MatRippleModule } from '@angular/material/core';
+import { MatButtonModule } from '@angular/material/button/public-api';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CdkTableModule } from '@angular/cdk/table';
+import {CdkStepperModule} from '@angular/cdk/stepper';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatInputModule } from '@angular/material/input';
+
+
+import { MatSelectModule } from '@angular/material/select';
+import { PortalModule } from '@angular/cdk/portal';
+
 
 @NgModule({
   declarations: [
@@ -39,11 +53,56 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCardModule,
     MatFormFieldModule,
     MatIconModule,
+    MatCommonModule,
     MatTableModule,
     MatToolbarModule,
     HttpClientModule,
+    MatCellDef,
+    CdkStepperModule,
+    CdkTableModule,
+    CdkTableModule,
+    MatCardModule,
+    MatButtonModule,
+    MatCardModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSnackBarModule,
     BrowserAnimationsModule
 
+  ],
+  exports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatCommonModule,
+    MatTableModule,
+    MatToolbarModule,
+    HttpClientModule,
+    MatCellDef,
+    CdkStepperModule,
+    CdkTableModule,
+    CdkTableModule,
+    MatCardModule,
+    MatButtonModule,
+    MatCardModule,
+    MatStepperModule,
+    MatDatepickerModule,
+    MatGridListModule,
+    MatIconModule,
+    MatInputModule,
+    MatRippleModule,
+    MatSelectModule,
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [UserService, JournalService],
   bootstrap: [AppComponent]
