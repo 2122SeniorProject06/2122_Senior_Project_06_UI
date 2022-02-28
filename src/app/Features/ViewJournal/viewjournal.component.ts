@@ -38,9 +38,6 @@ export class ViewJournalComponent  {
 
   }
 
-
-}
-
 //change the name to match better
 
 

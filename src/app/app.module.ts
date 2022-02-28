@@ -33,6 +33,8 @@ import { MatInputModule } from '@angular/material/input';
 
 import { MatSelectModule } from '@angular/material/select';
 import { PortalModule } from '@angular/cdk/portal';
+import { CountingGameComponent } from './Features/CountGame/countgame.component';
+import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.component';
 
 
 @NgModule({
@@ -40,9 +42,10 @@ import { PortalModule } from '@angular/cdk/portal';
     AppComponent,
     UserLoginComponent,
     UserRegistrationComponent,
-    JournalComponent,
+    ViewJournalComponent,
     ViewOneJournalComponent,
-    StepperComponent
+    StepperComponent,
+    CountingGameComponent
 
   ],
   imports: [
