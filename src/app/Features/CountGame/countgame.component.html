@@ -1,22 +1,136 @@
-<section>
-    <div class="countgame-label">Focus</div>
-    <div class="countgame-button-row">
-      <div class="countgame-flex-container">
-        <div class="countgame-button-container">
-          <button mat-fab color="primary" aria-label="button for num1">
-            <mat-icon>num1</mat-icon>
-          </button>
+<div class="count-game-panel">
+
+  <h2 class="title">Focus</h2>
+
+  <mat-horizontal-stepper class="mat-elevation-z7"
+                          labelPosition="bottom"
+                          [linear]="true">
+
+ <mat-step>
+    <ng-template matStepLabel></ng-template>
+
+        Lets countdown by 20 starting at 100
+
+        <div class="countdown-buttons">
+            <button mat-raised-button color="primary">
+              90
+            </button>
+        
+            <button mat-raised-button color="primary">
+              95
+            </button>
+
+            <button mat-raised-button color="primary" matStepperNext>
+              80
+            </button>
         </div>
-        <div class="example-button-container">
-          <button mat-fab color="primary" aria-label="button for num2">
-            <mat-icon>num2</mat-icon>
+  </mat-step>
+
+  <mat-step >
+      <ng-template matStepLabel></ng-template>
+      Lets countdown by 20 from 80
+      <div class="countdown-buttons">
+          <button mat-raised-button color="primary">
+            75
           </button>
-        </div>
-        <div class="example-button-container">
-          <button mat-fab color="primary" aria-label="buttom for num3">
-            <mat-icon>num3</mat-icon>
+
+          <button mat-raised-button color="primary">
+            70
           </button>
-        </div>
+
+          <button mat-raised-button color="primary" matStepperNext>
+            60
+          </button>
       </div>
+
+  </mat-step>
+
+  <mat-step >
+      
+      <ng-template matStepLabel></ng-template>
+      Lets countdown by 20 from 60
+
+      <div class="countdown-buttons">
+          <button mat-raised-button color="primary">
+            55
+          </button>
+
+          <button mat-raised-button color="primary">
+            50
+          </button>
+
+          <button mat-raised-button color="primary" matStepperNext>
+            40
+          </button>
+      </div>
+
+  </mat-step>
+
+  <mat-step >
+      
+      <ng-template matStepLabel></ng-template>
+
+      Lets countdown by 20 from 40
+
+      <div class="countdown-buttons">
+          <button mat-raised-button color="primary">
+            25
+          </button>
+
+          <button mat-raised-button color="primary">
+            15
+          </button>
+
+          <button mat-raised-button color="primary" matStepperNext>
+            20
+          </button>
+      </div>
+
+  </mat-step>
+
+  <mat-step >
+      
+      <ng-template matStepLabel></ng-template>
+
+      Lets countdown by 20 from 20
+
+      <div class="countdown-buttons">
+          <button mat-raised-button color="primary">
+            10
+          </button>
+
+          <button mat-raised-button color="primary">
+            5
+          </button>
+
+          <button mat-raised-button color="primary" matStepperNext>
+            0
+          </button>
+      </div>
+
+  </mat-step>
+
+  <mat-step >
+      
+    <ng-template matStepLabel></ng-template>
+
+    <div class="countdown-buttons">
+        <button mat-raised-button color="accent">
+          Home
+        </button>
+
+        <button mat-raised-button color="primary">
+          Play Again
+        </button>
     </div>
-  </section>
+
+</mat-step>
+
+  </mat-horizontal-stepper>
+  
+   <!-- Footer -->
+  <footer>
+    <h3 class="title">Need Immediate Help?</h3>
+      <a href="https://suicidepreventionlifeline.org/" target="_blank" rel="noopener"> Visit the National Suicide Prevention Lifeline</a>
+  </footer>
+</div>

@@ -18,23 +18,31 @@ export class MainmenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  gotoCalmMusic(){
-    this.router.navigateByUrl('/calmmusic-component');
+  gotoAudioMed(){
+    this.router.navigateByUrl('/audioMeditation');
   }
 
   gotoCountGame(){
-    this.router.navigateByUrl('/counting-component');
+    this.router.navigateByUrl('/countgame');
   }
 
   gotoDeepBreath(){
     this.router.navigateByUrl('/deepbreathing-component');
   }
 
-  gotoFiveOne(){
-    this.router.navigateByUrl('/fivesees');
+  gotoStepper(){
+    this.router.navigateByUrl('/stepper');
   }
 
-  gotoNoteTake(){
+  gotoJournal(){
     this.router.navigateByUrl('/journal');
+  }
+
+  gotoMantra(){
+    this.router.navigateByUrl('/mantra');
+  }
+
+  gotoCheckin(){
+    this.router.navigateByUrl('/checkin');
   }
 }

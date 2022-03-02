@@ -1,0 +1,1 @@
+const SAMPLE_TEXT="I am a Champion for __________ .I am Worthy of ___________ My Wealth is in my ____________ My _________ has no limits. I’m invested in ___________ I will __________ I want ___________"
