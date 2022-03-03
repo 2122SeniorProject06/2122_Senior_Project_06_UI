@@ -1,3 +1,4 @@
+import { CheckinComponent } from './Features/Checkin/checkin.component';
 import { JournalService } from './Services/journal.service';
 import { UserService } from './Services/user.service';
 import { JournalComponent } from './Features/Journaling/journal.component';
@@ -45,8 +46,8 @@ import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.compone
     ViewJournalComponent,
     ViewOneJournalComponent,
     StepperComponent,
-    CountingGameComponent
-
+    CountingGameComponent,
+    CheckinComponent
   ],
   imports: [
     BrowserModule,
