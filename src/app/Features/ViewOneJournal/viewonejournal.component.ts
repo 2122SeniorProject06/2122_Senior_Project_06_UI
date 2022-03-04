@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { JournalModel } from 'Models/JournalModel';
 
 /** @title Form field theming */
 @Component({

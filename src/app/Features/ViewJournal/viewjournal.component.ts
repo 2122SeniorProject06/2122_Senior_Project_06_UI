@@ -3,6 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatTableModule, MatCellDef, MatColumnDef, MatTable } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { JournalModel } from 'Models/JournalModel';
 
 
 @Component({

@@ -1,7 +1,7 @@
 import { environment } from './../../environments/environment';
 import { Injectable } from "@angular/core";
 //why can't you find this model?
-import {JournalModel} from '../../../Models/JournalModel'
+import {JournalModel} from '../../../Models/JournalModel';
 import { Router, ActivatedRoute } from "@angular/router";
 import { HttpClient, HttpHeaderResponse, HttpHeaders } from "@angular/common/http";
 

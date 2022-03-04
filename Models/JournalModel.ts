@@ -1,5 +1,5 @@
 //model for Journal feature
-class JournalModel {
+export class JournalModel {
   public title!: string;
   public description!: string;
   public subject!: string;
