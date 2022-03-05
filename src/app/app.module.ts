@@ -22,7 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StepperComponent } from './Features/Stepper/stepper.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCommonModule, MatNativeDateModule, MatRippleModule } from '@angular/material/core';
-import { MatButtonModule } from '@angular/material/button/public-api';
+import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CdkTableModule } from '@angular/cdk/table';
 import {CdkStepperModule} from '@angular/cdk/stepper';
