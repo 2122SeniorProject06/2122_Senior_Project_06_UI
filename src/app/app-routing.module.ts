@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserRegistrationComponent } from "../app/UserRegistration/userregistration.component";
 import {UserLoginComponent} from "../app/UserLogin/userlogin.component"
-import { MainmenuComponent } from './MainMenu/mainmenu.component';
+import { MainmenuComponent } from '../app/mainmenu/mainmenu.component';
 
 //Add Routes that map to components
 const routes: Routes = [
