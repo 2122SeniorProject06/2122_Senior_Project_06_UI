@@ -1,17 +1,24 @@
-<div class="journal-wrapper" fxLayout="row" fxLayoutAlign="center center">
-    <form class="journal">
-        <form>
-          <input type="text" placeholder="Title" style="width:525px">
-        </form>
+<div class="journal">
+<form [formGroup]="journalForm" (ngSubmit)="onSubmit()">
+  <p>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Username" formControlName="username">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input type="password" matInput placeholder="Password" formControlName="password">
+    </mat-form-field>
+  </p>
 
-        <form>
-          <input type="text" placeholder="Subject" style="width: 525px;">
-        </form>
 
-        <form>
-          <input type="text" placeholder="Description" style="height: 360px; width: 525px;">
-        </form>
-      <button mat-stroked-button color="accent" class="btn-success">Save</button>
-      <button mat-stroked-button color="accent" class="btn-success" (click)="goToMain()">Done</button>
-    </form>
+  <button class="register" mat-raised-button>Log In</button>
+  </form>
 </div>
+
+  <mat-toolbar>
+  <button class="home" (click)="goToMain()">
+  <mat-icon>home</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  </mat-toolbar>

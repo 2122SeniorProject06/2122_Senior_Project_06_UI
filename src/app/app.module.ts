@@ -1,3 +1,4 @@
+import { JournalComponent } from './Features/Journaling/journal.component';
 import { CheckinComponent } from './Features/Checkin/checkin.component';
 import { JournalService } from './Services/journal.service';
 import { UserService } from './Services/user.service';
@@ -38,6 +39,7 @@ import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.compone
     UserLoginComponent,
     UserRegistrationComponent,
     ViewJournalComponent,
+    JournalComponent,
     ViewOneJournalComponent,
     StepperComponent,
     CountingGameComponent,
