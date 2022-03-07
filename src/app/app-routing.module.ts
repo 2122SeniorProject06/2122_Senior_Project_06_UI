@@ -1,3 +1,4 @@
+import { CountingGameComponent } from './Features/CountGame/countgame.component';
 import { AudioComponent } from './Features/AudioMeditation/audiomeditation.component';
 import { CheckinComponent } from './Features/Checkin/checkin.component';
 import { ViewOneJournalComponent } from './Features/ViewOneJournal/viewonejournal.component';
@@ -11,6 +12,7 @@ import {UserLoginComponent} from "../app/UserLogin/userlogin.component"
 import { MainmenuComponent } from '../app/mainmenu/mainmenu.component';
 
 //Add Routes that map to components
+//you need to have the / if you're routing from one component to the next...
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo:'main-menu' },
   { path: 'login', component: UserLoginComponent },
@@ -22,6 +24,7 @@ const routes: Routes = [
   { path: 'main-menu/journal', component: JournalComponent},
   { path: 'main-menu/check-in', component: CheckinComponent},
   { path: 'main-menu/meditate', component: AudioComponent },
+  { path: 'main-menu/count', component: CountingGameComponent}
 
 ];
 
