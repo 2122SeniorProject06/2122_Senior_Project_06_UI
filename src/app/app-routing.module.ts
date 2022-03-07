@@ -1,3 +1,5 @@
+import { AudioComponent } from './Features/AudioMeditation/audiomeditation.component';
+import { CheckinComponent } from './Features/Checkin/checkin.component';
 import { ViewOneJournalComponent } from './Features/ViewOneJournal/viewonejournal.component';
 import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.component';
 import { StepperComponent } from './Features/Stepper/stepper.component';
@@ -15,9 +17,12 @@ const routes: Routes = [
   { path: 'viewjournal', component: ViewJournalComponent },
   { path: 'viewonjournal', component: ViewOneJournalComponent },
   { path: 'main-menu', component: MainmenuComponent },
-  { path: 'stepper', component: StepperComponent},
+  { path: 'main-menu/stepper', component: StepperComponent},
   { path: 'register', component: UserRegistrationComponent },
-  { path: 'journal', component: JournalComponent}
+  { path: 'main-menu/journal', component: JournalComponent},
+  { path: 'main-menu/check-in', component: CheckinComponent},
+  { path: 'main-menu/meditate', component: AudioComponent },
+
 ];
 
 @NgModule({

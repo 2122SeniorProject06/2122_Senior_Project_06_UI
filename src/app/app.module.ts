@@ -1,3 +1,4 @@
+import { AudioComponent } from './Features/AudioMeditation/audiomeditation.component';
 import { JournalComponent } from './Features/Journaling/journal.component';
 import { CheckinComponent } from './Features/Checkin/checkin.component';
 import { JournalService } from './Services/journal.service';
@@ -43,7 +44,8 @@ import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.compone
     ViewOneJournalComponent,
     StepperComponent,
     CountingGameComponent,
-    CheckinComponent
+    CheckinComponent,
+    AudioComponent,
   ],
   imports: [
     BrowserModule,
