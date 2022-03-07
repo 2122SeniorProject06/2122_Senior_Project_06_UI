@@ -36,6 +36,7 @@ export class UserRegistrationComponent implements OnInit {
     if(this.confirmedPassword == this.registerModel.Password){
       this.UserService.register(this.registerModel).subscribe((result: any) =>{
         if(result) {
+          console.log("Registration was successful");
           this.goToLogin();
         }
       })

@@ -1,3 +1,5 @@
+import { ViewOneJournalComponent } from './Features/ViewOneJournal/viewonejournal.component';
+import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.component';
 import { StepperComponent } from './Features/Stepper/stepper.component';
 import { JournalComponent } from './Features/Journaling/journal.component';
 import { NgModule } from '@angular/core';
@@ -8,8 +10,10 @@ import { MainmenuComponent } from '../app/mainmenu/mainmenu.component';
 
 //Add Routes that map to components
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo:'login' },
+  { path: '', pathMatch: 'full', redirectTo:'main-menu' },
   { path: 'login', component: UserLoginComponent },
+  { path: 'viewjournal', component: ViewJournalComponent },
+  { path: 'viewonjournal', component: ViewOneJournalComponent },
   { path: 'main-menu', component: MainmenuComponent },
   { path: 'stepper', component: StepperComponent},
   { path: 'register', component: UserRegistrationComponent },

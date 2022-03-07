@@ -1,5 +1,7 @@
+import { JournalComponent } from './../Journaling/journal.component';
 import {Component} from '@angular/core';
 import { JournalModel } from 'Models/JournalModel';
+import { JournalService } from 'src/app/Services/journal.service';
 
 /** @title Form field theming */
 @Component({
@@ -11,7 +13,7 @@ import { JournalModel } from 'Models/JournalModel';
 export class ViewOneJournalComponent {
 
 
-  constructor() {
+  constructor(private JournalService: JournalService) {
 
   }
 

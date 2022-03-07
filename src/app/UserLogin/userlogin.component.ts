@@ -52,12 +52,16 @@ export class UserLoginComponent implements OnInit {
       if (this.data) {
         const currUser = new UserModel();
         currUser.userId = this.data;
+        //set the local storage user id for easy access
+        localStorage.setItem('userId', this.data);
+        console.log("successful login");
         this.snackBar.dismiss();
       }
       //what is the angular function for this
       else if(this.data == null)
       {
         this.snackBar.open('Username or Password was Incorrect');
+        console.log("unsuccessful login");
         this.router.navigate(['Login']);
       }
     })
