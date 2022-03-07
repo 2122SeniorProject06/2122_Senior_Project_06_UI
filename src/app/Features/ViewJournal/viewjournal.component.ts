@@ -19,7 +19,7 @@ export class ViewJournalComponent  {
   displayedColumns = ['date', 'title', 'entry'];
   dataSource = new MatTableDataSource<JournalModel>();
   journals?: JournalModel[];
-  userId?: number; //this will be the user's id when they log in
+  userId?: any; //this will be the user's id when they log in
  // @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngOnInit(): void {
@@ -33,6 +33,8 @@ export class ViewJournalComponent  {
   }
     getJournals() {
       //right now userid is null
+      //valueOf needed?
+      this.userId = localStorage.getItem('userId');
       this.JournalService.getJournal(this.userId).subscribe(journals => {
         this.journals = journals as JournalModel[];
         if (this.journals){//if i receive data
