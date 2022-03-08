@@ -20,7 +20,7 @@ constructor(private http: HttpClient){}
 login(loginModel: UserLogin){
   //once api is set up in backend, this function will make an http POST call
   //need the login url
-return this.http.post(url + '/Login/Authenticate', loginModel, this.httpOptions);
+return this.http.post(url + '/Login/Authenticate', loginModel, {responseType: 'text'});
 }
  register(registerModel: UserRegistration){
    //once api is set up in backend this function will an http POST call to add user to database

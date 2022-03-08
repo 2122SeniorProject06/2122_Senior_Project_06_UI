@@ -17,6 +17,7 @@ export class UserLoginComponent implements OnInit {
  data: any;
  token?: string;
  error: any;
+ currUser: any;
 
   constructor(
     private router: Router,
@@ -49,11 +50,18 @@ export class UserLoginComponent implements OnInit {
 
     this.UserService.login(login).subscribe((result) => {
       this.data = result;
+      //JSON.parse(this.data);
+      //JSON.stringify(this.data);
+      console.log(this.data);
+      //clear prior to logging in
+      localStorage.clear();
+      console.log(localStorage.getItem('userId'));
       if (this.data) {
-        const currUser = new UserModel();
-        currUser.userId = this.data;
+        this.currUser = "";
+        this.currUser = this.data;
         //set the local storage user id for easy access
         localStorage.setItem('userId', this.data);
+        console.log(login);
         console.log("successful login");
         this.snackBar.dismiss();
       }
