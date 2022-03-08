@@ -39,6 +39,7 @@ export class MainmenuComponent implements OnInit {
   }
 
   gotoMantra(){
+    //this isn't going to work bcuz mantra has no component class so you cannot route to this
     this.router.navigateByUrl('/mantra');
   }
 
