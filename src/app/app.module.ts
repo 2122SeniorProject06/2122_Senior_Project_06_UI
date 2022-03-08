@@ -32,6 +32,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CountingGameComponent } from './Features/CountGame/countgame.component';
 import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.component';
+import { BreathingMeditationComponent } from './Features/breathing-meditation/breathing-meditation.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.compone
     CountingGameComponent,
     CheckinComponent,
     AudioComponent,
+    BreathingMeditationComponent,
   ],
   imports: [
     BrowserModule,
