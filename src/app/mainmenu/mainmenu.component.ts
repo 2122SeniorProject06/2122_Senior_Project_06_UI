@@ -35,7 +35,7 @@ export class MainmenuComponent implements OnInit {
   }
 
   gotoJournal(){
-    this.router.navigateByUrl('/journal');
+    this.router.navigateByUrl('/Journaling');
   }
 
   gotoMantra(){

@@ -8,7 +8,7 @@ import { MainmenuComponent } from '../app/mainmenu/mainmenu.component';
 
 //Add Routes that map to components
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo:'login' },
+  { path: '', pathMatch: 'full', redirectTo:'main-menu' },
   { path: 'login', component: UserLoginComponent },
   { path: 'main-menu', component: MainmenuComponent },
   { path: 'stepper', component: StepperComponent},
