@@ -29,9 +29,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { CountingGameComponent } from './Features/CountGame/countgame.component';
+import { CountGameComponent } from './Features/CountGame/countgame.component';
+import { MantraComponent } from './Features/Mantra/mantra.component';
 import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.component';
-
 
 @NgModule({
   declarations: [
@@ -42,7 +42,8 @@ import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.compone
     JournalComponent,
     ViewOneJournalComponent,
     StepperComponent,
-    CountingGameComponent,
+    CountGameComponent,
+    MantraComponent,
     CheckinComponent
   ],
   imports: [
