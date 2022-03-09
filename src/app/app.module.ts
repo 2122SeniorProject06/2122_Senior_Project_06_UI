@@ -1,5 +1,5 @@
 import { JournalComponent } from './Features/Journaling/journal.component';
-import { CheckinComponent } from './Features/Checkin/checkin.component';
+import { CheckInComponent } from './Features/Checkin/checkin.component';
 import { JournalService } from './Services/journal.service';
 import { UserService } from './Services/user.service';
 import { ViewOneJournalComponent } from './Features/ViewOneJournal/viewonejournal.component';
@@ -31,6 +31,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CountingGameComponent } from './Features/CountGame/countgame.component';
 import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.component';
+import { MainMenuComponent } from './mainmenu/mainmenu.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.compone
     ViewOneJournalComponent,
     StepperComponent,
     CountingGameComponent,
-    CheckinComponent
+    CheckInComponent,
+    MainMenuComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,9 +63,7 @@ import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.compone
     CdkStepperModule,
     CdkTableModule,
     CdkTableModule,
-    MatCardModule,
     MatButtonModule,
-    MatCardModule,
     MatStepperModule,
     MatDatepickerModule,
     MatGridListModule,
@@ -91,9 +91,7 @@ import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.compone
     CdkTableModule,
     MatCheckboxModule,
     CdkTableModule,
-    MatCardModule,
     MatButtonModule,
-    MatCardModule,
     MatStepperModule,
     MatDatepickerModule,
     MatGridListModule,

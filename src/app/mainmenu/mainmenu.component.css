@@ -7,7 +7,7 @@ mat-grid-tile {
    color: #52688F;
  }
 
-.reflect {
+.oddTile {
   background: #BDC6D9;
   letter-spacing: 2mm;
   font-size: large;
@@ -15,40 +15,18 @@ mat-grid-tile {
   color: #52688F;
 }
 
-.focus {
+.evenTile {
   background: #E3E7F1;
   letter-spacing: 2mm;
   font-size: large;
   color: #52688F;
 }
-.ground {
-  background: #BDC6D9;
-  letter-spacing: 2mm;
-  font-size: large;
-  color: #52688F;
 
-}
-
-.relax {
-  background: #E3E7F1;
-  letter-spacing: 2mm;
-  font-size: large;
-  color: #52688F;
-}
-.breath {
-  background: #BDC6D9;
-  letter-spacing: 2mm;
-  font-size: large;
-  color: #52688F;
-}
-
-.container {
-
-}
 .card {
 
   height: 75%;
-  width:75%;
+  width: 75%;
+  display: flex;
   text-align:center;
   position:center;
   justify-content: center;
