@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./mainmenu.component.css']
 })
 
-export class MainmenuComponent implements OnInit {
+export class MainMenuComponent implements OnInit {
 
   constructor(
     private router: Router,

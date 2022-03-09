@@ -9,4 +9,4 @@ import {Component} from '@angular/core';
   templateUrl: './checkin.component.html',
   styleUrls: ['./checkin.component.css'],
 })
-export class CheckinComponent {}
+export class CheckInComponent {}
