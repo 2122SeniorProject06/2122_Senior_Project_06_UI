@@ -56,5 +56,8 @@ export class UserRegistrationComponent implements OnInit {
     this.router.navigateByUrl('login');
   }
 
+  goToMainMenu(){
+    this.router.navigateByUrl('main-menu');
+  }
 }
 
