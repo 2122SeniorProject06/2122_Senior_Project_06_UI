@@ -1,4 +1,3 @@
-import { UserLoginComponent } from './../src/app/UserLogin/userlogin.component';
 //classes to create user login and registration models
 
 export class UserModel {

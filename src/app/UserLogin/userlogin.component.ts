@@ -1,5 +1,5 @@
-import { UserService } from './../Services/user.service';
-import { UserLogin, UserModel } from './../../../Models/UserModels';
+import { UserService } from '../Services/user.service';
+import { UserLogin, UserModel } from '../../../Models/UserModels';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -47,7 +47,7 @@ export class UserLoginComponent implements OnInit {
     const login = new UserLogin();
     login.Email = this.form.get('Email').value;
     login.Password = this.form.get('Password').value;
-
+localStorage.clear();
     this.UserService.login(login).subscribe((result) => {
       this.data = result;
       //JSON.parse(this.data);
@@ -64,6 +64,8 @@ export class UserLoginComponent implements OnInit {
         console.log(login);
         console.log("successful login");
         this.snackBar.dismiss();
+        //this.goToCreateJournal();
+        this.goToJournal();
       }
       //what is the angular function for this
       else if(this.data == null)

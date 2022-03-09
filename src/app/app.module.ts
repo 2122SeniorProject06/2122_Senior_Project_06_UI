@@ -31,7 +31,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CountingGameComponent } from './Features/CountGame/countgame.component';
-import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.component';
+import { ViewJournalsComponent } from './Features/ViewJournal/viewjournal.component';
 
 
 @NgModule({
@@ -39,7 +39,7 @@ import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.compone
     AppComponent,
     UserLoginComponent,
     UserRegistrationComponent,
-    ViewJournalComponent,
+    ViewJournalsComponent,
     JournalComponent,
     ViewOneJournalComponent,
     StepperComponent,
