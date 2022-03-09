@@ -28,8 +28,8 @@ const routes: Routes = [
   // { path: 'audio', component: AudioMeditationComponent}
   //{ path: 'deepbreathing-component', component: BreathingComponent}
   { path: 'check-in', component: CheckInComponent},
-  { path: 'meditate', component: AudioMeditationComponent },
-  { path: 'count', component: CountingGameComponent}
+  { path: 'audio-meditation', component: AudioMeditationComponent },
+  { path: 'count-game', component: CountingGameComponent}
 ];
 
 @NgModule({
