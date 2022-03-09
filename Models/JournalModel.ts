@@ -1,8 +1,8 @@
 //model for Journal feature
 export class JournalModel {
-  public title!: string;
-  public description!: string;
-  public subject!: string;
-  public id!: number;
-  public userId!: number;
-}
+  public JournalID?: string;
+  public Title?: string;
+  public Body?: string;
+  public UserID?: string;
+  public LastUpdated?: Date;
+  }

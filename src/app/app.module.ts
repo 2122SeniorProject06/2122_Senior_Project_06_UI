@@ -1,3 +1,4 @@
+import { AudioComponent } from './Features/AudioMeditation/audiomeditation.component';
 import { JournalComponent } from './Features/Journaling/journal.component';
 import { CheckInComponent } from './Features/Checkin/checkin.component';
 import { JournalService } from './Services/journal.service';
@@ -30,7 +31,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CountingGameComponent } from './Features/CountGame/countgame.component';
-import { ViewJournalComponent } from './Features/ViewJournal/viewjournal.component';
+import { ViewJournalsComponent } from './Features/ViewJournal/viewjournal.component';
 import { MainMenuComponent } from './mainmenu/mainmenu.component';
 
 
@@ -39,13 +40,14 @@ import { MainMenuComponent } from './mainmenu/mainmenu.component';
     AppComponent,
     UserLoginComponent,
     UserRegistrationComponent,
-    ViewJournalComponent,
+    ViewJournalsComponent,
     JournalComponent,
     ViewOneJournalComponent,
     StepperComponent,
     CountingGameComponent,
     CheckInComponent,
     MainMenuComponent,
+    AudioComponent,
   ],
   imports: [
     BrowserModule,

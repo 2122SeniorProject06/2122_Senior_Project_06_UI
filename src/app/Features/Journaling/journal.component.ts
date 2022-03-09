@@ -1,8 +1,8 @@
-import { JournalModel } from './../../../../Models/JournalModel';
+import { JournalModel } from '../../../../Models/JournalModel';
 import { FormsModule, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { JournalService } from 'src/app/Services/journal.service';
+import { JournalService } from '../../Services/journal.service';
 
 @Component({
   selector: 'journal-feature',
@@ -22,9 +22,8 @@ export class JournalComponent implements OnInit {
 
     ngOnInit(): void {
       this.journalForm = this.formBuilder.group({
-        title: [''],
-        subject: [''],
-        description: ['']
+        Title: [''],
+        Body: ['']
       });
     }
 
@@ -34,15 +33,13 @@ export class JournalComponent implements OnInit {
 
     onSubmit() {
       const journalModel = new FormData();
-      journalModel.append('title', this.journalForm.get('title').value);
-      journalModel.append('description', this.journalForm.get('description').value);
-      journalModel.append('subject', this.journalForm.get('subject').value);
+      journalModel.append('Title', this.journalForm.get('Title').value);
+      journalModel.append('Body', this.journalForm.get('Body').value);
 
       const journal = new JournalModel();
-      journal.title = this.journalForm.get('title').value;
-      journal.description = this.journalForm.get('description').value;
-      journal.subject = this.journalForm.get('subject').value;
-
+      journal.Title = this.journalForm.get('Title').value;
+      journal.Body = this.journalForm.get('Body').value;
+      console.log(journal);
       this.JournalService.createJournal(journal).subscribe((res) => {
           console.log(res);
       })
@@ -54,3 +51,4 @@ goToMain() {
 }
 
 }
+
