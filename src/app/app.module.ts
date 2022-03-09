@@ -1,4 +1,4 @@
-import { AudioComponent } from './Features/AudioMeditation/audiomeditation.component';
+import { AudioMeditationComponent } from './Features/AudioMeditation/audio-meditation.component';
 import { JournalComponent } from './Features/Journaling/journal.component';
 import { CheckInComponent } from './Features/Checkin/checkin.component';
 import { JournalService } from './Services/journal.service';
@@ -47,7 +47,7 @@ import { MainMenuComponent } from './mainmenu/mainmenu.component';
     CountingGameComponent,
     CheckInComponent,
     MainMenuComponent,
-    AudioComponent,
+    AudioMeditationComponent,
   ],
   imports: [
     BrowserModule,
