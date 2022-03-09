@@ -9,4 +9,4 @@ import {Component} from '@angular/core';
   templateUrl: './countgame.component.html',
   styleUrls: ['./countgame.component.css'],
 })
-export class CountGameComponent {}
+export class CountingGameComponent {}
