@@ -64,6 +64,13 @@ export class ViewJournalsComponent {
       this.route.navigateByUrl('view-one');
     }
 
+    goToMainMenu(){
+      this.route.navigateByUrl('main-menu');
+    }
+
+    goToAddJournal(){
+      this.route.navigateByUrl('journal');
+    }
 
   }
 
