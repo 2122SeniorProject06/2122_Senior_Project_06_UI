@@ -11,33 +11,49 @@ export class StepperComponent {
     throw new Error('Method not implemented.');
   }
 
-  formGroup1: FormGroup;
-  formGroup2: FormGroup;
-  thirdFormGroup: FormGroup;
-  fourthFormGroup: FormGroup;
-  fifthFormGroup:FormGroup;
+  // steps: boolean[];
+  // whichStep: number;
+
+
+  // constructor(){
+  //   this.steps = [true, false, false, false, false];
+  //   this.whichStep = 0;
+  // }
+
+  // onClick(){
+  //   this.steps[this.whichStep] = false;
+  //   if(this.whichStep == 4){
+  //     this.whichStep = 0;
+  //   }
+  //   else{
+  //     this.whichStep++;
+  //   }
+  //   this.steps[this.whichStep] = true;
+  // }
+
+  fiveSights: FormGroup;
+  fourTouches: FormGroup;
+  threeSounds: FormGroup;
+  twoSmells: FormGroup;
+  oneTaste: FormGroup;
 
   constructor(private _formBuilder: FormBuilder) {
-
-
-    this.formGroup1 = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+    this.fiveSights = this._formBuilder.group({
+      firstCtrl: ['', Validators.required],
     });
-    this.formGroup2 = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-
-    this.thirdFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.fourthFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-
-    this.fifthFormGroup = this._formBuilder.group({
+    this.fourTouches = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
 
+    this.threeSounds = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+    this.twoSmells = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
+
+    this.oneTaste = this._formBuilder.group({
+      firstCtrl: ['', Validators.required]
+    });
   }
-
 }
