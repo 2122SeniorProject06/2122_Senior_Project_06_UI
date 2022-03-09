@@ -61,7 +61,7 @@ export class ViewJournalsComponent {
 
     goToViewOne(){
       console.log("going to view one");
-      this.route.navigateByUrl('viewonejournal');
+      this.route.navigateByUrl('view-one-journal');
     }
 
     goToMainMenu(){

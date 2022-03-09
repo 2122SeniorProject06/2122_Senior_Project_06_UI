@@ -7,30 +7,31 @@ mat-grid-tile {
    color: #52688F;
  }
 
-.oddTile {
-  background: #BDC6D9;
-  letter-spacing: 2mm;
-  font-size: large;
-  font-style: bold;
-  color: #52688F;
-}
-
-.evenTile {
-  background: #E3E7F1;
-  letter-spacing: 2mm;
-  font-size: large;
-  color: #52688F;
-}
-
 .card {
 
-  height: 75%;
-  width: 75%;
+  height: 65%;
+  width: 65%;
   display: flex;
   text-align:center;
   position:center;
   justify-content: center;
 
+}
+
+.card mat-grid-tile{
+  letter-spacing: 2mm;
+  font-size: large;
+  font-style: bold;
+}
+
+.card mat-grid-tile:nth-child(odd){
+  background: #BDC6D9;
+  color: #52688F;
+}
+
+.card mat-grid-tile:nth-child(even){
+  background: #E3E7F1;
+  color: #52688F;
 }
 
 body {
