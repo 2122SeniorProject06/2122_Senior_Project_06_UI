@@ -85,7 +85,7 @@ localStorage.clear();
   }
 
   goToJournal(){
-    this.router.navigateByUrl('/journal');
+    this.router.navigateByUrl('/viewjournal');
   }
 
   goToMainMenu(){

@@ -40,10 +40,10 @@
     <mat-toolbar>
 
       <button class="home">
-        <mat-icon>home</mat-icon>
+        <mat-icon (click)="goToMainMenu()">home</mat-icon>
       </button>
       <span class="example-spacer"></span>
       <button class="create">
-        <mat-icon>create</mat-icon>
+        <mat-icon (click)="goToAddJournal()">create</mat-icon>
       </button>
     </mat-toolbar>

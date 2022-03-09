@@ -1,6 +1,6 @@
-import { AudioComponent } from './Features/AudioMeditation/audiomeditation.component';
+import { AudioMeditationComponent } from './Features/AudioMeditation/audio-meditation.component';
 import { JournalComponent } from './Features/Journaling/journal.component';
-import { CheckinComponent } from './Features/Checkin/checkin.component';
+import { CheckInComponent } from './Features/Checkin/checkin.component';
 import { JournalService } from './Services/journal.service';
 import { UserService } from './Services/user.service';
 import { ViewOneJournalComponent } from './Features/ViewOneJournal/viewonejournal.component';
@@ -30,9 +30,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MantraComponent } from './Features/Mantra/mantra.component';
 import { CountingGameComponent } from './Features/CountGame/countgame.component';
 import { ViewJournalsComponent } from './Features/ViewJournal/viewjournal.component';
-
+import { MainMenuComponent } from './mainmenu/mainmenu.component';
 
 @NgModule({
   declarations: [
@@ -44,8 +45,10 @@ import { ViewJournalsComponent } from './Features/ViewJournal/viewjournal.compon
     ViewOneJournalComponent,
     StepperComponent,
     CountingGameComponent,
-    CheckinComponent,
-    AudioComponent,
+    MantraComponent,
+    CheckInComponent,
+    MainMenuComponent,
+    AudioMeditationComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,9 +66,7 @@ import { ViewJournalsComponent } from './Features/ViewJournal/viewjournal.compon
     CdkStepperModule,
     CdkTableModule,
     CdkTableModule,
-    MatCardModule,
     MatButtonModule,
-    MatCardModule,
     MatStepperModule,
     MatDatepickerModule,
     MatGridListModule,
@@ -93,9 +94,7 @@ import { ViewJournalsComponent } from './Features/ViewJournal/viewjournal.compon
     CdkTableModule,
     MatCheckboxModule,
     CdkTableModule,
-    MatCardModule,
     MatButtonModule,
-    MatCardModule,
     MatStepperModule,
     MatDatepickerModule,
     MatGridListModule,
