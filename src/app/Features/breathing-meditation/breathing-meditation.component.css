@@ -1,0 +1,47 @@
+#box {
+  
+    border: solid 5px #333;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 500px;
+    height: 500px;
+  }
+  
+  
+  @keyframes ball {
+      0%   {top: 483px; left: -23px;}
+      25%  {top: -23px; left: -23px;}
+      50%  {top: -23px; left: 483px;}
+      75%  {top: 483px; left: 483px;}
+      100% {top: 483px; left: -23px;}
+  }
+  #ball {
+    position: absolute;
+    top: 480px; left: -20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    animation: ball 16s linear infinite;
+  }
+  @keyframes breath {
+    0%   {background-color: #ccc; top: 240px; left: 240px; width:  20px; height:  20px;}
+    25%  {background-color: #52688F; top:  10px; left:  10px; width: 480px; height: 480px;}
+    50%  {background-color: #7391C8; top:  10px; left:  10px; width: 480px; height: 480px;}
+    75%  {background-color: #BDC6D9; top: 240px; left: 240px; width:  20px; height:  20px;}
+    100% {background-color: #ccc; top: 240px; left: 240px; width:  20px; height:  20px;}
+  }
+  #breath {
+    position: absolute;
+    background-color: #999;
+    top: 240px; left: 240px; width:  20px; height:  20px;
+    animation: breath 16s ease-in-out infinite;
+  }
+  #breath:hover{
+    
+    animation:breath 16s ease-in-out infinite;
+  
+  }
+ 
+  

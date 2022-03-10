@@ -1,1 +1,11 @@
-body {background-color: coral;}
+.body {background-color: coral;}
+
+.card {
+    max-width: 500px;
+    align-self: center;
+    margin: 15px;
+}
+
+.user-input{
+    align-self: center;
+}

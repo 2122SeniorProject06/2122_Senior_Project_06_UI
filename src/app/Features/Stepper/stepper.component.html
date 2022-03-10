@@ -1,81 +1,148 @@
-<mat-vertical-stepper >
-  <mat-step [stepControl]="formGroup1" label ="Enter five things you can see">
-     
-    <form [formGroup]="formGroup1">
-      
-      <mat-form-field>
-          <input matInput placeholder="Enter five things you see" formControlName = "firstCtrl"required>
-         
+<!-- <mat-vertical-stepper>
+  <mat-step>
+    <ul>
+      <li>Test</li>
+      <li *ngIf="steps[0]">Select 5 things.</li>
+      <li *ngIf="steps[1]">Select 4 things.</li>
+      <li *ngIf="steps[2]">Select 3 things.</li>
+      <li *ngIf="steps[3]">Select 2 things.</li>
+      <li *ngIf="steps[4]">Select 1 things.</li>
+      <button ((click))="onClick()">Click here to switch views.</button>
+    </ul>
+  </mat-step>
+</mat-vertical-stepper> -->
 
+<mat-card class="card">
+  <mat-vertical-stepper class="user-input">
 
-      </mat-form-field>
+    <!--Five things to see.-->
+    <mat-step [stepControl]="fiveSights" label ="Enter five things you can see"> 
+      <form [formGroup]="fiveSights">
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Sight #1" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Sight #2" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Sight #3" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Sight #4" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Sight #5" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!--Four things to touch.-->
+    <mat-step [stepControl]="fourTouches" label = "Enter four things you can touch">
+      <form [formGroup]="fourTouches">
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Touch #1" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Touch #2" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Touch #3" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Touch #4" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!--Three things to hear.-->
+    <mat-step [stepControl]="threeSounds" label= "Enter three things you can hear">
+      <form [formGroup]="threeSounds">
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Sound #1" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Sound #2" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Sound #3" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!--Two things to smell.-->
+    <mat-step [stepControl]="twoSmells" label = "Enter two things you can smell">
+      <form [formGroup]="twoSmells">
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Smell #1" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Smell #2" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <!--One thing to taste.-->
+    <mat-step [stepControl]="oneTaste" label = "Enter one thing you can taste">
+      <form [formGroup]="oneTaste">
+        <p>
+          <mat-form-field>
+            <input matInput placeholder="Taste #1" formControlName = "firstCtrl"required>
+          </mat-form-field>
+        </p>
+      </form>
       <div>
-     <button mat-button matStepperNext>Next</button>
-    </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="formGroup2" label = "Enter four things you can touch">
-  
-    <form [formGroup]="formGroup2">
-      <mat-form-field>
-        <input matInput placeholder="Enter four things you can touch" formControlName = "secondCtrl"required>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </mat-step>
+
+  </mat-vertical-stepper>
+</mat-card>
 
 
-    </mat-form-field>
-    <div>
-    <button mat-button matStepperPrevious>Back</button>
-    <button mat-button matStepperNext>Next</button>
-  </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="thirdFormGroup" label= "Enter three things you can hear">
-    
-    <form [formGroup]="thirdFormGroup">
-      <mat-form-field>
-        <input matInput placeholder="Enter three things you can hear" formControlName = "thirdCtrl"required>
-
-
-    </mat-form-field>
-    <div>
-    <button mat-button matStepperPrevious>Back</button>
-    <button mat-button matStepperNext>Next</button>
-  </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="fourthFormGroup" label = "Enter two things you can smell">
-    
-    <form [formGroup]="fourthFormGroup">
-      <mat-form-field>
-        <input matInput placeholder="Enter two things you can smell" formControlName = "secondCtrl"required>
-      
-
-
-    </mat-form-field>
-    <div>
-    <button mat-button matStepperPrevious>Back</button>
-    <button mat-button matStepperNext>Next</button>
-  </div>
-    </form>
-  </mat-step>
-  <mat-step [stepControl]="fifthFormGroup" label = "Enter one thing you can taste">
-   
-    <form [formGroup]="fifthFormGroup">
-      <mat-form-field>
-        <input matInput placeholder="Enter one things you can taste" formControlName = "firstCtrl"required>
-
-
-    </mat-form-field>
-    </form>
-    <div>
-    <button mat-button matStepperPrevious>Back</button>
-    <button mat-button matStepperNext>Next</button>
-  </div>
-    
-
-  </mat-step>
-  
- 
-</mat-vertical-stepper>
 
 
 
