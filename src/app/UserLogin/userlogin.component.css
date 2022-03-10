@@ -23,6 +23,13 @@ mat-raised-button {
   justify-content: flex-end;
   float: right;
 }
+
+.register{
+  color: white;
+  background-color: #52688F;
+  float: left;
+  justify-content: flex-start;
+}
 .mat-toolbar{
   position: fixed;
   bottom: 0;
