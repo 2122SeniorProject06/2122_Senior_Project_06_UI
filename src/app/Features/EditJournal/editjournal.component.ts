@@ -26,8 +26,11 @@ export class EditJournalComponent implements OnInit {
         Title: [''],
         Body: ['']
       });
+
+
     }
 
+    
     get f() {
       return this.editJournalForm.controls;
     }

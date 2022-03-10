@@ -34,6 +34,8 @@ import { MantraComponent } from './Features/Mantra/mantra.component';
 import { CountingGameComponent } from './Features/CountGame/countgame.component';
 import { ViewJournalsComponent } from './Features/ViewJournal/viewjournal.component';
 import { MainMenuComponent } from './mainmenu/mainmenu.component';
+import { EditJournalComponent } from './Features/EditJournal/editjournal.component';
+
 
 @NgModule({
   declarations: [
@@ -49,6 +51,7 @@ import { MainMenuComponent } from './mainmenu/mainmenu.component';
     CheckInComponent,
     MainMenuComponent,
     AudioMeditationComponent,
+    EditJournalComponent
   ],
   imports: [
     BrowserModule,
