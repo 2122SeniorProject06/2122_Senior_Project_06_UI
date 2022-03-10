@@ -1,9 +1,17 @@
-<div [align]="['center']" class="bg">
-    <mat-card class="card">
-        <button mat-fab class="playButton" (click)="modifyAudio()">
-            <mat-icon *ngIf="!isPlaying">play_arrow</mat-icon>
-            <mat-icon *ngIf="isPlaying">pause</mat-icon>
-        </button>
-    </mat-card>
+
+<body>
+<div [align]="['center']">
+    <iframe width="560" 
+    class ="audio-wrapper"
+
+    height="315" 
+    src="https://www.youtube.com/embed/UfcAVejslrU" 
+    title="YouTube video player" 
+    frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+    allowfullscreen></iframe>
+    <p style="color:white;">Please click on the video to enjoy your audio meditation</p>
+
+   
 </div>
-<!--Youtube video link: https://www.youtube.com/embed/UfcAVejslrU-->
+</body>
