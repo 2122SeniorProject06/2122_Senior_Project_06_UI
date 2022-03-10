@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './countgame.component.html',
   styleUrls: ['./countgame.component.css'],
 })
-export class CountingGameComponent {
+export class CountGameComponent {
 
   constructor(
     private router: Router,
