@@ -57,7 +57,7 @@ goToMain() {
 }
 
 goToJournals(){
-  this.router.navigateByUrl('/viewjournal');
+  this.router.navigateByUrl('/view-journal');
 }
 
 }
