@@ -54,14 +54,14 @@ export class ViewJournalsComponent {
           this.journal = res;
           console.log(this.journal);
           console.log("routing to view one");
-          this.route.navigateByUrl('viewonejournal');
+          this.route.navigateByUrl('view-one-journal');
       });
 
     }
 
     goToViewOne(){
       console.log("going to view one");
-      this.route.navigateByUrl('viewonejournal');
+      this.route.navigateByUrl('view-one-journal');
     }
 
     goToMainMenu(){
