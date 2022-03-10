@@ -51,3 +51,15 @@ p {
 
   flex: 1 1 auto;
 }
+
+.logout {
+  color: #52688F;
+  border: none;
+  background-color: white;
+  float: right;
+}
+
+.view {
+  border: none;
+  background-color: white;
+}

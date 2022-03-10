@@ -32,6 +32,10 @@ export class UserLoginComponent implements OnInit {
       Email: [''],
       Password: ['']
     })
+
+    if(localStorage.getItem('userId') != null){
+      this.goToJournal();
+    }
   }
 
   get f(){
