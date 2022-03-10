@@ -12,7 +12,7 @@ import { CheckInComponent } from './Features/Checkin/checkin.component';
 import { UserRegistrationComponent } from "../app/UserRegistration/userregistration.component";
 import {UserLoginComponent} from "../app/UserLogin/userlogin.component";
 import { MainMenuComponent } from '../app/mainmenu/mainmenu.component';
-//import { BreathingComponent } from './Features/AudioMeditation/audiomeditation.component';
+import { BreathingMeditationComponent } from '../app/Features/breathing-meditation/breathing-meditation.component';
 
 //Add Routes that map to components
 //you need to have the / if you're routing from one component to the next...
@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'view-one-journal', component: ViewOneJournalComponent },
   { path: 'journal', component: JournalComponent},
   { path: 'stepper', component: StepperComponent},
-  //{ path: 'deepbreathing-component', component: BreathingComponent}
+  { path: 'breathing-component', component: BreathingMeditationComponent },
   { path: 'check-in', component: CheckInComponent},
   { path: 'audio-meditation', component: AudioMeditationComponent },
   { path: 'count-game', component: CountGameComponent}
