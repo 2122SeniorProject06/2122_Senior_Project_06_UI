@@ -42,12 +42,12 @@ export class JournalComponent implements OnInit {
       journal.Body = this.journalForm.get('Body').value;
       this.userId = localStorage.getItem('userId');
       journal.UserID = this.userId;
-      console.log(journal);
+      console.log(journal.UserID);
       this.JournalService.createJournal(journal).subscribe((res) => {
           console.log(res);
-          
+
           this.goToJournals();
-          
+
       })
 
     }
