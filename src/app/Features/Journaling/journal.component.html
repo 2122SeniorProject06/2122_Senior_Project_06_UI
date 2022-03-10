@@ -1,6 +1,6 @@
-<div class="journal">
+<div [align]=""  class="journal">
   <mat-card>
-    <mat-card-title>Add Journal</mat-card-title>
+    <mat-card-title></mat-card-title>
   <mat-card-content>
   <form [formGroup]="journalForm" (ngSubmit)="onSubmit()">
     <p>
@@ -26,5 +26,8 @@
     <mat-icon>home</mat-icon>
     </button>
     <span class="example-spacer"></span>
+    <button class="journals">
+      <mat-icon (click)="goToJournals()">thumbs_up_alt</mat-icon>
+      </button>
     </mat-toolbar>
 
