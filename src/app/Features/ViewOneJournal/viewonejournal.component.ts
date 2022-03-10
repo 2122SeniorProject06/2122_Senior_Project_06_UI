@@ -48,7 +48,7 @@ export class ViewOneJournalComponent {
   delete(id: any){
     this.JournalService.deleteJournalById(id).subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('viewjournal');
+      this.router.navigateByUrl('view-journals');
     })
   }
   goToMain(){

@@ -59,6 +59,11 @@ export class ViewJournalsComponent {
 
     }
 
+    logout(){
+      localStorage.clear();
+      this.goToMainMenu();
+    }
+
     goToViewOne(){
       console.log("going to view one");
       this.route.navigateByUrl('viewonejournal');

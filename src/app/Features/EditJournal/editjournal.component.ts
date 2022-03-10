@@ -5,13 +5,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { JournalService } from '../../Services/journal.service';
 
 @Component({
-  selector: 'journal-feature',
-  templateUrl: './journal.component.html',
-  styleUrls: ['./journal.component.css']
+  selector: 'edit-journal',
+  templateUrl: './editjournal.component.html',
+  styleUrls: ['./editjournal.component.css']
 })
 
-export class JournalComponent implements OnInit {
-  journalForm: any;
+export class EditJournalComponent implements OnInit {
+  editJournalForm: any;
   userId: any;
 
   constructor(
@@ -22,28 +22,28 @@ export class JournalComponent implements OnInit {
     ) { }
 
     ngOnInit(): void {
-      this.journalForm = this.formBuilder.group({
+      this.editJournalForm = this.formBuilder.group({
         Title: [''],
         Body: ['']
       });
     }
 
     get f() {
-      return this.journalForm.controls;
+      return this.editJournalForm.controls;
     }
 
     onSubmit() {
       const journalModel = new FormData();
-      journalModel.append('Title', this.journalForm.get('Title').value);
-      journalModel.append('Body', this.journalForm.get('Body').value);
+      journalModel.append('Title', this.editJournalForm.get('Title').value);
+      journalModel.append('Body', this.editJournalForm.get('Body').value);
 
-      const journal = new JournalModel();
-      journal.Title = this.journalForm.get('Title').value;
-      journal.Body = this.journalForm.get('Body').value;
+      const editjournal = new JournalModel();
+      editjournal.Title = this.editJournalForm.get('Title').value;
+      editjournal.Body = this.editJournalForm.get('Body').value;
       this.userId = localStorage.getItem('userId');
-      journal.UserID = this.userId;
-      console.log(journal);
-      this.JournalService.createJournal(journal).subscribe((res) => {
+      editjournal.UserID = this.userId;
+      console.log(editjournal);
+      this.JournalService.updateJournal(editjournal).subscribe((res) => {
           console.log(res);
           
           this.goToJournals();
