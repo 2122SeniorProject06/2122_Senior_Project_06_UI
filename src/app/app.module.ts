@@ -37,6 +37,7 @@ import { UserService } from './Services/user.service';
 import { ViewOneJournalComponent } from './Features/ViewOneJournal/viewonejournal.component';
 import { UserRegistrationComponent } from './UserRegistration/userregistration.component';
 import { UserLoginComponent } from './UserLogin/userlogin.component';
+import { BreathingMeditationComponent } from './Features/breathing-meditation/breathing-meditation.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { UserLoginComponent } from './UserLogin/userlogin.component';
     CheckInComponent,
     MainMenuComponent,
     AudioMeditationComponent,
+    BreathingMeditationComponent,
   ],
   imports: [
     AppRoutingModule,
