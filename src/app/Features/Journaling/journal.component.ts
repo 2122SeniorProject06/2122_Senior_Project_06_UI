@@ -30,7 +30,7 @@ export class JournalComponent implements OnInit {
     get f() {
       return this.journalForm.controls;
     }
-
+/*Andrew helped with debugging*/
     onSubmit() {
       const journalModel = new FormData();
       journalModel.append('Title', this.journalForm.get('Title').value);
