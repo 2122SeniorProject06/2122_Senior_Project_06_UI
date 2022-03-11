@@ -1,24 +1,44 @@
+<div class="check-in-panel">
+
+<h2 class="title">Check In</h2>
+
 <mat-checkbox color="primary" formControlName="item1"
     [indeterminate]="true">
     Shower
 </mat-checkbox>
-
+<br>
 <mat-checkbox color="primary" formControlName="item2"
     [indeterminate]="true">
     Make the bed
 </mat-checkbox>
-
+<br>
 <mat-checkbox color="primary" formControlName="item3"
     [indeterminate]="true">
     Eat Food
 </mat-checkbox>
-
+<br>
 <mat-checkbox color="primary" formControlName="item4"
     [indeterminate]="true">
     Move for 20 minutes
 </mat-checkbox>
-
+<br>
 <mat-checkbox color="primary" formControlName="item5"
     [indeterminate]="true">
     Do something for myself
 </mat-checkbox>
+<br>
+
+<!-- Footer -->
+<footer>
+    <h3 class="title">Need Immediate Help?</h3>
+      <a href="https://suicidepreventionlifeline.org/" target="_blank" rel="noopener"> Visit the National Suicide Prevention Lifeline</a>
+  </footer>
+</div>
+
+<!--ToolBar-->
+<mat-toolbar>
+  <button class="home" (click)="goToMain()">
+  <mat-icon>home</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+</mat-toolbar>

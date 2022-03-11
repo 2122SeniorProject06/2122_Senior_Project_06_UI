@@ -1,4 +1,8 @@
-<mat-form-field appearance="outline">
+<div class="mantra-panel">
+
+    <h2 class="title">Encourage</h2>
+    
+    <mat-form-field appearance="outline">
 
     <textarea matInput placeholder="Description" formControlName="longDescription"
         cdkTextareaAutosize [cdkAutosizeMinRows]="2"
@@ -6,4 +10,19 @@
 
     </textarea>
     
-</mat-form-field>
+    </mat-form-field>
+
+    <!-- Footer -->
+<footer>
+    <h3 class="title">Need Immediate Help?</h3>
+      <a href="https://suicidepreventionlifeline.org/" target="_blank" rel="noopener"> Visit the National Suicide Prevention Lifeline</a>
+  </footer>
+</div>
+
+<!--ToolBar-->
+<mat-toolbar>
+  <button class="home" (click)="goToMain()">
+  <mat-icon>home</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+</mat-toolbar>
