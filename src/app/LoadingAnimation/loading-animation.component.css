@@ -1,0 +1,9 @@
+.title{
+    text-align: left;
+    letter-spacing: .43mm;
+    color: #52688F;
+  }
+
+.spinner{
+    stroke: red;
+}
