@@ -16,10 +16,8 @@
       <mat-grid-tile class="evenTile" [routerLink]="['/audio-meditation']">RELAX</mat-grid-tile>
       <!-- <button class="btn"(click)="gotoAudioMed()">RELAX</button> -->
       <!--Navigates to the Deep Breathing Feature "Breathe"-->
-      <!-- <mat-grid-tile class="breath" [routerLink]="['/']">BREATHE</mat-grid-tile> -->
-      <!-- <button class="btn"(click)="gotoDeepBreath()">BREATHE</button> -->
-      <!--Navigates to the Mantra Manifestation Feature "Breathe" -->
-      <!-- <mat-grid-tile class="encourage" [routerLink]="['/audio-mediation']">ENCOURAGE</mat-grid-tile> -->
+      <mat-grid-tile [routerLink]="['/breathing-component']">BREATHE</mat-grid-tile>
+      <mat-grid-tile class="encourage" [routerLink]="['/mantra']">ENCOURAGE</mat-grid-tile>
       <!-- <button class="btn"(click)="gotoMantra()">ENCOURAGE</button> -->
       <!--Navigates to the Checkin Feature "Check In" -->
       <mat-grid-tile class="oddTile" [routerLink]="['/check-in']">CHECK IN</mat-grid-tile>
