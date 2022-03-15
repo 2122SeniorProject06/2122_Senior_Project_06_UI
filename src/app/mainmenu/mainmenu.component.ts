@@ -1,6 +1,7 @@
-import { Component, Directive, Input, OnChanges, OnInit, QueryList, SimpleChanges, ViewChildren } from '@angular/core';
+import { trigger } from '@angular/animations';
+import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { MatGridTile } from '@angular/material/grid-list';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 //this will need to be edited to route the dynamic grid to the correct components, i added the html and css to the correct files
 @Component({

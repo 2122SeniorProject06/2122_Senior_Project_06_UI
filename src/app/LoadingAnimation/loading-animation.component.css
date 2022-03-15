@@ -1,9 +1,10 @@
 .title{
-    text-align: left;
+    text-align: center;
     letter-spacing: .43mm;
+    margin-bottom: 12px;
     color: #52688F;
   }
 
 .spinner{
-    stroke: red;
+    margin: 0 auto;
 }

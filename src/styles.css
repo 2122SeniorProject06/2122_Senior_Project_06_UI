@@ -1,3 +1,9 @@
 /* @import "~bootstrap/dist/css/bootstrap.css" */
 html, body { height: 100%; }
-body { margin: 0; background-image: linear-gradient(#E3E7F1, #BDC6D9, #7391C8, #52688F) ; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0;
+    background-image: url("./assets/gradient-glass.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -23,6 +23,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 //Components
 import { StepperComponent } from './Features/Stepper/stepper.component';
@@ -87,6 +88,7 @@ import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.
     MatSelectModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   exports: [
     AppRoutingModule,
@@ -115,6 +117,7 @@ import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.
     MatSelectModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   providers: [UserService, JournalService],
   bootstrap: [AppComponent]

@@ -32,5 +32,8 @@ export class LoadingAnimationComponent implements OnInit, OnChanges {
     var routeName = this.targetRoute.innerHTML;
     var routeLink = this.targetRoute.parentElement!.id;
     document.getElementById('routeDescription')!.innerHTML = "GOING TO " + routeName + " ACTIVITY";
+    setTimeout( () => {
+      this.router.navigateByUrl(routeLink)
+    },1000)
   }
 }
