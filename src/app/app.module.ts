@@ -22,6 +22,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
 //Components
 import { StepperComponent } from './Features/Stepper/stepper.component';
@@ -74,6 +75,7 @@ import { BreathingMeditationComponent } from './Features/breathing-meditation/br
     MatToolbarModule,
     MatButtonModule,
     MatStepperModule,
+    MatProgressSpinnerModule,
     MatDatepickerModule,
     MatGridListModule,
     MatIconModule,

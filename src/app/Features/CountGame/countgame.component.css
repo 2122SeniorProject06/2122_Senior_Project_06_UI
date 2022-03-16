@@ -38,3 +38,7 @@ footer{
   background-color: #E3E7F1;
 
 }
+
+.spinner-container mat-spinner {
+  margin: 130px auto 0 auto;
+}
