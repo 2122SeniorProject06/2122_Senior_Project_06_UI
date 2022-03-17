@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms'
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-stepper',
@@ -37,7 +38,8 @@ export class StepperComponent {
   twoSmells: FormGroup;
   oneTaste: FormGroup;
 
-  constructor(private _formBuilder: FormBuilder) {
+  constructor(private _formBuilder: FormBuilder,
+              private router: Router,) {
     this.fiveSights = this._formBuilder.group({
       firstCtrl: ['', Validators.required],
     });
@@ -55,5 +57,13 @@ export class StepperComponent {
     this.oneTaste = this._formBuilder.group({
       firstCtrl: ['', Validators.required]
     });
+  }
+
+  goToMainMenu() {
+    this.router.navigateByUrl('/main-menu')
+  }
+
+  restartStepper() {
+    window.location.reload();
   }
 }
