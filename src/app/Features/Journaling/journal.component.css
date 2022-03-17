@@ -13,9 +13,8 @@
 
 }
 .add {
-  color: white;
   background-color: #52688F;
-  justify-content: center;
+  color: white;
   float: right;
 }
 .mat-form-field, .form, .body, .title {
@@ -29,4 +28,16 @@
   width: 100%;
   height: 100%;
   display: flex;
+}
+.example-spacer {
+
+  flex: 1 1 auto;
+}
+.journals {
+  color: #52688F;
+  border: none;
+  background-color: #E3E7F1;
+  float: right;
+
+
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-audio-meditation',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AudioMeditationComponent {
   title = 'audioMeditation';
+  constructor(
+    private router: Router,
+    
+    ) { }
+  goToMain() {
+    this.router.navigateByUrl('/main-menu');
+  }
 }

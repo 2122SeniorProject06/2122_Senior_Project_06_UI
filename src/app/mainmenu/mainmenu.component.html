@@ -1,27 +1,27 @@
-<div class="container">
-  <h3 class="title">I NEED TO...</h3>
-
+<div [align]="['center']" class="container">
   <mat-card class="card">
+    <h3 class="title">I NEED TO...</h3>
     <mat-grid-list cols="1" rowHeight="5:1" class="grid-layout-custom">
       <!--Navigates to the Journaling Feature "Reflect"-->
-      <mat-grid-tile class="oddTile" [routerLink]="['/login']">REFLECT</mat-grid-tile>
-      <!-- <button class="btn"(click)="gotoJournal()">REFLECT</button> -->
+      <mat-grid-tile [routerLink]="['/login']">REFLECT</mat-grid-tile>
+
       <!--Navigates to the Count Game Feature "Focus"-->
-      <mat-grid-tile class="evenTile" [routerLink]="['/count-game']">FOCUS</mat-grid-tile>
-      <!-- <button class="btn"(click)="gotoCountGame()">FOCUS</button> -->
+      <mat-grid-tile [routerLink]="['/count-game']">FOCUS</mat-grid-tile>
+
       <!--Navigates to the Stepper Feature "Ground"-->
-      <mat-grid-tile class="oddTile" [routerLink]="['/stepper']">GROUND</mat-grid-tile>
-      <!-- <button class="btn"(click)="gotoStepper()">GROUND</button> -->
+      <mat-grid-tile [routerLink]="['/stepper']">GROUND</mat-grid-tile>
+
       <!--Navigates to the Audio Mediation Feature "Relax"-->
-      <mat-grid-tile class="evenTile" [routerLink]="['/audio-meditation']">RELAX</mat-grid-tile>
-      <!-- <button class="btn"(click)="gotoAudioMed()">RELAX</button> -->
+      <mat-grid-tile [routerLink]="['/audio-meditation']">RELAX</mat-grid-tile>
+
       <!--Navigates to the Deep Breathing Feature "Breathe"-->
       <mat-grid-tile [routerLink]="['/breathing-component']">BREATHE</mat-grid-tile>
-      <mat-grid-tile class="encourage" [routerLink]="['/mantra']">ENCOURAGE</mat-grid-tile>
-      <!-- <button class="btn"(click)="gotoMantra()">ENCOURAGE</button> -->
+      
+      <!--Navigate to the Mantra Feature "Encourage"-->
+      <mat-grid-tile [routerLink]="['/mantra']">ENCOURAGE</mat-grid-tile>
+      
       <!--Navigates to the Checkin Feature "Check In" -->
-      <mat-grid-tile class="oddTile" [routerLink]="['/check-in']">CHECK IN</mat-grid-tile>
-      <!-- <button class="btn"(click)="gotoCheckin()">CHECK IN</button> -->
+      <mat-grid-tile [routerLink]="['/check-in']">CHECK IN</mat-grid-tile>
     </mat-grid-list>
   </mat-card>
 </div>

@@ -12,6 +12,7 @@ import { JournalService } from '../../Services/journal.service';
 
 export class JournalComponent implements OnInit {
   journalForm: any;
+  userId: any;
 
   constructor(
     private router: Router,
@@ -30,7 +31,7 @@ export class JournalComponent implements OnInit {
     get f() {
       return this.journalForm.controls;
     }
-
+/*Andrew helped with debugging*/
     onSubmit() {
       const journalModel = new FormData();
       journalModel.append('Title', this.journalForm.get('Title').value);
@@ -39,15 +40,24 @@ export class JournalComponent implements OnInit {
       const journal = new JournalModel();
       journal.Title = this.journalForm.get('Title').value;
       journal.Body = this.journalForm.get('Body').value;
-      console.log(journal);
+      this.userId = localStorage.getItem('userId');
+      journal.UserID = this.userId;
+      console.log(journal.UserID);
       this.JournalService.createJournal(journal).subscribe((res) => {
           console.log(res);
+
+          this.goToJournals();
+
       })
 
     }
 
 goToMain() {
   this.router.navigateByUrl('/main-menu');
+}
+
+goToJournals(){
+  this.router.navigateByUrl('/view-journal');
 }
 
 }

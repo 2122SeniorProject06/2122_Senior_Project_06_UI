@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-
+import { ActivatedRoute, Router } from '@angular/router';
 /**
  * Value Selection
  */
@@ -9,4 +9,14 @@ import {Component} from '@angular/core';
   templateUrl: './checkin.component.html',
   styleUrls: ['./checkin.component.css'],
 })
-export class CheckInComponent {}
+export class CheckInComponent {
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+  ){}
+  
+  goToMain() {
+    this.router.navigateByUrl('/main-menu');
+  }
+}
