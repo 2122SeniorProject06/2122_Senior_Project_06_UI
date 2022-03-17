@@ -29,7 +29,9 @@ export class MainMenuComponent implements OnInit {
   }
 
   routeToChoice(nextRoute: Event){
-    this.targetEvent = <HTMLElement>nextRoute.target;
+    let item = <HTMLElement>nextRoute.target;
+    item.innerHTML = item.innerHTML  + " ACTIVITY";
+    this.targetEvent = item;
     this.showLoading = true;
   }
 }

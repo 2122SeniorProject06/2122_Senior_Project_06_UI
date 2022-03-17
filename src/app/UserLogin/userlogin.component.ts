@@ -18,6 +18,8 @@ export class UserLoginComponent implements OnInit {
  token?: string;
  error: any;
  currUser: any;
+ showLoading: boolean;
+ targetEvent: HTMLElement;
 
   constructor(
     private router: Router,
@@ -25,7 +27,13 @@ export class UserLoginComponent implements OnInit {
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
     private UserService: UserService
-    ) { }
+    ) {
+      if(localStorage.getItem('userId') != null){
+        this.router.navigateByUrl('/view-journal');
+      } 
+      this.showLoading = false;
+      this.targetEvent = document.createElement('br');
+    }
 
   ngOnInit() {
     this.form = this.fb.group ({
@@ -33,9 +41,9 @@ export class UserLoginComponent implements OnInit {
       Password: ['']
     })
 
-    if(localStorage.getItem('userId') != null){
-      this.goToJournal();
-    }
+    // if(localStorage.getItem('userId') != null){
+    //   this.goToJournal();
+    // }
   }
 
   get f(){
@@ -85,14 +93,24 @@ localStorage.clear();
 
   goToRegistration(){
     //User is not registered and chooses to register via login page
-    this.router.navigateByUrl('/register');
+    this.activateLoadingAnimation('/register', 'ACCOUNT CREATION');
   }
 
   goToJournal(){
-    this.router.navigateByUrl('/view-journal');
+    this.activateLoadingAnimation('/view-journal', 'ALL JOURNALS');
   }
 
   goToMainMenu(){
-    this.router.navigateByUrl('/main-menu')
+    this.activateLoadingAnimation('/main-menu', "MAIN MENU")
+  }
+
+  activateLoadingAnimation(routeLink: string, routeName: string){
+    let mainMenuEvent = document.createElement('p');
+    let mainMenuParent = document.createElement('div');
+    mainMenuParent.id = routeLink;
+    mainMenuEvent.innerHTML = routeName;
+    mainMenuParent.appendChild(mainMenuEvent);
+    this.targetEvent = mainMenuEvent;
+    this.showLoading = true;
   }
 }

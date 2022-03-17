@@ -2,7 +2,7 @@
 html, body { height: 100%; }
 body { 
     margin: 0;
-    background-image: url("./assets/gradient-glass.png");
+    background-image: url("./assets/tahoe-glass.png");
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Roboto, "Helvetica Neue", sans-serif;

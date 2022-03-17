@@ -11,7 +11,6 @@ mat-grid-tile {
   width: 65%;
   display: flex;
   text-align:center;
-  position:center;
 }
 
 .grid-layout-custom{
