@@ -33,7 +33,7 @@ getJournal(userId?: string){
 
 createJournal(journal: JournalModel){
   console.log(journal);
-  return this.http.post(url + '/Journal/Create', journal, this.httpOptions);
+  return this.http.post(url + '/Journal/Create' + "/" + journal.UserID, journal, this.httpOptions);
 }
 
 getJournalById(id: string){

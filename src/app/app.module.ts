@@ -30,6 +30,8 @@ import { MantraComponent } from './Features/Mantra/mantra.component';
 import { CountGameComponent } from './Features/CountGame/countgame.component';
 import { ViewJournalsComponent } from './Features/ViewJournal/viewjournal.component';
 import { MainMenuComponent } from './mainmenu/mainmenu.component';
+import { EditJournalComponent } from './Features/EditJournal/editjournal.component';
+
 import { AudioMeditationComponent } from './Features/AudioMeditation/audio-meditation.component';
 import { JournalComponent } from './Features/Journaling/journal.component';
 import { CheckInComponent } from './Features/Checkin/checkin.component';
@@ -54,6 +56,7 @@ import { BreathingMeditationComponent } from './Features/breathing-meditation/br
     CheckInComponent,
     MainMenuComponent,
     AudioMeditationComponent,
+    EditJournalComponent,
     BreathingMeditationComponent,
   ],
   imports: [

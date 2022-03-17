@@ -48,7 +48,7 @@ export class ViewOneJournalComponent {
   delete(id: any){
     this.JournalService.deleteJournalById(id).subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('viewjournal');
+      this.router.navigateByUrl('view-journals');
     })
   }
   goToMain(){
@@ -56,10 +56,15 @@ export class ViewOneJournalComponent {
   }
   goToEdit(id: any) {
     //Implement a dialog box for editing
+    this.JournalService.getJournalById(id).subscribe(res =>{
+      console.log(res + " " + id);
+    })
     this.router.navigateByUrl('journal');
   }
   clear() {
   //not needed for this
   }
+
+  
 }
 
