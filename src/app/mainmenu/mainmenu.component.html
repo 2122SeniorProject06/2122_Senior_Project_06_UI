@@ -3,9 +3,6 @@
     <mat-card-content *ngIf="!showLoading">
       <h3 class="title">I NEED TO...</h3>
       <mat-grid-list cols="1" rowHeight="6:1" class="grid-layout-custom">
-        <!--Navigates to the Journaling Feature "Reflect"-->
-        <mat-grid-tile id="/login" (click)="routeToChoice($event)">REFLECT</mat-grid-tile>
-
         <!--Navigates to the Count Game Feature "Focus"-->
         <mat-grid-tile id="/count-game" (click)="routeToChoice($event)">FOCUS</mat-grid-tile>
 
@@ -23,6 +20,9 @@
         
         <!--Navigates to the Checkin Feature "Check In" -->
         <mat-grid-tile id="/check-in" (click)="routeToChoice($event)">CHECK IN</mat-grid-tile>
+
+        <!--Navigates to the Journaling Feature "Reflect"-->
+        <mat-grid-tile id="/login" (click)="routeToChoice($event)">REFLECT</mat-grid-tile>
       </mat-grid-list>
     </mat-card-content>
     <mat-card-content>
