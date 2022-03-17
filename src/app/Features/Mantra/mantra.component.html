@@ -1,12 +1,15 @@
-<div [align]="['center']" class="container">
+<div [align]="['center']" [formGroup]="form" class="container">
+
     <h2 class="title">Encourage</h2>
      
-<mat-form-field appearance="outline">
+    <mat-form-field appearance="outline" formControlName="longDescription">
 
-    <textarea matInput placeholder="Description" formControlName="longDescription"
-        cdkTextareaAutosize [cdkAutosizeMinRows]="2"
-            [cdkAutosizeMaxRows]="5">
+        <textarea matInput placeholder="Description" formControlName="longDescription"
+            cdkTextareaAutosize [cdkAutosizeMinRows]="2"
+                [cdkAutosizeMaxRows]="5">
 
-    </textarea>
-    
-</mat-form-field>
+        </textarea>
+        
+    </mat-form-field>
+
+

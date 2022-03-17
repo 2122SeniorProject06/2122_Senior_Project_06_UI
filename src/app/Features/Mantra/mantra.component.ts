@@ -1,14 +1,22 @@
 import {Component} from '@angular/core';
+import {FormBuilder, Validators} from '@angular/forms';
 
-/**
- * Value Selection
- */
+const SAMPLE_TEXT="I am a Champion for ______________________________.  I am Worthy of __________________________________. My Wealth is in my ______________________________ My __________________________________ has no limits. I’m invested in _____________________________________ I will _______________________________________________ I want ____________________________________________"
 
 @Component({
   selector: 'Mantra',
   templateUrl: './mantra.component.html',
   styleUrls: ['./mantra.component.css'],
 })
-export class MantraComponent {}
+export class MantraComponent {
 
-const SAMPLE_TEXT="I am a Champion for __________ .I am Worthy of ___________ My Wealth is in my ____________ My _________ has no limits. I’m invested in ___________ I will __________ I want ___________"
+  form = this.fb.group({
+    title: ['', []],
+    longDescription: [SAMPLE_TEXT, [Validators.required, Validators.minLength(3)]]
+  });
+
+  constructor(private fb: FormBuilder) {
+
+  }
+
+}
