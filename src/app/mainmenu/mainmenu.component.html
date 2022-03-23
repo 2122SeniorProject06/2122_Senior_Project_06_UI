@@ -1,27 +1,32 @@
-<div [align]="['center']" class="container">
+<div class="container">
   <mat-card class="card">
-    <h3 class="title">I NEED TO...</h3>
-    <mat-grid-list cols="1" rowHeight="5:1" class="grid-layout-custom">
-      <!--Navigates to the Journaling Feature "Reflect"-->
-      <mat-grid-tile [routerLink]="['/login']">REFLECT</mat-grid-tile>
+    <mat-card-content *ngIf="!showLoading">
+      <h3 class="title">I NEED TO...</h3>
+      <mat-grid-list cols="1" rowHeight="6:1" class="grid-layout-custom">
+        <!--Navigates to the Count Game Feature "Focus"-->
+        <mat-grid-tile id="/count-game" (click)="routeToChoice($event)">FOCUS</mat-grid-tile>
 
-      <!--Navigates to the Count Game Feature "Focus"-->
-      <mat-grid-tile [routerLink]="['/count-game']">FOCUS</mat-grid-tile>
+        <!--Navigates to the Stepper Feature "Ground"-->
+        <mat-grid-tile id="/stepper" (click)="routeToChoice($event)">GROUND</mat-grid-tile>
 
-      <!--Navigates to the Stepper Feature "Ground"-->
-      <mat-grid-tile [routerLink]="['/stepper']">GROUND</mat-grid-tile>
+        <!--Navigates to the Audio Mediation Feature "Relax"-->
+        <mat-grid-tile id="/audio-meditation" (click)="routeToChoice($event)">RELAX</mat-grid-tile>
 
-      <!--Navigates to the Audio Mediation Feature "Relax"-->
-      <mat-grid-tile [routerLink]="['/audio-meditation']">RELAX</mat-grid-tile>
+        <!--Navigates to the Deep Breathing Feature "Breathe"-->
+        <mat-grid-tile id="/breathing-component" (click)="routeToChoice($event)">BREATHE</mat-grid-tile>
+        
+        <!--Navigate to the Mantra Feature "Encourage"-->
+        <mat-grid-tile id="/mantra" (click)="routeToChoice($event)">ENCOURAGE</mat-grid-tile>
+        
+        <!--Navigates to the Checkin Feature "Check In" -->
+        <mat-grid-tile id="/check-in" (click)="routeToChoice($event)">CHECK IN</mat-grid-tile>
 
-      <!--Navigates to the Deep Breathing Feature "Breathe"-->
-      <mat-grid-tile [routerLink]="['/breathing-component']">BREATHE</mat-grid-tile>
-      
-      <!--Navigate to the Mantra Feature "Encourage"-->
-      <mat-grid-tile class="encourage" [routerLink]="['/mantra']">ENCOURAGE</mat-grid-tile>
-      
-      <!--Navigates to the Checkin Feature "Check In" -->
-      <mat-grid-tile [routerLink]="['/check-in']">CHECK IN</mat-grid-tile>
-    </mat-grid-list>
+        <!--Navigates to the Journaling Feature "Reflect"-->
+        <mat-grid-tile id="/login" (click)="routeToChoice($event)">REFLECT</mat-grid-tile>
+      </mat-grid-list>
+    </mat-card-content>
+    <mat-card-content>
+      <app-loading-animation *ngIf="showLoading" [targetRoute]=targetEvent></app-loading-animation>
+    </mat-card-content>
   </mat-card>
 </div>

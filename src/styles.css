@@ -1,3 +1,10 @@
-@import "~bootstrap/dist/css/bootstrap.css"
+/* @import "~bootstrap/dist/css/bootstrap.css" */
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0;
+    background-image: url("./assets/Mountains_Glacier_Lake.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
