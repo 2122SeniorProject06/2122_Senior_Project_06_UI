@@ -18,8 +18,8 @@ export class UserLoginComponent implements OnInit {
  token?: string;
  error: any;
  currUser: any;
- showLoading: boolean;
- targetEvent: HTMLElement;
+ showLoading: boolean; // Shows the loading bar.
+ targetEvent: HTMLElement; // The actual target to load.
 
   constructor(
     private router: Router,
@@ -104,6 +104,11 @@ localStorage.clear();
     this.activateLoadingAnimation('/main-menu', "MAIN MENU")
   }
 
+  /**
+   * Creates a html element to send to the loading animation to route to the next page.
+   * @param routeLink The route path to take.
+   * @param routeName The name of the activity to go to.
+   */
   activateLoadingAnimation(routeLink: string, routeName: string){
     let mainMenuEvent = document.createElement('p');
     let mainMenuParent = document.createElement('div');
