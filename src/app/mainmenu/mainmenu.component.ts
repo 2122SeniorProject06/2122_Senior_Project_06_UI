@@ -13,7 +13,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class MainMenuComponent implements OnInit {
 
   showLoading: boolean;
+  isSignedIn: boolean;
   targetEvent: HTMLElement;
+  testVar : string;
 
   @ViewChildren(MatGridTile) allRoutes! : QueryList<MatGridTile>;
 
@@ -21,6 +23,8 @@ export class MainMenuComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {
+      this.isSignedIn = localStorage.getItem('userId') != null;
+      this.testVar = "I NEED TO...";
       this.showLoading = false;
       this.targetEvent = document.createElement('br');
    }

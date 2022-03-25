@@ -1,7 +1,20 @@
+<!--Look into how flex works, might be something I need.-->
+<mat-toolbar>
+  <span class="example-spacer"></span>
+  
+  <button *ngIf="isSignedIn" id="signedIn" class="home">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+
+  <button *ngIf="!isSignedIn" id="notSignedIn" class="signIn" id="/login" (click)="routeToChoice($event)">
+    <p class="signIn">Sign In</p>
+  </button>
+</mat-toolbar>
+
 <div class="container">
   <mat-card class="card">
     <mat-card-content *ngIf="!showLoading">
-      <h3 class="title">I NEED TO...</h3>
+      <h3 class="title">{{testVar}}</h3>
       <mat-grid-list cols="1" rowHeight="6:1" class="grid-layout-custom">
         <!--Navigates to the Count Game Feature "Focus"-->
         <mat-grid-tile id="/count-game" (click)="routeToChoice($event)">FOCUS</mat-grid-tile>
@@ -22,7 +35,7 @@
         <mat-grid-tile id="/check-in" (click)="routeToChoice($event)">CHECK IN</mat-grid-tile>
 
         <!--Navigates to the Journaling Feature "Reflect"-->
-        <mat-grid-tile id="/login" (click)="routeToChoice($event)">REFLECT</mat-grid-tile>
+        <mat-grid-tile id="/view-journal" (click)="routeToChoice($event)">REFLECT</mat-grid-tile>
       </mat-grid-list>
     </mat-card-content>
     <mat-card-content>

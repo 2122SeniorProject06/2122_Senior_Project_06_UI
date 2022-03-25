@@ -39,6 +39,7 @@ mat-grid-tile {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
   padding: 50px;
 }
 
@@ -46,4 +47,42 @@ body {
   margin: 0;
   background-color: white;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.mat-toolbar{
+  z-index: 8888;
+  position: fixed;
+  height: 5%;
+  top: 0;
+  left: 0%;
+  color: white;
+  background-color: #52688F;
+}
+
+.home {
+  color: #E3E7F1;
+  border: none;
+  background-color: #52688F;
+}
+
+.signIn{
+  border-color: #E3E7F1;
+  display: flex;
+  background-color: transparent;
+  size: 50%;
+}
+
+button.signIn{
+  border-style: solid;
+}
+
+p.signIn{
+  display: flex;
+  color: #E3E7F1;
+  margin-bottom: 0%;
+}
+
+.example-spacer {
+
+  flex: 1 1 auto;
 }
