@@ -4,22 +4,23 @@
 <form [formGroup]="form" (ngSubmit)="Register()">
 <p>
   <mat-form-field>
-    <input type="text" matInput placeholder="Username" formControlName="Username">
+    <input type="text" matInput placeholder="Username" formControlName="Username"required> 
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field>
+    <input type="text" matInput placeholder="Email" formControlName="Email"required>
   </mat-form-field>
 </p>
 <p>
   <mat-form-field>
-    <input type="text" matInput placeholder="Email" formControlName="Email">
+    <input type="password" matInput placeholder="Password" formControlName="Password"required>
   </mat-form-field>
 </p>
 <p>
   <mat-form-field>
-    <input type="password" matInput placeholder="Password" formControlName="Password">
-  </mat-form-field>
-</p>
-<p>
-  <mat-form-field>
-    <input type="password" matInput placeholder="Confirm Password" formControlName="confirmpassword">
+    <input type="password" matInput placeholder="Confirm Password" formControlName="confirmpassword"required>
   </mat-form-field>
 </p>
 

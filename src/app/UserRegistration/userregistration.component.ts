@@ -1,6 +1,6 @@
 import { UserRegistration } from '../../../Models/UserModels';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validator } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from "../Services/user.service";
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -23,11 +23,12 @@ export class UserRegistrationComponent implements OnInit {
 
   registerUser!: UserRegistration;
   ngOnInit() {
+    console.log("OnINit");
     this.form = this.formBuilder.group({
-      Email: [''],
-      Username: [''],
-      Password: [''],
-      confirmpassword: [''],
+      Email: ['', Validators.required ],
+      Username: ['', Validators.required ],
+      Password: ['', Validators.required ],
+      confirmpassword: ['', Validators.required ],
     });
     
   }
@@ -35,7 +36,8 @@ export class UserRegistrationComponent implements OnInit {
 
 /*Pair Programmed with Andrew, he was helpful with his knowledge of the API controllers*/
 
-  Register() {
+  Register(v:any = false) {
+    console.log("Register");
     const registerForm = new FormData();
     registerForm.append('Email', this.form.get('Email')?.value);
     registerForm.append('Username', this.form.get('Username')?.value);
@@ -50,49 +52,26 @@ export class UserRegistrationComponent implements OnInit {
     registerModel.Password = this.form.get('Password')?.value;
     this.confirmedPassword = this.form.get('confirmpassword')?.value;
 //if the confirmed password is equal to the other password, then we create the user
-    if(this.confirmedPassword == registerModel.Password ){
+    if(this.confirmedPassword == 'Test' ){
       this.UserService.register(registerModel).subscribe((result: any) =>{
-        if(result == 0) { //if result == 0 then no error occured and account is created
+
+        if(!result) { //if result all true then no error occured and account is created
           console.log("Registration was successful");
-          this.goToLogin();
+          console.log(result);
+          //this.goToLogin();
         }
-        else if(result == 1)//just email is invalid
-        {
-          //print error message only under email "Email is invalid."
-        }
-        else if(result == 3)//just Username is invalid(i.e. username is empty)
-        {
-          //print error message only under email "Username is invalid."
-        }
-        else if(result == 4)//Username and Email are invalid
-        {
-          //print error message under email and username: "Email is invalid.", "Username is invalid."
-        }
-        else if(result == 9)//just Password is invalid(i.e. password does not meet requirements)
-        {
-          //print error message only under password "Password is not strong enough" or display password policy
-          //"Password must be more that 8 characters and contain at least one upper case, lower case, and number."
-        }
-        else if(result == 10)//Email and password are invalid
-        {
-          //print error message under email "Email is invalid."
-          //print error message under password "Password is not strong enough" or display password policy
-          //"Password must be more that 8 characters and contain at least one upper case, lower case, and number."
-        }
-        else if(result == 12)//Email, password, and username are invalid
-        {
-          //print error message under email and username: "Email is invalid.", "Username is invalid."
-          //print error message under password "Password is not strong enough" or display password policy
-          //"Password must be more that 8 characters and contain at least one upper case, lower case, and number."
-        }
-        
+        else{
+          console.log(result);
+        } 
       })
     }
     else
     {
       //print under confirmed pass "Passwords do not match."
     }
+    
     /*
+      V1_ThoughtProcess(Old)
       Alternative options: if result != 0 then we recall the register function and send result as a parameter.
       Call a function that checks the value of result and produces the proper error
 
@@ -100,6 +79,28 @@ export class UserRegistrationComponent implements OnInit {
       Possible solutions: use Validators.required? I have no idea where to begin with that
                           Create a new registration page that takes result as parameter and allows for errors to be displayed?
                           Recall Register funciton but pass in result as a parameter, Still have no idea how to output to user
+      
+      V2_ThoughtProcess(Current)
+      Current situation: Change the API function to return a list of bools to determine if an input runs into an error
+                        (Email:if is not an email && if email is not already in use; Username:if username is not empty; 
+                        Password:if password requirements are not met). Currently able to show user an if an input is not entered,
+                        Similar to the Ground technique. Have a possible idea for an error page if html inject occurs.
+      
+      Current issues: Have no idea how to make error statements conditional, i.e. lets say only Username is invalid but everything else is valid,
+                      how do you only show an error for username(this is after the user clicks the register button). Also do not know how to output
+                      specific error messages(this way I can inform user on password policy).
+                      Is it possible to make a default parameter for Register()?
+                          How would the conditional work?
+                              Output should be directly below invalid input
+      
+      Possible solutions: Save the subscribe value as a gobal and set to null? empty? any? make conditionals around user input?
+                              Still do not know how to output to user...ngIf?
+                          Change API to return status code
+                              How could you differentiate? different status codes?
+                          Output to user the same way Hugo did in Ground technique
+                              No freakin clue where to start in figuring out how he did that
+                              Conditional should work if we pass the bool list as parameter to error message function
+                              Vague idea how to out to output to user
     */
 
   }

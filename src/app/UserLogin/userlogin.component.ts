@@ -1,7 +1,7 @@
 import { UserService } from '../Services/user.service';
 import { UserLogin, UserModel } from '../../../Models/UserModels';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -36,9 +36,10 @@ export class UserLoginComponent implements OnInit {
     }
 
   ngOnInit() {
+    console.log("ngOnInit");
     this.form = this.fb.group ({
-      Email: [''],
-      Password: ['']
+      Email: ['', Validators.required ],
+      Password: ['', Validators.required ]
     })
 
     // if(localStorage.getItem('userId') != null){
@@ -52,6 +53,7 @@ export class UserLoginComponent implements OnInit {
 
 
   onSubmit() {
+    console.log("onSubmit");
     const loginModel = new FormData();
     loginModel.append('Email', this.form.get('Email').value);
     loginModel.append('Password', this.form.get('Password').value);
