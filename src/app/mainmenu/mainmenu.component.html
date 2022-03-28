@@ -1,45 +1,49 @@
-<!--Look into how flex works, might be something I need.-->
-<mat-toolbar>
-  <span class="example-spacer"></span>
-  
-  <button *ngIf="isSignedIn" id="signedIn" class="home">
-    <mat-icon>account_circle</mat-icon>
-  </button>
+<div class="flex-container">
+  <!--Look into how flex works, might be something I need.-->
+  <!--Main type giving issue: Galaxy Fold with a 280px width-->
+  <mat-toolbar class="header">
+    <button *ngIf="isSignedIn" id="signedIn" class="signed-in">
+      <mat-icon class="bigger-icon">account_circle</mat-icon>
+    </button>
+    <button *ngIf="!isSignedIn" id="notSignedIn" class="signIn" id="/login" (click)="routeToChoice($event)">
+      <p class="signIn">Sign In</p>
+    </button>
+  </mat-toolbar>
 
-  <button *ngIf="!isSignedIn" id="notSignedIn" class="signIn" id="/login" (click)="routeToChoice($event)">
-    <p class="signIn">Sign In</p>
-  </button>
-</mat-toolbar>
+  <div class="container">
+    <mat-card class="card">
+      <mat-card-content *ngIf="!showLoading" style="height: 100%;">
+        <h3 class="title">{{testVar}}</h3>
+        <mat-grid-list cols="1" class="activity-buttons" rowHeight="fit">
+          <!--Navigates to the Count Game Feature "Focus"-->
+          <mat-grid-tile id="/count-game" (click)="routeToChoice($event)">FOCUS</mat-grid-tile>
 
-<div class="container">
-  <mat-card class="card">
-    <mat-card-content *ngIf="!showLoading">
-      <h3 class="title">{{testVar}}</h3>
-      <mat-grid-list cols="1" rowHeight="6:1" class="grid-layout-custom">
-        <!--Navigates to the Count Game Feature "Focus"-->
-        <mat-grid-tile id="/count-game" (click)="routeToChoice($event)">FOCUS</mat-grid-tile>
+          <!--Navigates to the Stepper Feature "Ground"-->
+          <mat-grid-tile id="/stepper" (click)="routeToChoice($event)">GROUND</mat-grid-tile>
 
-        <!--Navigates to the Stepper Feature "Ground"-->
-        <mat-grid-tile id="/stepper" (click)="routeToChoice($event)">GROUND</mat-grid-tile>
+          <!--Navigates to the Audio Mediation Feature "Relax"-->
+          <mat-grid-tile id="/audio-meditation" (click)="routeToChoice($event)">RELAX</mat-grid-tile>
 
-        <!--Navigates to the Audio Mediation Feature "Relax"-->
-        <mat-grid-tile id="/audio-meditation" (click)="routeToChoice($event)">RELAX</mat-grid-tile>
+          <!--Navigates to the Deep Breathing Feature "Breathe"-->
+          <mat-grid-tile id="/breathing-component" (click)="routeToChoice($event)">BREATHE</mat-grid-tile>
+          
+          <!--Navigate to the Mantra Feature "Encourage"-->
+          <mat-grid-tile id="/mantra" (click)="routeToChoice($event)">ENCOURAGE</mat-grid-tile>
+          
+          <!--Navigates to the Checkin Feature "Check In" -->
+          <mat-grid-tile id="/check-in" (click)="routeToChoice($event)">CHECK IN</mat-grid-tile>
 
-        <!--Navigates to the Deep Breathing Feature "Breathe"-->
-        <mat-grid-tile id="/breathing-component" (click)="routeToChoice($event)">BREATHE</mat-grid-tile>
-        
-        <!--Navigate to the Mantra Feature "Encourage"-->
-        <mat-grid-tile id="/mantra" (click)="routeToChoice($event)">ENCOURAGE</mat-grid-tile>
-        
-        <!--Navigates to the Checkin Feature "Check In" -->
-        <mat-grid-tile id="/check-in" (click)="routeToChoice($event)">CHECK IN</mat-grid-tile>
+          <!--Navigates to the Journaling Feature "Reflect"-->
+          <mat-grid-tile id="/view-journal" (click)="routeToChoice($event)">REFLECT</mat-grid-tile>
+        </mat-grid-list>
+      </mat-card-content>
+      <mat-card-content>
+        <app-loading-animation *ngIf="showLoading" [targetRoute]=targetEvent></app-loading-animation>
+      </mat-card-content>
+    </mat-card>
+  </div>
 
-        <!--Navigates to the Journaling Feature "Reflect"-->
-        <mat-grid-tile id="/view-journal" (click)="routeToChoice($event)">REFLECT</mat-grid-tile>
-      </mat-grid-list>
-    </mat-card-content>
-    <mat-card-content>
-      <app-loading-animation *ngIf="showLoading" [targetRoute]=targetEvent></app-loading-animation>
-    </mat-card-content>
-  </mat-card>
+  <mat-toolbar class="footer">
+    <p [align]="['center']"><i>{{inspireQuote}}</i></p>
+  </mat-toolbar>
 </div>

@@ -16,6 +16,7 @@ export class MainMenuComponent implements OnInit {
   isSignedIn: boolean;
   targetEvent: HTMLElement;
   testVar : string;
+  inspireQuote : string;
 
   @ViewChildren(MatGridTile) allRoutes! : QueryList<MatGridTile>;
 
@@ -25,6 +26,7 @@ export class MainMenuComponent implements OnInit {
   ) {
       this.isSignedIn = localStorage.getItem('userId') != null;
       this.testVar = "I NEED TO...";
+      this.inspireQuote = "Do or do not, there is no try.";
       this.showLoading = false;
       this.targetEvent = document.createElement('br');
    }
