@@ -26,7 +26,7 @@ export class MainMenuComponent implements OnInit {
   ) {
       this.isSignedIn = localStorage.getItem('userId') != null;
       this.testVar = "I NEED TO...";
-      this.inspireQuote = "Do or do not, there is no try.";
+      this.inspireQuote = "The great thing, then, in all education, is to make our nervous system our ally instead of our enemy.";
       this.showLoading = false;
       this.targetEvent = document.createElement('br');
    }
@@ -38,6 +38,7 @@ export class MainMenuComponent implements OnInit {
     let item = <HTMLElement>nextRoute.target;
     item.innerHTML = item.innerHTML  + " ACTIVITY";
     this.targetEvent = item;
+    document.getElementById("card")!.style.height = "auto";
     this.showLoading = true;
   }
 }
