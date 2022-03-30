@@ -1,11 +1,30 @@
-import { trigger } from '@angular/animations';
-import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { MatGridTile } from '@angular/material/grid-list';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import {
+  trigger,
+  state,
+  animate,
+  transition,
+  style,
+  animation,
+} from '@angular/animations';
 
 //this will need to be edited to route the dynamic grid to the correct components, i added the html and css to the correct files
 @Component({
   selector: 'app-mainmenu',
+  animations: [
+    trigger('loadingAnimation', [
+      state('notLoading', style({
+        height: '80%'
+      })),
+      state('loading', style({
+        height: '*'
+      })),
+      transition('notLoading => loading', [
+        animate('0.25s')
+      ])
+    ])
+  ],
   templateUrl: './mainmenu.component.html',
   styleUrls: ['./mainmenu.component.css']
 })
@@ -17,8 +36,6 @@ export class MainMenuComponent implements OnInit {
   targetEvent: HTMLElement;
   testVar : string;
   inspireQuote : string;
-
-  @ViewChildren(MatGridTile) allRoutes! : QueryList<MatGridTile>;
 
   constructor(
     private router: Router,
@@ -36,9 +53,11 @@ export class MainMenuComponent implements OnInit {
 
   routeToChoice(nextRoute: Event){
     let item = <HTMLElement>nextRoute.target;
-    item.innerHTML = item.innerHTML  + " ACTIVITY";
+    if(item.innerHTML != "Sign In")
+    {
+      item.innerHTML = item.innerHTML  + " ACTIVITY";
+    }
     this.targetEvent = item;
-    document.getElementById("card")!.style.height = "auto";
     this.showLoading = true;
   }
 }

@@ -16,9 +16,9 @@
 
 .card {
   width: 65%;
-  height: 80%;
   display: flex;
-  text-align:center;
+  text-align: center;
+  justify-content: center;
 }
 
 .activity-buttons {

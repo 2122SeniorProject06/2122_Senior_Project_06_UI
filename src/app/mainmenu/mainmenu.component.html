@@ -11,7 +11,7 @@
   </mat-toolbar>
 
   <div class="container">
-    <mat-card class="card" id="card">
+    <mat-card class="card" [@loadingAnimation]="!showLoading ? 'notLoading' : 'loading'">
       <mat-card-content *ngIf="!showLoading" style="height: 100%;">
         <h3 class="title">{{testVar}}</h3>
         <mat-grid-list cols="1" class="activity-buttons" rowHeight="fit">
@@ -43,7 +43,7 @@
     </mat-card>
   </div>
 
-  <mat-toolbar *ngIf="!showLoading" class="footer">
+  <!-- <mat-toolbar *ngIf="!showLoading" class="footer">
     <i class="footer-text">{{inspireQuote}}</i>
-  </mat-toolbar>
+  </mat-toolbar> -->
 </div>

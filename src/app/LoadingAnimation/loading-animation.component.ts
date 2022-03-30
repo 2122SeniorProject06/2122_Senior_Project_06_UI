@@ -29,11 +29,11 @@ export class LoadingAnimationComponent implements OnInit, OnChanges {
   }
 
   loadAndSwitch(){
-    var routeName = this.targetRoute.innerHTML;
+    var routeName = this.targetRoute.innerHTML.toUpperCase();
     var routeLink = this.targetRoute.parentElement!.id;
     document.getElementById('routeDescription')!.innerHTML = "GOING TO " + routeName;
     setTimeout( () => {
       this.router.navigateByUrl(routeLink)
-    },1000)
+    },1250)
   }
 }
