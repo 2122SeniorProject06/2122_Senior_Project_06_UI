@@ -21,7 +21,7 @@ import {
         height: '*'
       })),
       transition('notLoading => loading', [
-        animate('0.25s')
+        animate('0.37s')
       ])
     ])
   ],
