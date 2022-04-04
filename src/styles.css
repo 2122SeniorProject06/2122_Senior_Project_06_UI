@@ -2,9 +2,17 @@
 html, body { height: 100%; }
 body { 
     margin: 0;
-    background-image: url("./assets/Mountains_Glacier_Lake.jpg");
+    height: 100%;
+    width: 100%;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+#bg-image {
+    position: absolute;
+    background-image: url("./assets/21654009299_05c5d01113_o.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    height: 100%;
+    width: 100%;
 }

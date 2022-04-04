@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -26,11 +27,12 @@ export class UserLoginComponent implements OnInit {
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
-    private UserService: UserService
+    private UserService: UserService,
+    private location: Location
     ) {
-      if(localStorage.getItem('userId') != null){
-        this.router.navigateByUrl('/view-journal');
-      } 
+      // if(localStorage.getItem('userId') != null){
+      //   this.router.navigateByUrl('/view-journal');
+      // } 
       this.showLoading = false;
       this.targetEvent = document.createElement('br');
     }
@@ -77,7 +79,7 @@ localStorage.clear();
         console.log("successful login");
         this.snackBar.dismiss();
         //this.goToCreateJournal();
-        this.goToJournal();
+        this.location.back();
       }
       //what is the angular function for this
       else if(this.data == null)
