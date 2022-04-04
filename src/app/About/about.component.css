@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
   
 .container {
@@ -16,9 +17,59 @@
   
 .card {
     width: 100%;
+    height: auto;
     display: flex;
     text-align: center;
     justify-content: center;
+}
+
+.text-holder{
+    display: table;
+}
+
+.about-us{
+    overflow-wrap: break-word;
+    width: 100%;
+    line-height: 100%;
+    color: #52688F;
+    /* color: #7391c8; */
+}
+
+img.about-us{
+    width: 75%;
+    height: auto;
+}
+
+@media screen
+and (orientation: landscape)
+and (max-width: 1199px) {
+    .about-us {
+        font-size: 2.75vh;
+    }   
+}
+
+@media screen
+and (orientation: landscape)
+and (min-width: 1200px) {
+    .about-us {
+        font-size: 3vh;
+    }   
+}
+
+@media screen
+and (orientation: portrait)
+and (max-width: 590px) {
+    .about-us {
+        font-size: 3.5vw;
+    }
+}
+
+@media screen
+and (orientation: portrait)
+and (min-width: 591px) {
+    .about-us {
+        font-size: 3vw;
+    }
 }
 
 /* Header Styling */
