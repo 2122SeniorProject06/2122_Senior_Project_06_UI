@@ -5,9 +5,11 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
+import { Animations } from 'animations';
 
 @Component({
   selector: 'app-login',
+  animations: [ Animations.loadingTrigger],
   templateUrl: './userlogin.component.html',
   styleUrls: ['./userlogin.component.css'],
   providers: [UserLogin, UserModel]
@@ -30,9 +32,6 @@ export class UserLoginComponent implements OnInit {
     private UserService: UserService,
     private location: Location
     ) {
-      // if(localStorage.getItem('userId') != null){
-      //   this.router.navigateByUrl('/view-journal');
-      // } 
       this.showLoading = false;
       this.targetEvent = document.createElement('br');
     }

@@ -4,18 +4,24 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from "../Services/user.service";
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { Animations } from 'animations';
+import { HostListener } from '@angular/core';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 
 @Component({
   selector: 'user-registration',
+  animations: [Animations.loadingTrigger],
   templateUrl: './userregistration.component.html',
   styleUrls: ['./userregistration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
   
+  showLoading: boolean = false; // Shows the loading bar.
+  targetEvent: HTMLElement = document.createElement('br'); // The actual target to load.
+  bgImage: HTMLElement | null = document.createElement('br');
+
   form!: FormGroup;
-   confirmedPassword?: string;
+  confirmedPassword?: string;
   isRegistered: boolean = false;
   notRegistered: boolean = false;
   passVerification: boolean[] = [true,true,true,true];
@@ -23,13 +29,26 @@ export class UserRegistrationComponent implements OnInit {
   ifNull: boolean[] = [false,false,false,false];
   registerModel: any;
   registerForm?: any;
-  errorMessages: string[] = ["","Passwords do not match.","",""]
-  passwordErrorTypes: string[] = ["- The password must be at least more than 8 lengths.","- The password must contain at least one lowercase character.",
-                                  "- The password must contain at least one capital character.", "- The password must contain at least one number." ]
-  constructor(private UserService: UserService, private formBuilder: FormBuilder, private snackBar: MatSnackBar, private router: Router, private route: ActivatedRoute) {}
   registerUser!: UserRegistration;
+  errorMessages: string[] = ["","Passwords do not match.","",""]
+  passwordErrorTypes: string[] = ["- The password must be at least more than 8 lengths.",
+                                  "- The password must contain at least one lowercase character.",
+                                  "- The password must contain at least one capital character.",
+                                  "- The password must contain at least one number." ]
+
+  constructor(
+    private UserService: UserService, 
+    private formBuilder: FormBuilder, 
+    private snackBar: MatSnackBar, 
+    private router: Router, 
+    private route: ActivatedRoute) { }
+
   ngOnInit() {
-    console.log("OnINit");
+    console.log("OnInit");
+
+    this.bgImage = document.getElementById("bg-image");
+    this.bgImage!.style.filter = "blur(8px)";
+
     this.form = this.formBuilder.group({
       Email: ['', Validators.required ],
       Username: ['', Validators.required ],
@@ -160,11 +179,36 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   goToLogin(){
-    this.router.navigateByUrl('login');
+    this.activateLoadingAnimation('/login', "LOGIN");
+    this.onPopState(new Event('Changing Screens'))
   }
 
   goToMainMenu(){
-    this.router.navigateByUrl('main-menu');
+    this.activateLoadingAnimation('/main-menu', "MAIN MENU");
+    this.onPopState(new Event('Changing Screens'))
   }
-}
 
+  /**
+  * Creates a html element to send to the loading animation to route to the next page.
+  * @param routeLink The route path to take.
+  * @param routeName The name of the activity to go to.
+  */
+  activateLoadingAnimation(routeLink: string, routeName: string){
+    let mainMenuEvent = document.createElement('p');
+    let mainMenuParent = document.createElement('div');
+    mainMenuParent.id = routeLink;
+    mainMenuEvent.innerHTML = routeName;
+    mainMenuParent.appendChild(mainMenuEvent);
+    this.targetEvent = mainMenuEvent;
+    this.showLoading = true;
+  }
+
+  /**
+     * Unblurs the background image on leaving the page.
+     * @param event Event that triggers the unblurring.
+     */
+   @HostListener('window:popstate', ['$event'])
+   onPopState(event : Event) {
+       this.bgImage!.style.filter = '';
+   }
+}
