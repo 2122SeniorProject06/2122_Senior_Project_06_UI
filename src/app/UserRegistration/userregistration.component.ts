@@ -17,10 +17,16 @@ export class UserRegistrationComponent implements OnInit {
   form!: FormGroup;
    confirmedPassword?: string;
   isRegistered: boolean = false;
+  notRegistered: boolean = false;
+  passVerification: boolean[] = [true,true,true,true];
+  errorResults: boolean[] = [true,true,true,true];
+  ifNull: boolean[] = [false,false,false,false];
   registerModel: any;
   registerForm?: any;
+  errorMessages: string[] = ["","Passwords do not match.","",""]
+  passwordErrorTypes: string[] = ["- The password must be at least more than 8 lengths.","- The password must contain at least one lowercase character.",
+                                  "- The password must contain at least one capital character.", "- The password must contain at least one number." ]
   constructor(private UserService: UserService, private formBuilder: FormBuilder, private snackBar: MatSnackBar, private router: Router, private route: ActivatedRoute) {}
-
   registerUser!: UserRegistration;
   ngOnInit() {
     console.log("OnINit");
@@ -31,78 +37,126 @@ export class UserRegistrationComponent implements OnInit {
       confirmpassword: ['', Validators.required ],
     });
     
+    // document.getElementById('username')!.onblur = this.VerifyUsernameNotNull;
   }
   get f() { return this.form.controls }
 
-/*Pair Programmed with Andrew, he was helpful with his knowledge of the API controllers*/
+/*
+  Pair Programmed with Andrew, he was helpful with his knowledge of the API controllers
+  Registration error handling pair programmed with Andrew, Sarah, and Hugo
+*/
 
-  Register(v:any = false) {
-    console.log("Register");
+  Register() {
     const registerForm = new FormData();
     registerForm.append('Email', this.form.get('Email')?.value);
     registerForm.append('Username', this.form.get('Username')?.value);
     registerForm.append('Password', this.form.get('Password')?.value);
     registerForm.append('confirmpassword', this.form.get('confirmpassword')?.value);
-
-
+    this.checkForNull(registerForm);
 
     const registerModel = new UserRegistration();
     registerModel.Email = this.form.get('Email')?.value;
     registerModel.Username = this.form.get('Username')?.value;
     registerModel.Password = this.form.get('Password')?.value;
-    this.confirmedPassword = this.form.get('confirmpassword')?.value;
+    registerModel.confirmedPassword = this.form.get('confirmpassword')?.value;
 //if the confirmed password is equal to the other password, then we create the user
-    if(this.confirmedPassword == 'Test' ){
       this.UserService.register(registerModel).subscribe((result: any) =>{
-
         if(!result) { //if result all true then no error occured and account is created
           console.log("Registration was successful");
+          this.isRegistered = true;
+          this.notRegistered = false;
           console.log(result);
           //this.goToLogin();
         }
-        else{
-          console.log(result);
+        else{ //if one result is false/user not registered
+          this.errorMessages = ["","Passwords do not match.","",""];
+          if(result[3]==false) // checks if password received and error, if so find out why
+          {
+            console.log("Password_Error");
+            this.NpassCheck(registerModel.Password); // checks why password failed
+            console.log("Password Errors:"+ this.passVerification)
+          }
+          for(let i = 0; i< result.length;i++) // Assigns result values to Error results for proper output
+          {
+            if(i != 3)
+            {
+              /*
+                errorResults key
+                [0]: if email is valid
+                [1]: if passwords match
+                [2]: if username is valid
+                [3]: if password is valid
+              */
+               
+             
+            }
+            this.errorResults[i] = result[i];
+          }
+          console.log("unsuccessful");
+          console.log("errorResults:" + this.errorResults);
+          this.isRegistered = false;
+          this.notRegistered = true;
+          
         } 
       })
-    }
-    else
-    {
-      //print under confirmed pass "Passwords do not match."
-    }
-    
-    /*
-      V1_ThoughtProcess(Old)
-      Alternative options: if result != 0 then we recall the register function and send result as a parameter.
-      Call a function that checks the value of result and produces the proper error
 
-      Current issues: How tf am i supposed to updated the registration page given these errors?
-      Possible solutions: use Validators.required? I have no idea where to begin with that
-                          Create a new registration page that takes result as parameter and allows for errors to be displayed?
-                          Recall Register funciton but pass in result as a parameter, Still have no idea how to output to user
-      
-      V2_ThoughtProcess(Current)
-      Current situation: Change the API function to return a list of bools to determine if an input runs into an error
-                        (Email:if is not an email && if email is not already in use; Username:if username is not empty; 
-                        Password:if password requirements are not met). Currently able to show user an if an input is not entered,
-                        Similar to the Ground technique. Have a possible idea for an error page if html inject occurs.
-      
-      Current issues: Have no idea how to make error statements conditional, i.e. lets say only Username is invalid but everything else is valid,
-                      how do you only show an error for username(this is after the user clicks the register button). Also do not know how to output
-                      specific error messages(this way I can inform user on password policy).
-                      Is it possible to make a default parameter for Register()?
-                          How would the conditional work?
-                              Output should be directly below invalid input
-      
-      Possible solutions: Save the subscribe value as a gobal and set to null? empty? any? make conditionals around user input?
-                              Still do not know how to output to user...ngIf?
-                          Change API to return status code
-                              How could you differentiate? different status codes?
-                          Output to user the same way Hugo did in Ground technique
-                              No freakin clue where to start in figuring out how he did that
-                              Conditional should work if we pass the bool list as parameter to error message function
-                              Vague idea how to out to output to user
+  }
+
+  NpassCheck(pass:string)
+  {
+    // uses boolean list passVerifification[]
+    /*
+        [0]:between character requirements
+        [1]:has lowercase letter
+        [2]:has capital letter
+        [3]:has number
     */
 
+      if(!(new RegExp(".{8,64}")).test(pass))
+      {
+        this.passVerification[0] = false;
+        this.errorMessages[3] += '\n' + this.passwordErrorTypes[0];
+      }
+      if(!(new RegExp("[a-z]")).test(pass))
+      {
+        this.passVerification[1] = false;
+        this.errorMessages[3] += '\n' + this.passwordErrorTypes[1];
+      }
+      if(!(new RegExp("[A-Z]")).test(pass))
+      {
+        this.passVerification[2] = false;
+        this.errorMessages[3] += '\n' + this.passwordErrorTypes[2];
+      }
+      if(!(new RegExp("[0-9]")).test(pass))
+      {
+        this.passVerification[3] = false;
+        this.errorMessages[3] += '\n' + this.passwordErrorTypes[3];
+      }
+      
+      this.errorMessages[3] = this.errorMessages[3].slice(1);
+  }
+
+  reloadPage(): void {
+    window.location.reload();
+  }
+
+  checkForNull(input: FormData){
+    if(input.get('username')==null)
+    {
+      this.ifNull[0] = true;
+    }
+    if(input.get('email')==null)
+    {
+      this.ifNull[1] = true;
+    }
+    if(input.get('password')==null)
+    {
+      this.ifNull[2] = true;
+    }
+    if(input.get('confirmpassword')==null)
+    {
+      this.ifNull[3] = true;
+    }
   }
 
   goToLogin(){

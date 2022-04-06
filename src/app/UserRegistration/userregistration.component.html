@@ -1,32 +1,61 @@
 <mat-card>
   <mat-card-title>Create New Account</mat-card-title>
 <mat-card-content>
-<form [formGroup]="form" (ngSubmit)="Register()">
-<p>
+<form [formGroup]="form" (ngSubmit)="Register()" class="sign-up-form" novalidate>
+<div class="field-div">
   <mat-form-field>
-    <input type="text" matInput placeholder="Username" formControlName="Username"required> 
+    <input 
+      id = "username"
+      type="text" 
+      matInput placeholder="Username" 
+      formControlName="Username" 
+      name = "username"
+      required
+      >
+      
   </mat-form-field>
-</p>
+  <div *ngIf= "ifNull[0]">hello bitches</div>
+  <div *ngIf="!errorResults[2]"> Username is invalid.</div>
+</div>
 
-<p>
+<div class="field-div">
   <mat-form-field>
-    <input type="text" matInput placeholder="Email" formControlName="Email"required>
+    <input 
+      id = "email"
+      type="text" 
+      matInput placeholder="Email" 
+      formControlName="Email" 
+      required>
   </mat-form-field>
-</p>
-<p>
+  <div *ngIf="!errorResults[0]"> Email is invalid.</div>
+</div>
+<div class="field-div">
   <mat-form-field>
-    <input type="password" matInput placeholder="Password" formControlName="Password"required>
+    <input 
+      id = "password"
+      type="password" 
+      matInput placeholder="Password" 
+      formControlName="Password" 
+      required>
   </mat-form-field>
-</p>
-<p>
+  <div *ngIf="!errorResults[3]" [innerText]="errorMessages[3]"></div>
+</div>
+<div class="field-div">
   <mat-form-field>
-    <input type="password" matInput placeholder="Confirm Password" formControlName="confirmpassword"required>
+    <input 
+      id = "confirmpassword"
+      type="password" 
+      matInput placeholder="Confirm Password" 
+      formControlName="confirmpassword"
+      required>
   </mat-form-field>
-</p>
+  <div *ngIf="!errorResults[1]"> Passwords do not match.</div>
+</div>
 
-
-<button class="register" mat-raised-button>Register</button>
-<button class="login" (click)="goToLogin()" mat-raised-button>Login</button>
+<div class="registration-buttons">
+  <button class="login" (click)="goToLogin()" mat-raised-button>Login</button>
+  <button class="register" mat-raised-button>Register</button>
+</div>
 </form>
 </mat-card-content>
 </mat-card>

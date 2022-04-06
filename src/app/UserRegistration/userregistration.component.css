@@ -3,26 +3,51 @@
   justify-content: center;
   margin: 100px 0px;
 }
-.mat-form-field {
+
+.field-div{
+  padding-bottom: 0.5em;
+}
+
+mat-form-field {
   width: 100%;
   min-width: 300px;
+  margin-bottom: 0%;
+  display: flex;
 }
+
+::ng-deep .mat-form-field-wrapper{
+  margin-bottom: -1.25em;
+}
+
 mat-card-title,
 mat-card-content {
   display: flex;
   justify-content: center;
 }
+
 mat-raised-button {
   display: flex;
   justify-content: flex-end;
   background-color: #BDC6D9;
 }
+
+.registration-buttons{
+  display: flex;
+  justify-content: space-between;
+}
+
+.sign-up-form{
+  display: flex;
+  flex-direction: column;
+}
+
 .register {
   color: white;
   background-color: #52688F;
   justify-content: flex-end;
   float: right;
 }
+
 .mat-toolbar{
   position: fixed;
   bottom: 0;
@@ -45,9 +70,4 @@ mat-raised-button {
   border: none;
   background-color: #E3E7F1;
 
-}
-
-.example-spacer {
-
-  flex: 1 1 auto;
 }
