@@ -25,12 +25,13 @@ export class UserRegistrationComponent implements OnInit {
   isRegistered: boolean = false;
   notRegistered: boolean = false;
   passVerification: boolean[] = [true,true,true,true];
-  errorResults: boolean[] = [true,true,true,true];
   ifNull: boolean[] = [false,false,false,false];
+  errorResults: boolean[] = [true,true,true,true];
+  errorMessage: string[] = ["", "", "", ""];
   registerModel: any;
   registerForm?: any;
   registerUser!: UserRegistration;
-  errorMessages: string[] = ["","Passwords do not match.","",""]
+  errorMessages: string[] = ["","","",""]
   passwordErrorTypes: string[] = ["- The password must be at least more than 8 lengths.",
                                   "- The password must contain at least one lowercase character.",
                                   "- The password must contain at least one capital character.",
@@ -55,8 +56,6 @@ export class UserRegistrationComponent implements OnInit {
       Password: ['', Validators.required ],
       confirmpassword: ['', Validators.required ],
     });
-    
-    // document.getElementById('username')!.onblur = this.VerifyUsernameNotNull;
   }
   get f() { return this.form.controls }
 
@@ -64,118 +63,41 @@ export class UserRegistrationComponent implements OnInit {
   Pair Programmed with Andrew, he was helpful with his knowledge of the API controllers
   Registration error handling pair programmed with Andrew, Sarah, and Hugo
 */
-
+  /**
+   * Very
+   */
   Register() {
     const registerForm = new FormData();
     registerForm.append('Email', this.form.get('Email')?.value);
     registerForm.append('Username', this.form.get('Username')?.value);
     registerForm.append('Password', this.form.get('Password')?.value);
     registerForm.append('confirmpassword', this.form.get('confirmpassword')?.value);
-    this.checkForNull(registerForm);
 
     const registerModel = new UserRegistration();
     registerModel.Email = this.form.get('Email')?.value;
     registerModel.Username = this.form.get('Username')?.value;
     registerModel.Password = this.form.get('Password')?.value;
     registerModel.confirmedPassword = this.form.get('confirmpassword')?.value;
-//if the confirmed password is equal to the other password, then we create the user
-      this.UserService.register(registerModel).subscribe((result: any) =>{
-        if(!result) { //if result all true then no error occured and account is created
-          console.log("Registration was successful");
-          this.isRegistered = true;
-          this.notRegistered = false;
-          console.log(result);
-          //this.goToLogin();
-        }
-        else{ //if one result is false/user not registered
-          this.errorMessages = ["","Passwords do not match.","",""];
-          if(result[3]==false) // checks if password received and error, if so find out why
-          {
-            console.log("Password_Error");
-            this.NpassCheck(registerModel.Password); // checks why password failed
-            console.log("Password Errors:"+ this.passVerification)
-          }
-          for(let i = 0; i< result.length;i++) // Assigns result values to Error results for proper output
-          {
-            if(i != 3)
-            {
-              /*
-                errorResults key
-                [0]: if email is valid
-                [1]: if passwords match
-                [2]: if username is valid
-                [3]: if password is valid
-              */
-               
-             
-            }
-            this.errorResults[i] = result[i];
-          }
-          console.log("unsuccessful");
-          console.log("errorResults:" + this.errorResults);
-          this.isRegistered = false;
-          this.notRegistered = true;
-          
-        } 
-      })
 
-  }
-
-  NpassCheck(pass:string)
-  {
-    // uses boolean list passVerifification[]
-    /*
-        [0]:between character requirements
-        [1]:has lowercase letter
-        [2]:has capital letter
-        [3]:has number
-    */
-
-      if(!(new RegExp(".{8,64}")).test(pass))
-      {
-        this.passVerification[0] = false;
-        this.errorMessages[3] += '\n' + this.passwordErrorTypes[0];
+    this.UserService.register(registerModel).subscribe((result: any) =>{
+      if(!result.verificationResults.includes(false)) { //if result all true then no error occured and account is created
+        this.isRegistered = true;
+        this.notRegistered = false;
+        console.log(result.verificationResults);
+        this.goToLogin();
       }
-      if(!(new RegExp("[a-z]")).test(pass))
-      {
-        this.passVerification[1] = false;
-        this.errorMessages[3] += '\n' + this.passwordErrorTypes[1];
-      }
-      if(!(new RegExp("[A-Z]")).test(pass))
-      {
-        this.passVerification[2] = false;
-        this.errorMessages[3] += '\n' + this.passwordErrorTypes[2];
-      }
-      if(!(new RegExp("[0-9]")).test(pass))
-      {
-        this.passVerification[3] = false;
-        this.errorMessages[3] += '\n' + this.passwordErrorTypes[3];
-      }
-      
-      this.errorMessages[3] = this.errorMessages[3].slice(1);
-  }
+      else{ //if one result is false/user not registered
+        this.errorResults = result.verificationResults;
+        this.errorMessages = result.verificationErrors
+        console.log(this.errorResults);
+        console.log(this.errorMessages);
+        
+        this.isRegistered = false;
+        this.notRegistered = true;
+        
+      } 
+    })
 
-  reloadPage(): void {
-    window.location.reload();
-  }
-
-  checkForNull(input: FormData){
-    if(input.get('username')==null)
-    {
-      this.ifNull[0] = true;
-    }
-    if(input.get('email')==null)
-    {
-      this.ifNull[1] = true;
-    }
-    if(input.get('password')==null)
-    {
-      this.ifNull[2] = true;
-    }
-    if(input.get('confirmpassword')==null)
-    {
-      this.ifNull[3] = true;
-    }
   }
 
   goToLogin(){
