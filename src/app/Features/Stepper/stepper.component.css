@@ -9,3 +9,29 @@
 .user-input{
     align-self: center;
 }
+
+.refresh {
+    color: #52688F;
+    border: none;
+    background-color: #E3E7F1;
+    float: right;  
+}
+  
+.home {
+    color: #52688F;
+    border: none;
+    background-color: #E3E7F1;
+}
+  
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-toolbar{
+    position: fixed;
+    bottom: 0;
+    left: 0%;
+    color: white;
+    background-color: #E3E7F1;
+  
+}

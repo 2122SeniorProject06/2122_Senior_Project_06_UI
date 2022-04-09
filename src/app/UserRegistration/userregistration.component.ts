@@ -29,6 +29,8 @@ export class UserRegistrationComponent implements OnInit {
   }
   get f() { return this.form.controls }
 
+/*Pair Programmed with Andrew, he was helpful with his knowledge of the API controllers*/
+
   Register() {
     const registerForm = new FormData();
     registerForm.append('Email', this.form.get('Email')?.value);

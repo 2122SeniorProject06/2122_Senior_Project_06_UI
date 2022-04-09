@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -18,14 +19,23 @@ export class UserLoginComponent implements OnInit {
  token?: string;
  error: any;
  currUser: any;
+ showLoading: boolean; // Shows the loading bar.
+ targetEvent: HTMLElement; // The actual target to load.
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
-    private UserService: UserService
-    ) { }
+    private UserService: UserService,
+    private location: Location
+    ) {
+      // if(localStorage.getItem('userId') != null){
+      //   this.router.navigateByUrl('/view-journal');
+      // } 
+      this.showLoading = false;
+      this.targetEvent = document.createElement('br');
+    }
 
   ngOnInit() {
     this.form = this.fb.group ({
@@ -33,9 +43,9 @@ export class UserLoginComponent implements OnInit {
       Password: ['']
     })
 
-    if(localStorage.getItem('userId') != null){
-      this.goToJournal();
-    }
+    // if(localStorage.getItem('userId') != null){
+    //   this.goToJournal();
+    // }
   }
 
   get f(){
@@ -69,7 +79,7 @@ localStorage.clear();
         console.log("successful login");
         this.snackBar.dismiss();
         //this.goToCreateJournal();
-        this.goToJournal();
+        this.location.back();
       }
       //what is the angular function for this
       else if(this.data == null)
@@ -85,14 +95,29 @@ localStorage.clear();
 
   goToRegistration(){
     //User is not registered and chooses to register via login page
-    this.router.navigateByUrl('/register');
+    this.activateLoadingAnimation('/register', 'ACCOUNT CREATION');
   }
 
   goToJournal(){
-    this.router.navigateByUrl('/view-journal');
+    this.activateLoadingAnimation('/view-journal', 'ALL JOURNALS');
   }
 
   goToMainMenu(){
-    this.router.navigateByUrl('/main-menu')
+    this.activateLoadingAnimation('/main-menu', "MAIN MENU")
+  }
+
+  /**
+   * Creates a html element to send to the loading animation to route to the next page.
+   * @param routeLink The route path to take.
+   * @param routeName The name of the activity to go to.
+   */
+  activateLoadingAnimation(routeLink: string, routeName: string){
+    let mainMenuEvent = document.createElement('p');
+    let mainMenuParent = document.createElement('div');
+    mainMenuParent.id = routeLink;
+    mainMenuEvent.innerHTML = routeName;
+    mainMenuParent.appendChild(mainMenuEvent);
+    this.targetEvent = mainMenuEvent;
+    this.showLoading = true;
   }
 }

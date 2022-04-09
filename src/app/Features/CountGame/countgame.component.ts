@@ -19,6 +19,6 @@ export class CountGameComponent {
   goToMain() {
     this.router.navigateByUrl('/main-menu');
   }
-  
 
+  
 }
