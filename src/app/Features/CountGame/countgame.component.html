@@ -12,11 +12,11 @@
         Lets countdown by 20 starting at 100
 
         <div class="countdown-buttons">
-            <button mat-raised-button color="primary">
+            <button  [ngClass]="{'test': newColor}" (click)="toggleColorOne()" mat-raised-button color="primary">
               90
             </button>
         
-            <button mat-raised-button color="primary">
+            <button [ngClass]="{'test': newColor}" (click)="toggleColorOne()" mat-raised-button color="primary">
               95
             </button>
 
@@ -30,7 +30,7 @@
       <ng-template matStepLabel></ng-template>
       Lets countdown by 20 from 80
       <div class="countdown-buttons">
-          <button mat-raised-button color="primary">
+          <button [ngClass]="{'test': newColorTwo}" (click)="toggleColorTwo()" mat-raised-button color="primary">
             75
           </button>
 
@@ -38,7 +38,7 @@
             60
           </button>
           
-          <button mat-raised-button color="primary">
+          <button [ngClass]="{'test': newColorTwo}" (click)="toggleColorTwo()" mat-raised-button color="primary">
             70
           </button>
 
@@ -52,11 +52,11 @@
       Lets countdown by 20 from 60
 
       <div class="countdown-buttons">
-          <button mat-raised-button color="primary">
+          <button [ngClass]="{'test': newColorThree}" (click)="toggleColorThree()" mat-raised-button color="primary">
             55
           </button>
 
-          <button mat-raised-button color="primary">
+          <button [ngClass]="{'test': newColorThree}" (click)="toggleColorThree()" mat-raised-button color="primary">
             50
           </button>
 
@@ -78,11 +78,11 @@
           20
          </button>
         
-         <button mat-raised-button color="primary">
+         <button [ngClass]="{'test': newColorFour}" (click)="toggleColorFour()" mat-raised-button color="primary">
             25
           </button>
 
-          <button mat-raised-button color="primary">
+          <button [ngClass]="{'test': newColorFour}" (click)="toggleColorFour()" mat-raised-button color="primary">
             15
           </button>
 
@@ -98,7 +98,7 @@
       Lets countdown by 20 from 20
 
       <div class="countdown-buttons">
-          <button mat-raised-button color="primary">
+          <button [ngClass]="{'test': newColorFive}" (click)="toggleColorFive()" mat-raised-button color="primary">
             10
           </button>
 
@@ -106,7 +106,7 @@
             0
           </button>
           
-          <button mat-raised-button color="primary">
+          <button [ngClass]="{'test': newColorFive}" (click)="toggleColorFive()" mat-raised-button color="primary">
             5
           </button>
 
@@ -130,6 +130,7 @@
   
 <!-- Footer -->
   <footer>
+    <br>
     <h3 class="title">Need Immediate Help?</h3>
       <a href="https://suicidepreventionlifeline.org/" target="_blank" rel="noopener"> Visit the National Suicide Prevention Lifeline</a>
   </footer>

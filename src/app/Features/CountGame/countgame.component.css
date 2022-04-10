@@ -38,6 +38,10 @@ footer{
 
 }
 
-.spinner-container mat-spinner {
-  margin: 130px auto 0 auto;
+.countdown-buttons:active{
+  background-color: red;
+}
+
+.test {
+  background-color: red;
 }
