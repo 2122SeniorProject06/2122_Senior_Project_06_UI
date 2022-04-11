@@ -1,31 +1,26 @@
 <div class="check-in-panel">
-
-    <h1 class="title">Check In</h1>
-    <h2>
-        {{currentDate | date:'EEEE, MMMM d'}}th
-    </h2>
-    
-    <br> What would you like to check in on right now?<br>
-
-    <br> How are you feeling right now?<br>
-
-    <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
-        <mat-tab label="Moods">How are you feeling right now</mat-tab>
-        <mat-tab label="Anxious"></mat-tab>
-        <mat-tab label="Angry"></mat-tab>
-        <mat-tab label="Sad"></mat-tab>
-        <mat-tab label="Stressed"></mat-tab>
-        <mat-tab label="Lonely"></mat-tab>
-        <mat-tab label="Tierd"></mat-tab>
-        <mat-tab label="Bored"></mat-tab>
-        <mat-tab label="OK"></mat-tab>
-        <mat-tab label="Calm"></mat-tab>
-        <mat-tab label="Motivated"></mat-tab>
-        <mat-tab label="Loved"></mat-tab>
-        <mat-tab label="Proud"></mat-tab>
-        <mat-tab label="Joyful"></mat-tab>
-    </mat-tab-group>
-
+    <mat-card>
+        <h1 class="title">Check In</h1>
+        <h2>
+            {{currentDate | date:'EEEE, MMMM d'}}th
+        </h2>
+        <br> How are you feeling right now?<br>
+            <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
+                <mat-tab label="Anxious"></mat-tab>
+                <mat-tab label="Angry"></mat-tab>
+                <mat-tab label="Sad"></mat-tab>
+                <mat-tab label="Stressed"></mat-tab>
+                <mat-tab label="Lonely"></mat-tab>
+                <mat-tab label="Tierd"></mat-tab>
+                <mat-tab label="Bored"></mat-tab>
+                <mat-tab label="OK"></mat-tab>
+                <mat-tab label="Calm"></mat-tab>
+                <mat-tab label="Motivated"></mat-tab>
+                <mat-tab label="Loved"></mat-tab>
+                <mat-tab label="Proud"></mat-tab>
+                <mat-tab label="Joyful"></mat-tab>
+            </mat-tab-group>
+    </mat-card>
     
     <!-- 
     <mat-card class="mat-elevation-z7">
