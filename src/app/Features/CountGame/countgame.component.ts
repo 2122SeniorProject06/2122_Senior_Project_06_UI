@@ -50,4 +50,8 @@ export class CountGameComponent {
     this.newColorFive = !this.newColorFive;
     this.newColorFive = true;
   }
+
+  restartCount() {
+    window.location.reload();
+  }
 }
