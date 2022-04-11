@@ -19,6 +19,7 @@ constructor(private http: HttpClient){}
  registerUser!: UserRegistration;
  loginUser!: UserLogin;
 
+
 login(loginModel: UserLogin){
   //once api is set up in backend, this function will make an http POST call
   //need the login url
@@ -30,6 +31,18 @@ return this.http.post(url + '/Login/Authenticate', loginModel, { responseType: '
   return this.http.post(url + '/NewAccount/Create', registerModel, this.httpOptions);
  }
 
+ update(updateUser: UserRegistration){
+  // return this.http.put(url + '/')
+  return this.http.put(url + 'UpdateUser', updateUser, this.httpOptions);
+ }
 
+ view(userId: string | null | undefined){
+   //view user info
+   return this.http.get(url + 'ViewAccount/' + userId, {responseType: 'text'});
+ }
+
+ delete(userId: string | null | undefined){
+   return this.http.delete(url + 'DeleteUser' + userId);
+ }
 
 }

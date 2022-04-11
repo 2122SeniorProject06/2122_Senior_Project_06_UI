@@ -23,8 +23,8 @@ export class JournalComponent implements OnInit {
 
     ngOnInit(): void {
       this.journalForm = this.formBuilder.group({
-        Title: [''],
-        Body: ['']
+        title: [''],
+        body: ['']
       });
     }
 
@@ -40,7 +40,7 @@ export class JournalComponent implements OnInit {
       const journal = new JournalModel();
       journal.Title = this.journalForm.get('Title').value;
       journal.Body = this.journalForm.get('Body').value;
-      this.userId = localStorage.getItem('userId');
+      this.userId = localStorage.getItem('UserId');
       journal.UserID = this.userId;
       console.log(journal.UserID);
       this.JournalService.createJournal(journal).subscribe((res) => {

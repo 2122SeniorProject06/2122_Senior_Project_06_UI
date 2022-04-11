@@ -30,7 +30,7 @@ export class EditJournalComponent implements OnInit {
 
     }
 
-    
+
     get f() {
       return this.editJournalForm.controls;
     }
@@ -48,9 +48,9 @@ export class EditJournalComponent implements OnInit {
       console.log(editjournal);
       this.JournalService.updateJournal(editjournal).subscribe((res) => {
           console.log(res);
-          
+
           this.goToJournals();
-          
+
       })
 
     }
