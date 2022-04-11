@@ -28,4 +28,8 @@ export class CheckInComponent {
     document.getElementsByClassName('mat-tab-header-pagination-before')[0].remove();
     document.getElementsByClassName('mat-tab-header-pagination-after')[0].remove();
   }
+
+  restartCheckIn() {
+    window.location.reload();
+  }
 }
