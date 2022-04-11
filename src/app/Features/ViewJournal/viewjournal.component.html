@@ -3,10 +3,10 @@
   <mat-icon>exit_to_app</mat-icon>
 </button>
 
+<mat-card>
 <div class="table-container">
   <mat-table #table [dataSource]="dataSource">
     <!---View Journal Component -->
-
     <!-- Date Column -->
     <ng-container matColumnDef="LastUpdated">
       <mat-header-cell *matHeaderCellDef> Last Updated </mat-header-cell>
@@ -41,10 +41,9 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
-
-
+</div>
+</mat-card>
     <mat-toolbar>
-
       <button class="home">
         <mat-icon (click)="goToMainMenu()">home</mat-icon>
       </button>
