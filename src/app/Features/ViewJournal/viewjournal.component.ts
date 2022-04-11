@@ -50,7 +50,7 @@ export class ViewJournalsComponent {
           console.log(this.journals);
         this.dataSource.data = this.journals;
         }
-        this.dataSource.data = []
+        //this.dataSource.data = []
 
         //add if i don't receive data because they have no journals, route them to add one
       })
@@ -68,7 +68,7 @@ export class ViewJournalsComponent {
 
     logout(){
       localStorage.clear();
-      this.goToMainMenu();
+      //this.goToMainMenu();
     }
 
     goToViewOne(){
@@ -77,6 +77,7 @@ export class ViewJournalsComponent {
     }
 
     goToMainMenu(){
+      this.logout();
       this.router.navigateByUrl('main-menu');
     }
 
