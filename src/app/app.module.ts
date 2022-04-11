@@ -3,9 +3,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CdkTableModule } from '@angular/cdk/table';
 import { CdkStepperModule } from '@angular/cdk/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -22,7 +22,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 //Components
 import { StepperComponent } from './Features/Stepper/stepper.component';
@@ -31,7 +32,6 @@ import { CountGameComponent } from './Features/CountGame/countgame.component';
 import { ViewJournalsComponent } from './Features/ViewJournal/viewjournal.component';
 import { MainMenuComponent } from './mainmenu/mainmenu.component';
 import { EditJournalComponent } from './Features/EditJournal/editjournal.component';
-
 import { AudioMeditationComponent } from './Features/AudioMeditation/audio-meditation.component';
 import { JournalComponent } from './Features/Journaling/journal.component';
 import { CheckInComponent } from './Features/Checkin/checkin.component';
@@ -41,6 +41,8 @@ import { ViewOneJournalComponent } from './Features/ViewOneJournal/viewonejourna
 import { UserRegistrationComponent } from './UserRegistration/userregistration.component';
 import { UserLoginComponent } from './UserLogin/userlogin.component';
 import { BreathingMeditationComponent } from './Features/breathing-meditation/breathing-meditation.component';
+import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.component';
+import { AboutComponent } from './About/about.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { BreathingMeditationComponent } from './Features/breathing-meditation/br
     AudioMeditationComponent,
     EditJournalComponent,
     BreathingMeditationComponent,
+    LoadingAnimationComponent,
+    AboutComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -86,6 +90,8 @@ import { BreathingMeditationComponent } from './Features/breathing-meditation/br
     MatRippleModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   exports: [
     AppRoutingModule,
@@ -113,6 +119,8 @@ import { BreathingMeditationComponent } from './Features/breathing-meditation/br
     MatRippleModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
   ],
   providers: [UserService, JournalService],
   bootstrap: [AppComponent]
