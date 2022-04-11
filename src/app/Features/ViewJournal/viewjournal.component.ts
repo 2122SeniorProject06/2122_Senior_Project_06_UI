@@ -15,7 +15,7 @@ import { JournalModel } from '../../../../Models/JournalModel';
 })
 export class ViewJournalsComponent {
 
-  constructor(private JournalService: JournalService, private router: Router) { 
+  constructor(private JournalService: JournalService, private router: Router) {
     if(localStorage.getItem('userId') == null){
       this.router.navigateByUrl('/login');
     }
@@ -50,6 +50,8 @@ export class ViewJournalsComponent {
           console.log(this.journals);
         this.dataSource.data = this.journals;
         }
+        this.dataSource.data = []
+
         //add if i don't receive data because they have no journals, route them to add one
       })
     }
