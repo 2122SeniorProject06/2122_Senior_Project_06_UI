@@ -65,6 +65,6 @@ export class ViewOneJournalComponent {
   //not needed for this
   }
 
-
+  
 }
 
