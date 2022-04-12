@@ -11,21 +11,22 @@ const SAMPLE_TEXT="I am a Champion for ______________________________.  I am Wor
 })
 
 export class MantraComponent {
-
-  form = this.fb.group({
-    title: ['', []],
-    longDescription: [SAMPLE_TEXT, [Validators.required, Validators.minLength(3)]]
-  });
-
   constructor(
     private fb: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
   ){}
   
+  //Routes to Main Menu
   goToMain() {
     this.router.navigateByUrl('/main-menu');
   }
 
+  //Refresh Page
+  restartFeature() {
+    window.location.reload();
+  }
+  
+  //Display Date
+  currentDate = new Date();
 }
-
