@@ -1,13 +1,16 @@
 import { UserService } from '../Services/user.service';
 import { UserLogin, UserModel } from '../../../Models/UserModels';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
+import { Animations } from 'animations';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-login',
+  animations: [ Animations.loadingTrigger],
   templateUrl: './userlogin.component.html',
   styleUrls: ['./userlogin.component.css'],
   providers: [UserLogin, UserModel]
@@ -21,6 +24,7 @@ export class UserLoginComponent implements OnInit {
  currUser: any;
  showLoading: boolean; // Shows the loading bar.
  targetEvent: HTMLElement; // The actual target to load.
+ bgImage: HTMLElement | null = document.createElement('br');
 
   constructor(
     private router: Router,
@@ -30,17 +34,19 @@ export class UserLoginComponent implements OnInit {
     private UserService: UserService,
     private location: Location
     ) {
-      // if(localStorage.getItem('userId') != null){
-      //   this.router.navigateByUrl('/view-journal');
-      // } 
       this.showLoading = false;
       this.targetEvent = document.createElement('br');
     }
 
   ngOnInit() {
+    console.log("ngOnInit");
+
+    this.bgImage = document.getElementById("bg-image");
+    this.bgImage!.style.filter = "blur(8px)";
+
     this.form = this.fb.group ({
-      Email: [''],
-      Password: ['']
+      Email: ['', Validators.required ],
+      Password: ['', Validators.required ]
     })
 
     // if(localStorage.getItem('userId') != null){
@@ -54,6 +60,7 @@ export class UserLoginComponent implements OnInit {
 
 
   onSubmit() {
+    console.log("onSubmit");
     const loginModel = new FormData();
     loginModel.append('Email', this.form.get('Email').value);
     loginModel.append('Password', this.form.get('Password').value);
@@ -120,4 +127,13 @@ localStorage.clear();
     this.targetEvent = mainMenuEvent;
     this.showLoading = true;
   }
+
+    /**
+     * Unblurs the background image on leaving the page.
+     * @param event Event that triggers the unblurring.
+     */
+     @HostListener('window:popstate', ['$event'])
+     onPopState(event : Event) {
+         this.bgImage!.style.filter = '';
+     }
 }
