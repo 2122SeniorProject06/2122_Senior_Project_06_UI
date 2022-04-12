@@ -19,10 +19,37 @@
   footer{
     margin-left: 25px;
   }
-  h2 {
+
+  .card {
+    max-width: 350px;
+    align-self: center;
+    margin: 15px;
+}
+
+  h1 {
     font-family: "Roboto";
     margin-top: 25px;
-    margin-left: 25px;
-  }
+}
 
-  
+  h2 {
+    font-family: "Roboto";
+
+}
+
+.home {
+  color: #52688F;
+  border: none;
+  background-color: #E3E7F1;
+
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.refresh {
+  color: #52688F;
+  border: none;
+  background-color: #E3E7F1;
+  float: right;  
+}

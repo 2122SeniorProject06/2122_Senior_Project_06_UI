@@ -21,6 +21,11 @@ export class MantraComponent {
     this.router.navigateByUrl('/main-menu');
   }
 
+  currentDate = new Date();
+
+  restartCheckIn() {
+    window.location.reload();
+  }
   
 }
 

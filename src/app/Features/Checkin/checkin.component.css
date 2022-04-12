@@ -27,7 +27,6 @@
   margin-bottom: 15px;
 }
 
-
   .mat-tab-label-container {
     display: flex;
     flex-grow: 1;
@@ -66,3 +65,5 @@
 footer{
   margin-left: 25px;
 }
+
+#section2 {padding-top:50px;height:500px;color: #fff; background-color: #E3E7F1;}
