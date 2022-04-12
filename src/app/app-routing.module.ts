@@ -13,6 +13,8 @@ import { UserRegistrationComponent } from "../app/UserRegistration/userregistrat
 import {UserLoginComponent} from "../app/UserLogin/userlogin.component";
 import { MainMenuComponent } from '../app/mainmenu/mainmenu.component';
 import { BreathingMeditationComponent } from '../app/Features/breathing-meditation/breathing-meditation.component';
+import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.component';
+import { AboutComponent } from './About/about.component';
 
 //Add Routes that map to components
 //you need to have the / if you're routing from one component to the next...
@@ -23,13 +25,15 @@ const routes: Routes = [
   { path: 'login', component: UserLoginComponent },
   { path: 'view-journal', component: ViewJournalsComponent },
   { path: 'view-one-journal', component: ViewOneJournalComponent },
-  { path: 'journal', component: JournalComponent},
-  { path: 'stepper', component: StepperComponent},
+  { path: 'journal', component: JournalComponent },
+  { path: 'stepper', component: StepperComponent },
   { path: 'breathing-component', component: BreathingMeditationComponent },
-  { path: 'check-in', component: CheckInComponent},
+  { path: 'check-in', component: CheckInComponent },
   { path: 'audio-meditation', component: AudioMeditationComponent },
-  { path: 'count-game', component: CountGameComponent},
-  { path: 'mantra', component: MantraComponent}
+  { path: 'count-game', component: CountGameComponent },
+  { path: 'mantra', component: MantraComponent },
+  { path: 'loading-animation', component: LoadingAnimationComponent },
+  { path: 'about', component: AboutComponent}
 ];
 
 @NgModule({

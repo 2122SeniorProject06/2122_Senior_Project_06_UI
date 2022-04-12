@@ -9,7 +9,9 @@ export class UserRegistration {
   public Username!: string;
   public Email!: string;
   public Password!: string;
-  //public confirmpassword!: string;
+  public confirmedPassword!: string;
+  public VerificationResults!: boolean[];
+  public VerificationErrors!: string[];
   //public id!: number;
   UserRegistration() {
 

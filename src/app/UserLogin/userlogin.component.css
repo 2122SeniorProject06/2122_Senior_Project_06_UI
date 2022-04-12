@@ -1,12 +1,20 @@
-:host {
-  display: flex;
-  justify-content: center;
-  margin: 100px 0px;
-}
 .mat-form-field {
   width: 100%;
   min-width: 300px;
 }
+
+.flex-container{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+  margin-top: 50px;
+}
+
 mat-card-title,
 mat-card-content {
   display: flex;
@@ -32,10 +40,10 @@ mat-raised-button {
 }
 .mat-toolbar{
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0%;
   color: white;
-  background-color: #E3E7F1;
+  background-color: #52688F;
 
 }
 
@@ -48,13 +56,8 @@ mat-raised-button {
 
 }
 .home {
-  color: #52688F;
+  color: #E3E7F1;
   border: none;
-  background-color: #E3E7F1;
+  background-color: #52688F;
 
-}
-
-.example-spacer {
-
-  flex: 1 1 auto;
 }
