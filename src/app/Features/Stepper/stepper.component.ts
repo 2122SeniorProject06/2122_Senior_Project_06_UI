@@ -27,16 +27,26 @@ export class StepperComponent implements OnInit {
 
     this.fiveSights = this._formBuilder.group({
       firstCtrl: ['', Validators.required],
+      secondCtrl: ['', Validators.required],
+      thirdCtrl: ['', Validators.required],
+      fourthCtrl: ['', Validators.required],
+      fifthCtrl: ['', Validators.required],
     });
     this.fourTouches = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      firstCtrl: ['', Validators.required],
+      secondCtrl: ['', Validators.required],
+      thirdCtrl: ['', Validators.required],
+      fourthCtrl: ['', Validators.required],
     });
 
     this.threeSounds = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      firstCtrl: ['', Validators.required],
+      secondCtrl: ['', Validators.required],
+      thirdCtrl: ['', Validators.required],
     });
     this.twoSmells = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
+      firstCtrl: ['', Validators.required],
+      secondCtrl: ['', Validators.required],
     });
     this.oneTaste = this._formBuilder.group({
       firstCtrl: ['', Validators.required]

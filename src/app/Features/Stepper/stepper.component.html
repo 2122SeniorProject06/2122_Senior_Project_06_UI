@@ -38,22 +38,22 @@
               </p>
               <p [align]="['left']">
                 <mat-form-field>
-                  <input matInput placeholder="Sight #2" formControlName = "firstCtrl"required>
+                  <input matInput placeholder="Sight #2" formControlName = "secondCtrl"required>
                 </mat-form-field>
               </p>
               <p [align]="['left']">
                 <mat-form-field>
-                  <input matInput placeholder="Sight #3" formControlName = "firstCtrl"required>
+                  <input matInput placeholder="Sight #3" formControlName = "thirdCtrl"required>
                 </mat-form-field>
               </p>
               <p [align]="['left']">
                 <mat-form-field>
-                  <input matInput placeholder="Sight #4" formControlName = "firstCtrl"required>
+                  <input matInput placeholder="Sight #4" formControlName = "fourthCtrl"required>
                 </mat-form-field>
               </p>
               <p [align]="['left']">
                 <mat-form-field>
-                  <input matInput placeholder="Sight #5" formControlName = "firstCtrl"required>
+                  <input matInput placeholder="Sight #5" formControlName = "fifthCtrl"required>
                 </mat-form-field>
               </p>
               <div>
@@ -72,17 +72,17 @@
               </p>
               <p [align]="['left']">
                 <mat-form-field>
-                  <input matInput placeholder="Touch #2" formControlName = "firstCtrl"required>
+                  <input matInput placeholder="Touch #2" formControlName = "secondCtrl"required>
                 </mat-form-field>
               </p>
               <p [align]="['left']">
                 <mat-form-field>
-                  <input matInput placeholder="Touch #3" formControlName = "firstCtrl"required>
+                  <input matInput placeholder="Touch #3" formControlName = "thirdCtrl"required>
                 </mat-form-field>
               </p>
               <p [align]="['left']">
                 <mat-form-field>
-                  <input matInput placeholder="Touch #4" formControlName = "firstCtrl"required>
+                  <input matInput placeholder="Touch #4" formControlName = "fourthCtrl"required>
                 </mat-form-field>
               </p>
               <div>
@@ -102,12 +102,12 @@
               </p>
               <p [align]="['left']">
                 <mat-form-field>
-                  <input matInput placeholder="Sound #2" formControlName = "firstCtrl"required>
+                  <input matInput placeholder="Sound #2" formControlName = "secondCtrl"required>
                 </mat-form-field>
               </p>
               <p [align]="['left']">
                 <mat-form-field>
-                  <input matInput placeholder="Sound #3" formControlName = "firstCtrl"required>
+                  <input matInput placeholder="Sound #3" formControlName = "thirdCtrl"required>
                 </mat-form-field>
               </p>
               <div>
@@ -127,7 +127,7 @@
               </p>
               <p [align]="['left']">
                 <mat-form-field>
-                  <input matInput placeholder="Smell #2" formControlName = "firstCtrl"required>
+                  <input matInput placeholder="Smell #2" formControlName = "secondCtrl"required>
                 </mat-form-field>
               </p>
               <div>
@@ -147,7 +147,8 @@
               </p>
             </form>
             <div>
-              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperPrevious (click)="goToMainMenu()">Home</button>
+              <button mat-button matStepperPrevious (click)="restartStepper()">Restart</button>
             </div>
           </mat-step>
         </mat-vertical-stepper>
