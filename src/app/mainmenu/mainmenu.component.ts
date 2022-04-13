@@ -63,5 +63,6 @@ export class MainMenuComponent implements OnInit {
 
   logout(){
     localStorage.clear();
+    location.reload();
   }
 }
