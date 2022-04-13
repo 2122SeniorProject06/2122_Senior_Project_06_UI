@@ -1,13 +1,21 @@
 <div class="flex-container">
-  <!--Look into how flex works, might be something I need.-->
-  <!--Main type giving issue: Galaxy Fold with a 280px width-->
   <mat-toolbar *ngIf="!showLoading" class="header">
-    <button *ngIf="isSignedIn" id="signedIn" class="signed-in">
-      <mat-icon class="bigger-icon">account_circle</mat-icon>
-    </button>
-    <button *ngIf="!isSignedIn" id="notSignedIn" class="signIn" id="/login" (click)="routeToChoice($event)">
+    <button mat-button *ngIf="!isSignedIn" id="notSignedIn" class="signIn" id="/login" (click)="routeToChoice($event)">
       <p class="signIn">Sign In</p>
     </button>
+    <button mat-icon-button *ngIf="isSignedIn" id="signedIn" class="signed-in" [matMenuTriggerFor]="menu">
+      <mat-icon class="bigger-icon">account_circle</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>settings</mat-icon>
+        <span>SETTINGS</span>
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+        <span>LOGOUT</span>
+      </button>
+    </mat-menu>
   </mat-toolbar>
 
   <div class="container">
