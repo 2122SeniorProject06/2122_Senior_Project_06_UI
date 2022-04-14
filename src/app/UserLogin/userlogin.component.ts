@@ -39,7 +39,6 @@ export class UserLoginComponent implements OnInit {
     }
 
   ngOnInit() {
-    console.log("ngOnInit");
 
     this.bgImage = document.getElementById("bg-image");
     this.bgImage!.style.filter = "blur(8px)";
@@ -60,7 +59,6 @@ export class UserLoginComponent implements OnInit {
 
 
   onSubmit() {
-    console.log("onSubmit");
     const loginModel = new FormData();
     loginModel.append('Email', this.form.get('Email').value);
     loginModel.append('Password', this.form.get('Password').value);
