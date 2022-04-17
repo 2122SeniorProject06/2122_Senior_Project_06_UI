@@ -1,27 +1,69 @@
-  .check-in-panel {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .home {
-    color: #52688F;
-    border: none;
-    background-color: #E3E7F1;
-  
-  }
-  .mat-toolbar{
-    position: fixed;
-    bottom: 0;
-    left: 0%;
-    color: white;
-    background-color: #E3E7F1;
-  
-  }
-  footer{
-    margin-left: 25px;
-  }
-  h2 {
-    font-family: "Roboto";
-    margin-top: 25px;
-    margin-left: 25px;
-  }
+.check-in-panel {
+  display: flex;
+  flex-direction: column;
+  top: 100px;
+}
+
+.card {
+  max-width: 350px;
+  align-self: center;
+  margin: 15px;
+}
+
+h1 {
+  font-family: "Roboto";
+  margin-top: 25px;
+}
+
+h2 {
+  font-family: "Roboto";
+
+}
+.mood{
+margin-bottom: 15px;
+}
+.checkin{
+margin-top: 30px;
+margin-bottom: 15px;
+}
+
+.mat-tab-label-container {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  z-index: 1;
+  overflow-x: scroll !important;
+}
+
+.mat-toolbar{
+position: fixed;
+bottom: 0;
+left: 0%;
+color: white;
+background-color: #E3E7F1;
+
+}
+
+.home {
+color: #52688F;
+border: none;
+background-color: #E3E7F1;
+
+}
+
+.example-spacer {
+flex: 1 1 auto;
+}
+
+.refresh {
+color: #52688F;
+border: none;
+background-color: #E3E7F1;
+float: right;  
+}
+
+footer{
+margin-left: 25px;
+}
+
+#section2 {padding-top:50px;height:500px;color: #fff; background-color: #E3E7F1;}

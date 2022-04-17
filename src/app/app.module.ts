@@ -22,6 +22,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatTabsModule} from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
@@ -82,7 +83,6 @@ import { AboutComponent } from './About/about.component';
     MatToolbarModule,
     MatButtonModule,
     MatStepperModule,
-    MatProgressSpinnerModule,
     MatDatepickerModule,
     MatGridListModule,
     MatIconModule,
@@ -90,6 +90,7 @@ import { AboutComponent } from './About/about.component';
     MatRippleModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatTabsModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
   ],
