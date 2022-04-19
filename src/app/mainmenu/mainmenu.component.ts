@@ -60,4 +60,9 @@ export class MainMenuComponent implements OnInit {
     this.targetEvent = item;
     this.showLoading = true;
   }
+
+  logout(){
+    localStorage.clear();
+    location.reload();
+  }
 }

@@ -24,6 +24,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu'
 
 //Components
 import { StepperComponent } from './Features/Stepper/stepper.component';
@@ -91,6 +92,7 @@ import { AboutComponent } from './About/about.component';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatMenuModule,
   ],
   exports: [
     AppRoutingModule,
@@ -120,6 +122,7 @@ import { AboutComponent } from './About/about.component';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatMenuModule,
   ],
   providers: [UserService, JournalService],
   bootstrap: [AppComponent]

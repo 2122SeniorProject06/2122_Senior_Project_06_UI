@@ -65,8 +65,8 @@ mat-toolbar.header{
   color: #E3E7F1;
   border: none;
   background-color: #52688F;
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   height: 100%
 }
 
@@ -77,9 +77,9 @@ mat-toolbar.header{
 .signIn{
   border:none;
   background-color: transparent;
-  position: flex;
+  /* position: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   size: 100%;
 }
 
