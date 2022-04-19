@@ -1,13 +1,13 @@
 <div class="flex-container">
   <mat-toolbar *ngIf="!showLoading" class="header">
-    <button mat-button *ngIf="!isSignedIn" id="notSignedIn" class="signIn" id="/login" (click)="routeToChoice($event)">
+    <button *ngIf="!isSignedIn" id="notSignedIn" class="signIn" id="/login" (click)="routeToChoice($event)">
       <p class="signIn">Sign In</p>
     </button>
     <button mat-icon-button *ngIf="isSignedIn" id="signedIn" class="signed-in" [matMenuTriggerFor]="menu">
       <mat-icon class="bigger-icon">account_circle</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
+      <button mat-menu-item id="/account/test" (click)="routeToChoice($event)">
         <mat-icon>person</mat-icon>
         <span>ACCOUNT</span>
       </button>

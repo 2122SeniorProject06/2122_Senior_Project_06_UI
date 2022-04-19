@@ -6,12 +6,12 @@ export class UserModel {
   UserModel() { }
 }
 export class UserRegistration {
-  public Username!: string;
-  public Email!: string;
-  public Password!: string;
+  public username!: string;
+  public email!: string;
+  public password!: string;
   public confirmedPassword!: string;
-  public VerificationResults!: boolean[];
-  public VerificationErrors!: string[];
+  public verificationResults!: boolean[];
+  public verificationErrors!: string[];
   //public id!: number;
   UserRegistration() {
 

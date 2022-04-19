@@ -24,7 +24,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { MatMenuModule } from '@angular/material/menu'
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
 
 //Components
 import { StepperComponent } from './Features/Stepper/stepper.component';
@@ -44,6 +45,8 @@ import { UserLoginComponent } from './UserLogin/userlogin.component';
 import { BreathingMeditationComponent } from './Features/breathing-meditation/breathing-meditation.component';
 import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.component';
 import { AboutComponent } from './About/about.component';
+import { AccountComponent } from './Account/account.component';
+import { AccountInfoComponent } from './Account/account-info/account-info.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +66,8 @@ import { AboutComponent } from './About/about.component';
     BreathingMeditationComponent,
     LoadingAnimationComponent,
     AboutComponent,
+    AccountComponent,
+    AccountInfoComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -93,6 +98,7 @@ import { AboutComponent } from './About/about.component';
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatMenuModule,
+    MatTabsModule,
   ],
   exports: [
     AppRoutingModule,
