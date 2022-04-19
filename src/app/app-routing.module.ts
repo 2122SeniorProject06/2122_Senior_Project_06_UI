@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: 'mantra', component: MantraComponent },
   { path: 'loading-animation', component: LoadingAnimationComponent },
   { path: 'about', component: AboutComponent},
-  { path: 'account/:userName', component: AccountComponent },
+  { path: 'account', component: AccountComponent },
 ];
 
 @NgModule({

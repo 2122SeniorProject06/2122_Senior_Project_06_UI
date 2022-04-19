@@ -9,13 +9,16 @@
 
     <div class="container">
         <mat-card class="card">
-            <mat-card-title>Hello {{userAccount.username}}</mat-card-title>
-            <mat-card-content>
+            <mat-card-title *ngIf="!showLoading">Hello {{userAccount.username}}</mat-card-title>
+            <mat-card-content *ngIf="!showLoading">
                 <mat-tab-group>
                     <mat-tab label="Info"><app-account-info [accountInfo]="userAccount"></app-account-info></mat-tab>
                     <mat-tab label="Metrics"></mat-tab>
                     <mat-tab label="Settings"></mat-tab>
                 </mat-tab-group>
+            </mat-card-content>
+            <mat-card-content>
+              <app-loading-animation *ngIf="showLoading" [targetRoute]=targetEvent></app-loading-animation>
             </mat-card-content>
         </mat-card>
     </div>

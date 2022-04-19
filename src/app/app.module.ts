@@ -47,6 +47,7 @@ import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.
 import { AboutComponent } from './About/about.component';
 import { AccountComponent } from './Account/account.component';
 import { AccountInfoComponent } from './Account/account-info/account-info.component';
+import { AccountMetricsComponent } from './Account/account-metrics/account-metrics.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { AccountInfoComponent } from './Account/account-info/account-info.compon
     AboutComponent,
     AccountComponent,
     AccountInfoComponent,
+    AccountMetricsComponent,
   ],
   imports: [
     AppRoutingModule,
