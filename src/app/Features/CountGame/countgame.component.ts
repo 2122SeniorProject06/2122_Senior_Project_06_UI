@@ -1,8 +1,5 @@
 import {Component} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-/**
- * Value Selection
- */
 
 @Component({
   selector: 'CountGame',
@@ -16,10 +13,12 @@ export class CountGameComponent {
     private route: ActivatedRoute,
   ){}
 
+  //Go to main menu
   goToMain() {
     this.router.navigateByUrl('/main-menu');
   }
 
+  //Color Changing 
   newColor = false;
   toggleColorOne() {
     this.newColor = !this.newColor;
@@ -38,7 +37,6 @@ export class CountGameComponent {
     this.newColorThree = true;
   }
 
-
   newColorFour=false;
   toggleColorFour() {
     this.newColorFour = !this.newColorFour;
@@ -51,7 +49,10 @@ export class CountGameComponent {
     this.newColorFive = true;
   }
 
+  //Restart
   restartCount() {
     window.location.reload();
   }
+
+  //
 }
