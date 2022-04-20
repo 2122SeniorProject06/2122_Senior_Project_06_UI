@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CountGameService } from 'src/app/Services/countgame.service';
 
 @Component({
   selector: 'CountGame',
@@ -8,10 +9,19 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CountGameComponent {
 
-  constructor(
+  constructor(private CountGameService: CountGameService, 
     private router: Router,
     private route: ActivatedRoute,
   ){}
+
+    value?: any;
+
+    ngOnInit(): void {
+      //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+      //Add 'implements OnInit' to the class.
+      console.log("help again");
+      this.getCountGame();
+    }
 
   //Go to main menu
   goToMain() {
@@ -54,5 +64,11 @@ export class CountGameComponent {
     window.location.reload();
   }
 
-  //
+  getCountGame(){
+    this.CountGameService.getCountGame(100).subscribe((res: any) => {
+      this.value = res;
+      console.log(this.value);
+    })
+  }
+
 }
