@@ -4,6 +4,7 @@
     max-width: 500px;
     align-self: center;
     margin: 15px;
+    top: 100px;
 }
 
 .user-input{
@@ -17,21 +18,23 @@
     float: right;  
 }
   
-.home {
-    color: #52688F;
-    border: none;
-    background-color: #E3E7F1;
-}
-  
+
 .example-spacer {
     flex: 1 1 auto;
 }
 
-.mat-toolbar{
+
+.home {
+    color: #E3E7F1;
+    border: none;
+    background-color: #52688F;
+  
+  }
+  .mat-toolbar{
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0%;
     color: white;
-    background-color: #E3E7F1;
+    background-color: #52688F;
   
-}
+  }
