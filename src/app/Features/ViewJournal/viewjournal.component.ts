@@ -15,7 +15,12 @@ import { JournalModel } from '../../../../Models/JournalModel';
 })
 export class ViewJournalsComponent {
 
-  constructor(private JournalService: JournalService, private route: Router) { console.log("help");}
+  constructor(private JournalService: JournalService, private router: Router) { 
+    if(localStorage.getItem('userId') == null){
+      this.router.navigateByUrl('/login');
+    }
+    console.log("help");
+  }
 
   displayedColumns = ['LastUpdated', 'Title', 'Body', 'Action'];
   dataSource = new MatTableDataSource<JournalModel[]>();
@@ -54,7 +59,7 @@ export class ViewJournalsComponent {
           this.journal = res;
           console.log(this.journal);
           console.log("routing to view one");
-          this.route.navigateByUrl('view-one-journal');
+          this.router.navigateByUrl('view-one-journal');
       });
 
     }
@@ -66,15 +71,15 @@ export class ViewJournalsComponent {
 
     goToViewOne(){
       console.log("going to view one");
-      this.route.navigateByUrl('view-one-journal');
+      this.router.navigateByUrl('view-one-journal');
     }
 
     goToMainMenu(){
-      this.route.navigateByUrl('main-menu');
+      this.router.navigateByUrl('main-menu');
     }
 
     goToAddJournal(){
-      this.route.navigateByUrl('journal');
+      this.router.navigateByUrl('journal');
     }
 
   }

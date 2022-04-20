@@ -42,6 +42,7 @@ import { UserRegistrationComponent } from './UserRegistration/userregistration.c
 import { UserLoginComponent } from './UserLogin/userlogin.component';
 import { BreathingMeditationComponent } from './Features/breathing-meditation/breathing-meditation.component';
 import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.component';
+import { AboutComponent } from './About/about.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.
     EditJournalComponent,
     BreathingMeditationComponent,
     LoadingAnimationComponent,
+    AboutComponent,
   ],
   imports: [
     AppRoutingModule,
