@@ -1,37 +1,26 @@
-<!DOCTYPE html>
 
-<head>
-<title>Box Breathing</title>
-<style>
+<mat-toolbar>
+    <button class="home" (click)="goToMain()">
+    <mat-icon>home</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+    </mat-toolbar>
 
- 
+    <div> 
+        <h1 class = "Breathing">BREATHE IN</h1> 
+        <h2 class = "Hold">HOLD</h2>
+        <h3 class = "Breathe-Out">BREATHE-OUT</h3>
+        <h4 class = "Hold2">HOLD</h4>
+    </div>
 
-</style>
-</head>
-<div id=box>
-<div id=breath></div>
-<div id=ball></div>
-
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-<br><br>
-
-<p><span style="color:#52688F;font-weight:bold;font-size: large;">Breathe in while box inflates</span></p>
-
-<p><span style="color:#52688F;font-weight:bold;font-size: large;">Hold breathe while box is inflated</span></p>
-
-<p><span style="color:#52688F;font-weight:bold;font-size: large">Breathe out while box deflates</span></p>
-
-<p><span style="color:#52688F;font-weight:bold;font-size: large;">Keep lungs empty while box is deflated</span></p>
+<div class="flex-container">
+   
+    <mat-card class="card">
+        
+        <div id=box>
+        <div id=breath></div>
+        <div id=ball></div>
+       
+        </div>
+    </mat-card>
 </div>
