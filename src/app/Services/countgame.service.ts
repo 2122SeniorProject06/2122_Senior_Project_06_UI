@@ -19,10 +19,13 @@ const url = environment.api;
   
     constructor(
       private http: HttpClient,
-      ) { console.log("journal service"); }
+      ) { console.log("countgame service"); }
   
-      getCountGame(startingValue: number){
-          return this.http.get(url + '/CountingGame/GetVal/?startingValue=' + startingValue, { responseType: 'text'})
+      getCountValue(countingValue: number){
+          return this.http.get(url + '/CountingGame/GetCountVal/?countingValue=' + countingValue, { responseType: 'text'})
       }
 
+      getStartValue(startingValue: number){
+          return this.http.get(url + '/CountingGame/GetStartVal/?startingValue=' + startingValue, { responseType: 'text'})
+        }
     }

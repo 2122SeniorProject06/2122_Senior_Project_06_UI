@@ -9,8 +9,8 @@
         <ng-template matStepLabel></ng-template>
 
             Lets countdown by 
-            {{value}}
-             starting at 100
+            {{countVal}}
+             starting at {{startVal}}
 
             <div class="countdown-buttons">
                 <button  [ngClass]="{'test': newColor}" (click)="toggleColorOne()" mat-raised-button color="primary">
