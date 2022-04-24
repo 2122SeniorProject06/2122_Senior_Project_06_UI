@@ -14,22 +14,22 @@
 
             <div class="countdown-buttons">
                 <button  [ngClass]="{'test': newColor}" (click)="toggleColorOne()" mat-raised-button color="primary">
-                  90
+                  {{val1}}
                 </button>
             
                 <button [ngClass]="{'test': newColor}" (click)="toggleColorOne()" mat-raised-button color="primary">
-                  95
+                  {{val2}}
                 </button>
 
                 <button mat-raised-button color="primary" matStepperNext>
-                  80
+                  {{val3}}
                 </button>
             </div>
       </mat-step>
 
       <mat-step >
           <ng-template matStepLabel></ng-template>
-          Lets countdown by 20 from 80
+          Lets countdown by {{countVal}} from {{val3}}
           <div class="countdown-buttons">
               <button [ngClass]="{'test': newColorTwo}" (click)="toggleColorTwo()" mat-raised-button color="primary">
                 75
@@ -50,7 +50,7 @@
       <mat-step >
           
           <ng-template matStepLabel></ng-template>
-          Lets countdown by 20 from 60
+          Lets countdown by {{countVal}} from {{val2}}
 
           <div class="countdown-buttons">
               <button [ngClass]="{'test': newColorThree}" (click)="toggleColorThree()" mat-raised-button color="primary">
@@ -72,7 +72,7 @@
           
           <ng-template matStepLabel></ng-template>
 
-          Lets countdown by 20 from 40
+          Lets countdown by {{countVal}} from {{val3}}
 
           <div class="countdown-buttons">
             <button mat-raised-button color="primary" matStepperNext>
@@ -96,7 +96,7 @@
           
           <ng-template matStepLabel></ng-template>
 
-          Lets countdown by 20 from 20
+          Lets countdown by {{countVal}} from {{val1}}
 
           <div class="countdown-buttons">
               <button [ngClass]="{'test': newColorFive}" (click)="toggleColorFive()" mat-raised-button color="primary">

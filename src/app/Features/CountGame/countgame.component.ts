@@ -14,16 +14,17 @@ export class CountGameComponent {
     private route: ActivatedRoute,
   ){}
 
-    //value variables
     countVal?: any;
     startVal?: any;
+    val1?: any;
+    val2?: any;
+    val3?: any;
 
     ngOnInit(): void {
       //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
       //Add 'implements OnInit' to the class.
       console.log("help again");
       this.getCountValue();
-      this.getStartValue();
     }
 
   //Go to main menu
@@ -72,13 +73,17 @@ export class CountGameComponent {
     this.CountGameService.getCountValue(100).subscribe((res: any) => {
       this.countVal = res;
       console.log(this.countVal);
-    })
-  }
-
-  //get starting value
-  getStartValue(){
-    this.CountGameService.getStartValue(100).subscribe((res: any) => {
-      this.startVal = res;
+      if (this.countVal == 3){
+        this.startVal = 15;
+    } else if(this.countVal == 5){
+        this.startVal = 25;
+    } else if(this.countVal == 15){
+      this.startVal = 75;
+    } else if(this.countVal == 20){
+      this.startVal = 100;
+    } else if(this.countVal == 30){
+      this.startVal = 150;
+    }
       console.log(this.startVal);
     })
   }

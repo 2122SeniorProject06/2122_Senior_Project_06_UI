@@ -24,8 +24,4 @@ const url = environment.api;
       getCountValue(countingValue: number){
           return this.http.get(url + '/CountingGame/GetCountVal/?countingValue=' + countingValue, { responseType: 'text'})
       }
-
-      getStartValue(startingValue: number){
-          return this.http.get(url + '/CountingGame/GetStartVal/?startingValue=' + startingValue, { responseType: 'text'})
-        }
     }
