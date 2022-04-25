@@ -1,7 +1,7 @@
 import { AotCompiler } from '@angular/compiler';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AccountModel, UserAccount, UserRegistration } from '../../../Models/UserModels';
+import { AccountEdit, UserAccount, UserRegistration } from '../../../Models/UserModels';
 import { UserService } from '../Services/user.service';
 @Component({
     selector: 'app-account',

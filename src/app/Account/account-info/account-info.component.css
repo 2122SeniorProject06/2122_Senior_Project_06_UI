@@ -12,13 +12,32 @@
   margin: 1%;
 }
 
+.section-title{
+  display: flex;
+  margin-bottom: 0%;
+  align-self: start;
+}
+
 .value-holder{
   height: 100%;
   width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 2.5%;
+}
+
+.value-editor{
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 2.5%;
+}
+
+.new-input{
+  width: 100%;
 }
 
 .account-list{
@@ -31,13 +50,11 @@
 }
 
 .label{
-  width: 30%;
   text-align: left;
 }
 
 .value{
-  width: 70%;
-  text-align: left;
+  text-align: right;
 }
 
 @media screen
@@ -45,15 +62,27 @@ and (orientation: landscape)
 and (max-width: 1199px) {
   .value-holder {
     font-size: 2.75vh;
-  }   
+  }
+  .value-editor {
+    font-size: 2.75vh;
+  }
+  .section-title{
+    font-size: 2.75vw;
+  } 
 }
 
 @media screen
 and (orientation: landscape)
 and (min-width: 1200px) {
   .value-holder {
-    font-size: 3vh;
-  }   
+    font-size: 2.5vh;
+  } 
+  .value-editor {
+    font-size: 2.5vh;
+  }
+  .section-title{
+    font-size: 2.5vh;
+  } 
 }
 
 @media screen
@@ -62,6 +91,12 @@ and (max-width: 590px) {
   .value-holder {
     font-size: 3.5vw;
   }
+  .value-editor {
+    font-size: 3.5vw;
+  }
+  .section-title{
+    font-size: 3.5vw;
+  } 
 }
 
 @media screen
@@ -70,12 +105,25 @@ and (min-width: 591px) {
   .value-holder {
     font-size: 3vw;
   }
+  .value-editor {
+    font-size: 3vw;
+  }
+  .section-title{
+    font-size: 3vw;
+  } 
 }
 
 .button-format{
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.edit-button{
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 

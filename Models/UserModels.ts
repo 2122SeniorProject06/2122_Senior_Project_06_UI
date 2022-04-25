@@ -26,22 +26,20 @@ export class UserLogin {
   }
 }
 
-export class AccountModel {
-  public username!: string;
-  public email!: string;
-  public oldPassword!: string;
-  public password!: string;
+export class AccountEdit {
+  public userID!: string;
+  public new_Username!: string;
+  public new_Password!: string;
+  public old_Password!: string;
+  public new_Email!: string;
   public confirmedPassword!: string;
   public verificationResults!: boolean[];
   public verificationErrors!: string[];
-  public mostEffective!: string;
-  public usefulMethods!: number[];
-  public userId!: number;
 
-  UserRegistration() {
+  AccountEdit() {
 
   }
-}
+} 
 
 export class UserAccount{
   public userID!: string;
