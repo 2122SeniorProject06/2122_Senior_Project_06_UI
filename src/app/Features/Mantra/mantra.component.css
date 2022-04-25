@@ -1,13 +1,16 @@
 .mantra-panel {
   display: flex;
   flex-direction: column;
+  top: 100px;
+  margin-top: 25px;
 }
 
 .card {
   max-width: 350px;
+  max-height: auto;
   align-self: center;
   margin: 15px;
-  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .title {
@@ -24,7 +27,7 @@
 
 .mat-toolbar{
 position: fixed;
-bottom: 0;
+top: 0;
 left: 0%;
 color: white;
 background-color: #E3E7F1; 
