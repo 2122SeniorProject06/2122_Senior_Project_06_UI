@@ -51,13 +51,32 @@ export class MainMenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  routeToChoice(nextRoute: Event){
-    let item = <HTMLElement>nextRoute.target;
-    if(item.innerHTML != "Sign In")
-    {
-      item.innerHTML = item.innerHTML  + " ACTIVITY";
-    }
-    this.targetEvent = item;
+  goToSignIn(){
+    this.activateLoadingAnimation("/login", "Sign In")
+  }
+
+  goToActivity(event:Event){
+        let activity = event.currentTarget as HTMLElement;
+        let routeLink = activity.id;
+        let routeName = activity.innerText + " ACTIVITY";
+        this.activateLoadingAnimation(routeLink, routeName);
+  }
+
+  goToAccount(event:Event){
+    let activity = event.currentTarget as HTMLElement;
+    let routeLink = activity.id;
+    let activitySpan = activity.children[1] as HTMLElement;
+    let routeName = activitySpan.innerText;
+    this.activateLoadingAnimation(routeLink, routeName);
+  }
+
+  activateLoadingAnimation(routeLink: string, routeName: string) {
+    let mainMenuEvent = document.createElement('p');
+    let mainMenuParent = document.createElement('div');
+    mainMenuParent.id = routeLink;
+    mainMenuEvent.innerHTML = routeName;
+    mainMenuParent.appendChild(mainMenuEvent);
+    this.targetEvent = mainMenuEvent;
     this.showLoading = true;
   }
 

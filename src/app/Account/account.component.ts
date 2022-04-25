@@ -21,8 +21,6 @@ export class AccountComponent implements OnInit {
         this.targetEvent = document.createElement('br');
         this.userAccount.username = "test";
         this.userAccount.email = "email2@gmail.com";
-        this.userAccount.password = "";
-        this.userAccount.confirmedPassword = "";
      }
   
     ngOnInit() {

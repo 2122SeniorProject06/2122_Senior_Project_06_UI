@@ -26,6 +26,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDividerModule } from '@angular/material/divider';
 
 //Components
 import { StepperComponent } from './Features/Stepper/stepper.component';
@@ -101,6 +102,7 @@ import { AccountMetricsComponent } from './Account/account-metrics/account-metri
     MatProgressBarModule,
     MatMenuModule,
     MatTabsModule,
+    MatDividerModule,
   ],
   exports: [
     AppRoutingModule,
@@ -131,6 +133,7 @@ import { AccountMetricsComponent } from './Account/account-metrics/account-metri
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatMenuModule,
+    MatDividerModule,
   ],
   providers: [UserService, JournalService],
   bootstrap: [AppComponent]

@@ -25,6 +25,7 @@ export class AppComponent {
     if(localStorage.getItem('userId') != null)
     {
       imageUrl = "beach.jpg";
+      //Save background and darkmode on local storage.
     }
 
     document.getElementById("bg-image")!.style.backgroundImage = "url(\"./assets/" + imageUrl + "\")";
