@@ -15,34 +15,37 @@
     <mat-card-title></mat-card-title>
   <mat-card-content>
   <form [formGroup]="journalForm" (ngSubmit)="onSubmit()">
-    <p>
-      <select formControlName="HadAttack">
+      <mat-form-field>
+        <mat-label>Did you have an attack?</mat-label>
+      <mat-select formControlName="HadAttack">
         <mat-option value="Did you have an attack?"></mat-option>
         <mat-option *ngFor="let attack of attack">{{attack}}</mat-option>
-      </select>
-    </p>
-    <p>
-      <select formControlName="Method">
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>What method did you use during the attack?</mat-label>
+      <mat-select formControlName="Method">
         <mat-option value="What method was used during the attack?"></mat-option>
         <mat-option *ngFor="let method of methodOptions">{{method}}</mat-option>
-      </select>
-    </p>
-    <p>
-      <select formControlName="WasEffective">
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select formControlName="WasEffective">
+        <mat-label>Was this method effective?</mat-label>
         <mat-option value="Was this method effective?"></mat-option>
         <mat-option *ngFor="let effective of effective">{{effective}}</mat-option>
-      </select>
-    </p>
-    <p>
+      </mat-select>
+    </mat-form-field>
+
       <mat-form-field class="title">
         <input type="text" matInput placeholder="Title" formControlName="Title">
       </mat-form-field>
-    </p>
-    <p>
+
+
       <mat-form-field class="body">
-        <textarea rows="25" cols="100" type="textarea" matInput placeholder="Body" formControlName="Body"></textarea>
+        <textarea type="textarea" matInput placeholder="Body" formControlName="Body"></textarea>
       </mat-form-field>
-    </p>
+
 
 
     <button class="add" mat-raised-button>Add</button>
