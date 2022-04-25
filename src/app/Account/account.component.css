@@ -16,10 +16,11 @@
   }
   
   .card {
-    width: 65%;
+    width: 80%;
+    height: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
   }
   
   .activity-buttons {
@@ -31,6 +32,38 @@
     letter-spacing: .43mm;
     color: #52688F;
   }
+
+@media screen
+and (orientation: landscape)
+and (max-width: 1199px) {
+    .about-us {
+        font-size: 2.75vh;
+    }   
+}
+
+@media screen
+and (orientation: landscape)
+and (min-width: 1200px) {
+    .about-us {
+        font-size: 3vh;
+    }   
+}
+
+@media screen
+and (orientation: portrait)
+and (max-width: 590px) {
+    .about-us {
+        font-size: 3.5vw;
+    }
+}
+
+@media screen
+and (orientation: portrait)
+and (min-width: 591px) {
+    .about-us {
+        font-size: 3vw;
+    }
+}
   
   /* Header Styling */
   mat-toolbar.header{
@@ -43,7 +76,7 @@
     background-color: #52688F;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   .home {

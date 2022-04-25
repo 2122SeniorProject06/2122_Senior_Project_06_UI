@@ -1,6 +1,8 @@
+import { AotCompiler } from '@angular/compiler';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AccountModel, UserRegistration } from '../../../Models/UserModels';
+import { AccountModel, UserAccount, UserRegistration } from '../../../Models/UserModels';
+import { UserService } from '../Services/user.service';
 @Component({
     selector: 'app-account',
     templateUrl: './account.component.html',
@@ -11,31 +13,38 @@ export class AccountComponent implements OnInit {
     isSignedIn: boolean;
     targetEvent: HTMLElement;
     bgImage: HTMLElement | null = document.createElement('br');
-    userAccount: AccountModel = new AccountModel();
+    userAccount: UserAccount = new UserAccount();
   
     constructor(
       private router: Router,
-      private route: ActivatedRoute) {
+      private route: ActivatedRoute,
+      private accountService: UserService) {
         this.isSignedIn = localStorage.getItem('userId') != null;
         this.showLoading = false;
         this.targetEvent = document.createElement('br');
-        this.userAccount.username = "test";
-        this.userAccount.email = "email2@gmail.com";
      }
   
     ngOnInit() {
         this.bgImage = document.getElementById("bg-image");
         this.bgImage!.style.filter = "blur(8px)";
+        this.getAccount();
+    }
+
+    getAccount(){
+        let userID = localStorage.getItem('userId') as string;
+        this.accountService.getAccountInfo(userID).subscribe((accountInfo) => {
+            this.userAccount = accountInfo;
+        })
     }
 
     /**
      * Unblurs the background image on leaving the page.
      * @param event Event that triggers the unblurring.
      */
-         @HostListener('window:popstate', ['$event'])
-         onPopState(event : Event) {
-             this.bgImage!.style.filter = '';
-       }
+    @HostListener('window:popstate', ['$event'])
+        onPopState(event : Event) {
+        this.bgImage!.style.filter = '';
+    }
 
     goToMainMenu() {
         this.activateLoadingAnimation('/main-menu', "MAIN MENU")

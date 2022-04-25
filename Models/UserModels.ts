@@ -42,3 +42,13 @@ export class AccountModel {
 
   }
 }
+
+export class UserAccount{
+  public userID!: string;
+  public username!: string;
+  public email!: string;
+  public darkMode!: boolean;
+  public background!: string;
+  
+  UserAccount() {}
+}

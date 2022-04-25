@@ -1,6 +1,6 @@
 import { environment } from './../../environments/environment';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { UserLogin, UserRegistration } from '../../../Models/UserModels';
+import { UserAccount, UserLogin, UserRegistration } from '../../../Models/UserModels';
 import { Injectable } from "@angular/core";
 
 const url = environment.api;
@@ -28,6 +28,10 @@ return this.http.post(url + '/Login/Authenticate', loginModel, { responseType: '
    //once api is set up in backend this function will an http POST call to add user to database
    //need the register url
   return this.http.post(url + '/NewAccount/Create', registerModel, this.httpOptions);
+ }
+
+ getAccountInfo(id: string){
+   return this.http.get<UserAccount>(url + '/Account/GetAllInfo?userID=' + id, { responseType: 'json'})
  }
 
 

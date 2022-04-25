@@ -11,9 +11,9 @@
         <mat-card class="card" [@loadingAnimation]="!showLoading ? 'notLoading' : 'loading'">
             <mat-card-content *ngIf="!showLoading" class="flex-container">
                 <img class="about-us" src="../../assets/SHARD_Logo.png" height="460" width="350">
-                <h3 class="about-us">About Us</h3>
-                <div>
-                    <p class="about-us">{{aboutUs[0]}}<br><br>{{aboutUs[1]}}<br><br>{{aboutUs[2]}}<br><br>{{aboutUs[3]}}<br>{{aboutUs[4]}}<br>{{aboutUs[5]}}<br>{{aboutUs[6]}}<br>{{aboutUs[7]}}<br>{{aboutUs[8]}}<br>{{aboutUs[9]}}<br></p>
+                <div class="about-us-text">
+                    <h3 class="about-us">About Us</h3>
+                    <p class="about-us" *ngFor="let para of aboutUs">{{para}}</p>
                 </div>
             </mat-card-content>
             <mat-card-content>
