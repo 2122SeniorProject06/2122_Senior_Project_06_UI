@@ -2,16 +2,16 @@
   background-color: #52688F;
   border: none;
   color: #E3E7F1;
-
 }
-.mat-card {
+.card {
   width: 65%;
   height: auto;
   display: flex;
   text-align: center;
   justify-content: center;
-  margin-top: auto;
+  
 }
+
 mat-toolbar.header {
   z-index: 8888;
   position: fixed;
@@ -42,7 +42,6 @@ mat-toolbar.header {
   display: flex;
 }
 .example-spacer {
-
   flex: 1 1 auto;
 }
 .journals {
@@ -50,6 +49,4 @@ mat-toolbar.header {
   border: none;
   color: #E3E7F1;
   float: right;
-
-
 }

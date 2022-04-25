@@ -24,10 +24,10 @@ button{
 }
 
 .create-icon {
-   color: #52688F;
+   background-color: #52688F;
    float: right;
    border: none;
-   background-color: white;
+   color: white;
  }
  /* Header Styling */
 mat-toolbar.header{
