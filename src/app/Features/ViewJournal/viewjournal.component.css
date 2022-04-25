@@ -1,13 +1,12 @@
 p {
   font-family: Lato;
 }
-.mat-card {
+.mat-card, .mat-table {
   width: 100%;
   display: flex;
-  text-align: center;
-  justify-content: center;
+
 }
-.example-container {
+.table-container {
   display: flex;
   flex-direction: column;
   max-height: 500px;
@@ -39,26 +38,23 @@ mat-toolbar.header{
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-bottom: auto;
 }
 
 .create {
-  color: #52688F;
+  background-color: #52688F;
   border: none;
-  background-color: #E3E7F1;
+  color: #E3E7F1;
   float: right;
-
-
 }
 
 .home {
   background-color: #52688F;
   border: none;
   color: #E3E7F1;
-
 }
 
 .example-spacer {
-
   flex: 1 1 auto;
 }
 

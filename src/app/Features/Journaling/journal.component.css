@@ -1,7 +1,7 @@
 .home {
-  color: #52688F;
+  background-color: #52688F;
   border: none;
-  background-color: #E3E7F1;
+  color: #E3E7F1;
 
 }
 .mat-card {
@@ -10,6 +10,7 @@
   display: flex;
   text-align: center;
   justify-content: center;
+  margin-top: auto;
 }
 mat-toolbar.header {
   z-index: 8888;
@@ -45,9 +46,9 @@ mat-toolbar.header {
   flex: 1 1 auto;
 }
 .journals {
-  color: #52688F;
+  background-color: #52688F;
   border: none;
-  background-color: #E3E7F1;
+  color: #E3E7F1;
   float: right;
 
 
