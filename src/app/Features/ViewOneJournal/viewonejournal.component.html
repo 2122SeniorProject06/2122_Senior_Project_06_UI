@@ -1,26 +1,30 @@
-<button (click)="delete(journal.JournalID)"  class="delete">
+<mat-toolbar>
+
+  <button class="home" (click)="goToMain()">
+    <mat-icon>home</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button class="edit" (click)="goToEdit(journal.journalID)">
+  <mat-icon>edit</mat-icon>
+  </button>
+  </mat-toolbar>
+
+<mat-card>
+<button (click)="delete(journal.journalID)"  class="delete">
   <mat-icon>delete</mat-icon>
 </button>
 <div class="one-journal" *ngIf="isLoaded">
 <h1>Title</h1>
 <br>
-{{journal.Title}}
+{{journal.title}}
 <br>
 <h2>Last Updated</h2>
-{{journal.LastUpdated | date: 'short' }}
+{{journal.lastUpdated | date: 'short' }}
 <h2>Entry</h2>
-{{journal.Body}}
+{{journal.body}}
 <br>
 </div>
+</mat-card>
 
-<mat-toolbar>
 
-<button class="home" (click)="goToMain()">
-  <mat-icon>home</mat-icon>
-</button>
-<span class="example-spacer"></span>
-<button class="edit" (click)="goToEdit(journal.JournalID)">
-<mat-icon>edit</mat-icon>
-</button>
-</mat-toolbar>
 
