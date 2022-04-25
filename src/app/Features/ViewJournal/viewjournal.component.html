@@ -1,9 +1,19 @@
+<mat-toolbar>
 
+  <button class="home">
+    <mat-icon (click)="goToMainMenu()">home</mat-icon>
+  </button>
+  <span class="example-spacer"></span>
+  <button class="create">
+    <mat-icon (click)="goToAddJournal()">create</mat-icon>
+  </button>
+</mat-toolbar>
 <button (click)="logout()"  class="logout">
   <mat-icon>exit_to_app</mat-icon>
 </button>
 
 <div class="table-container">
+  <mat-card>
   <mat-table #table [dataSource]="dataSource">
     <!---View Journal Component -->
 
@@ -41,15 +51,6 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
+</mat-card>
 
 
-    <mat-toolbar>
-
-      <button class="home">
-        <mat-icon (click)="goToMainMenu()">home</mat-icon>
-      </button>
-      <span class="example-spacer"></span>
-      <button class="create">
-        <mat-icon (click)="goToAddJournal()">create</mat-icon>
-      </button>
-    </mat-toolbar>

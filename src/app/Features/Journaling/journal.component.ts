@@ -14,7 +14,7 @@ import { JournalService } from '../../Services/journal.service';
 export class JournalComponent implements OnInit {
   journalForm: any;
   userId: any;
-  methodOptions: string[] = ['Focus', 'Ground', 'Relax', 'Breathe', 'Encourage', 'Check In', 'Reflect'];
+  methodOptions: string[] = ['Focus', 'Ground', 'Relax', 'Breathe', 'Encourage', 'Check In', 'Reflect', 'None'];
   attack: boolean[] = [true, false];
   effective: boolean[] = [true, false];
 
