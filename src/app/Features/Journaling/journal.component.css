@@ -4,21 +4,26 @@
   background-color: #E3E7F1;
 
 }
-
 .mat-card {
-  width: 65%;
+  width: 100%;
+  height: auto;
   display: flex;
   text-align: center;
   justify-content: center;
 }
-.mat-toolbar{
+mat-toolbar.header {
+  z-index: 8888;
   position: fixed;
-  bottom: 0;
+  height: 5%;
+  top: 0;
   left: 0%;
   color: white;
-  background-color: #E3E7F1;
-
+  background-color: #52688F;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
+
 .add {
   background-color: #52688F;
   color: white;
