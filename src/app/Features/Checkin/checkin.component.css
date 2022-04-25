@@ -17,11 +17,13 @@ h1 {
 
 h2 {
   font-family: "Roboto";
-
 }
+
 .mood{
+margin-top: 25px;
 margin-bottom: 15px;
 }
+
 .checkin{
 margin-top: 30px;
 margin-bottom: 15px;
@@ -47,7 +49,7 @@ background-color: #E3E7F1;
 color: #52688F;
 border: none;
 background-color: #E3E7F1;
-
+top: 25px;
 }
 
 .example-spacer {
@@ -61,4 +63,27 @@ background-color: #E3E7F1;
 float: right;  
 }
 
-#section2 {padding-top:50px;height:500px;color: #fff; background-color: #E3E7F1;}
+.list-section {
+  margin: 12px 0;
+  text-align:left;
+}
+
+.list-complete-section{
+  align-self: center;
+}
+
+.margin {
+  margin: 0 12px;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}
+
+.btn {
+color: #52688F;
+border: none;
+background-color: #E3E7F1;
+top: 10px;
+}
