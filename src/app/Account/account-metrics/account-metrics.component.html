@@ -8,3 +8,14 @@
     <p class="value">{{accountInfo.email}}</p>
   </div>
 </div>
+<div style="display: block">
+  <canvas baseChart
+    [type]="chartType"
+    [datasets]="chartDatasets"
+    [labels]="chartLabels"
+    [options]="chartOptions"
+    [legend]="true"
+    (chartHover)="chartHovered($event)"
+    (chartClick)="chartClicked($event)">
+  </canvas>
+</div>

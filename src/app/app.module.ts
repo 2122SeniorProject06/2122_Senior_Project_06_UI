@@ -28,6 +28,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { NgChartsModule } from 'ng2-charts';
+//import { ChartsModule } from 'ng2-charts/ng2-charts';
+
 
 //Components
 import { StepperComponent } from './Features/Stepper/stepper.component';
@@ -105,6 +108,7 @@ import { AccountMetricsComponent } from './Account/account-metrics/account-metri
     MatTabsModule,
     MatDividerModule,
     MatListModule,
+    NgChartsModule
   ],
   exports: [
     AppRoutingModule,

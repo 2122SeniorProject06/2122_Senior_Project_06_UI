@@ -9,7 +9,8 @@ import { TestBed } from '@angular/core/testing';
 })
 export class AppComponent {
   title = 'SHARD: Here To Pick Up The Pieces';
-
+  imageUrl: any;
+  darkmode: any;
   constructor()
   {
     this.changeBackground();
@@ -21,13 +22,21 @@ export class AppComponent {
   }
 
   changeBackground() {
-    let imageUrl = "mountain.jpg"
+    this.imageUrl = "mountain.jpg"
     if(localStorage.getItem('userId') != null)
     {
-      imageUrl = "beach.jpg";
+      this.imageUrl = localStorage.getItem('Background');
       //Save background and darkmode on local storage.
     }
 
-    document.getElementById("bg-image")!.style.backgroundImage = "url(\"./assets/" + imageUrl + "\")";
+    document.getElementById("bg-image")!.style.backgroundImage = "url(\"./assets/" + this.imageUrl + "\")";
+  }
+  setColorPallet() {
+    this.darkmode = 0;
+    if(localStorage.getItem('userId') != null)
+    {
+      this.darkmode = localStorage.getItem('DarkMode');
+    }
+  //somehow change color pallet
   }
 }

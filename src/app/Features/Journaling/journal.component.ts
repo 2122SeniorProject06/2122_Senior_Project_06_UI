@@ -15,7 +15,7 @@ import { ActivityMetric } from 'Models/MetricsModel';
 export class JournalComponent implements OnInit {
   journalForm: any;
   userId: any;
-  methodOptions: string[] = ['Focus', 'Ground', 'Relax', 'Breathe', 'Encourage', 'Check In', 'Reflect', 'None'];
+  methodOptions: string[] = ['Focus', 'Ground', 'Relax', 'Breathe', 'Encourage', 'Check In', 'None'];
   attack: boolean[] = [true, false];
   effective: boolean[] = [true, false];
 

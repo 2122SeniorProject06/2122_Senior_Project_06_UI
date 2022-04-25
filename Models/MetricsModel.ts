@@ -5,3 +5,8 @@ export class ActivityMetric {
 
   public ActivityMetric(){}
 }
+export class MerticsModel
+ {
+   public ActivitiyOccurances?: number[];
+   public MostEffective?: string[];
+ }

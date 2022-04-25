@@ -1,6 +1,6 @@
 import { environment } from './../../environments/environment';
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { UserAccount, UserLogin, UserRegistration } from '../../../Models/UserModels';
+import { UserAccount, UserLogin, UserRegistration, AccountEdit } from '../../../Models/UserModels';
 import { Injectable } from "@angular/core";
 
 const url = environment.api;
@@ -18,6 +18,7 @@ constructor(private http: HttpClient){}
 
  registerUser!: UserRegistration;
  loginUser!: UserLogin;
+ updatedAcc!: AccountEdit;
 
 login(loginModel: UserLogin){
   //once api is set up in backend, this function will make an http POST call
@@ -34,6 +35,8 @@ return this.http.post(url + '/Login/Authenticate', loginModel, { responseType: '
    return this.http.get<UserAccount>(url + '/Account/GetAllInfo?userID=' + id, { responseType: 'json'})
  }
 
-
+updateAccount(updatedAcc: AccountEdit){
+  return this.http.get<UserAccount>(url + '/Account/UpdateUser' + updatedAcc, { responseType: 'json'})
+}
 
 }

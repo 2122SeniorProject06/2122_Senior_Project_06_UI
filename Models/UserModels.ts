@@ -27,7 +27,7 @@ export class UserLogin {
 }
 
 export class AccountEdit {
-  public userID!: string;
+  public userID!: string | null | undefined;
   public new_Username!: string;
   public new_Password!: string;
   public old_Password!: string;
@@ -39,7 +39,7 @@ export class AccountEdit {
   AccountEdit() {
 
   }
-} 
+}
 
 export class UserAccount{
   public userID!: string;
@@ -47,6 +47,6 @@ export class UserAccount{
   public email!: string;
   public darkMode!: boolean;
   public background!: string;
-  
+
   UserAccount() {}
 }
