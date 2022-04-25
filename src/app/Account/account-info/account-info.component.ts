@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AccountModel, UserAccount } from '../../../../Models/UserModels';
+import { AccountEdit, UserAccount } from '../../../../Models/UserModels';
 @Component({
     selector: 'app-account-info',
     templateUrl: './account-info.component.html',
@@ -9,11 +10,19 @@ import { AccountModel, UserAccount } from '../../../../Models/UserModels';
 export class AccountInfoComponent{
     @Input() accountInfo: UserAccount;
     isEdit: boolean = false;
+    accountEdits: FormGroup;
   
     constructor(
       private router: Router,
-      private route: ActivatedRoute) {
-       this.accountInfo = new UserAccount();
+      private route: ActivatedRoute,
+      private formBuilder: FormBuilder) {
+        this.accountInfo = new UserAccount();
+        this.accountEdits = formBuilder.group({
+          usernameCtrl: [''],
+          emailCtrl: [''],
+          newPassCtrl: [''],
+          confirmCtrl: ['']
+        });
      }
 
      switchToEdit(){
@@ -25,6 +34,7 @@ export class AccountInfoComponent{
      }
 
      cancelEdit(){
+      this.accountEdits.reset();
       this.isEdit = false;
      }
 }
