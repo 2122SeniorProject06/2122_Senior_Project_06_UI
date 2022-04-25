@@ -28,30 +28,32 @@ button{
    float: right;
    border: none;
    background-color: white;
-
  }
- .mat-toolbar{
-   position: fixed;
-   bottom: 0;
-   left: 0%;
-   background-color: #52688F;
-   color: #E3E7F1;
-
- }
+ /* Header Styling */
+mat-toolbar.header{
+  z-index: 8888;
+  position: fixed;
+  height: 5%;
+  top: 0;
+  left: 0%;
+  color: white;
+  background-color: #52688F;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
 
  .create {
-   color: #52688F;
+   background-color: #52688F;
    border: none;
    background-color: #E3E7F1;
    float: right;
-
-
  }
 
  .delete{
-   background-color: #52688F;
+   color: #52688F;
    border: none;
-   color: white;
+   background-color: white;
    float: right;
  }
 
@@ -59,10 +61,8 @@ button{
    background-color: #52688F;
    border: none;
    color: #E3E7F1;
-
  }
 
  .example-spacer {
-
    flex: 1 1 auto;
  }

@@ -1,4 +1,4 @@
-<mat-toolbar>
+<mat-toolbar class="header">
   <button class="home" (click)="goToMain()">
   <mat-icon>home</mat-icon>
   </button>
@@ -6,7 +6,7 @@
   <button class="journals">
     <mat-icon (click)="goToJournals()">thumbs_up_alt</mat-icon>
     </button>
-  </mat-toolbar>
+</mat-toolbar>
 
 
 
@@ -17,23 +17,20 @@
   <form [formGroup]="journalForm" (ngSubmit)="onSubmit()">
       <mat-form-field>
         <mat-label>Did you have an attack?</mat-label>
-      <mat-select formControlName="HadAttack">
-        <mat-option value="Did you have an attack?"></mat-option>
-        <mat-option *ngFor="let attack of attack">{{attack}}</mat-option>
+      <mat-select required formControlName="HadAttack">
+        <mat-option  *ngFor="let attack of attack" [value]="attack">{{attack}}</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
       <mat-label>What method did you use during the attack?</mat-label>
-      <mat-select formControlName="Method">
-        <mat-option value="What method was used during the attack?"></mat-option>
-        <mat-option *ngFor="let method of methodOptions">{{method}}</mat-option>
+      <mat-select required formControlName="Method">
+        <mat-option *ngFor="let method of methodOptions" [value]="method">{{method}}</mat-option>
       </mat-select>
     </mat-form-field>
     <mat-form-field>
-      <mat-select formControlName="WasEffective">
-        <mat-label>Was this method effective?</mat-label>
-        <mat-option value="Was this method effective?"></mat-option>
-        <mat-option *ngFor="let effective of effective">{{effective}}</mat-option>
+      <mat-label>Was this method effective?</mat-label>
+      <mat-select required formControlName="WasEffective">
+        <mat-option *ngFor="let effective of effective" [value]="effective">{{effective}}</mat-option>
       </mat-select>
     </mat-form-field>
 

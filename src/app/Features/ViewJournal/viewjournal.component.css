@@ -1,8 +1,8 @@
 p {
   font-family: Lato;
 }
-.card {
-  width: 65%;
+.mat-card {
+  width: 100%;
   display: flex;
   text-align: center;
   justify-content: center;
@@ -27,13 +27,18 @@ p {
   background-color: white;
 
 }
-.mat-toolbar{
+/* Header Styling */
+mat-toolbar.header{
+  z-index: 8888;
   position: fixed;
-  bottom: 0;
+  height: 5%;
+  top: 0;
   left: 0%;
   color: white;
-  background-color: #E3E7F1;
-
+  background-color: #52688F;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .create {
@@ -46,9 +51,9 @@ p {
 }
 
 .home {
-  color: #52688F;
+  background-color: #52688F;
   border: none;
-  background-color: #E3E7F1;
+  color: #E3E7F1;
 
 }
 

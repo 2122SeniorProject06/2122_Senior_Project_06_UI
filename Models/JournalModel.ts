@@ -1,3 +1,5 @@
+import { ActivityMetric } from "./MetricsModel";
+
 //model for Journal feature
 export class JournalModel {
   public journalID?: string;
@@ -5,7 +7,5 @@ export class JournalModel {
   public body?: string;
   public userID?: string;
   public lastUpdated?: Date;
-  public hadAttack?: boolean;
-  public activity?: string;
-  public wasEffective?: boolean;
+  public ActivityMetric?: ActivityMetric;
   }

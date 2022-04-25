@@ -5,7 +5,7 @@
 
 }
 .mat-card {
-  width: 100%;
+  width: 65%;
   height: auto;
   display: flex;
   text-align: center;
@@ -32,7 +32,6 @@ mat-toolbar.header {
 .mat-form-field, .form, .body, .title {
   width: 100%;
   min-width: auto;
-
   justify-content: center;
   display: center;
 }

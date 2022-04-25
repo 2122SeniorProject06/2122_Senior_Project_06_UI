@@ -4,6 +4,7 @@ import { FormsModule, FormGroup, FormControl, FormBuilder } from '@angular/forms
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JournalService } from '../../Services/journal.service';
+import { ActivityMetric } from 'Models/MetricsModel';
 
 @Component({
   selector: 'journal-feature',
@@ -49,9 +50,10 @@ export class JournalComponent implements OnInit {
       journalModel.append('Body', this.journalForm.get('Body').value);
 
       const journal = new JournalModel();
-      journal.hadAttack = this.journalForm.get('HadAttack').value;
-      journal.activity = this.journalForm.get('Method').value;
-      journal.wasEffective = this.journalForm.get('WasEffective').value;
+      journal.ActivityMetric = new ActivityMetric();
+      journal.ActivityMetric.hadAttack = this.journalForm.get('HadAttack').value;
+      journal.ActivityMetric.activity = this.journalForm.get('Method').value;
+      journal.ActivityMetric.wasEffective = this.journalForm.get('WasEffective').value;
       journal.title = this.journalForm.get('Title').value;
       journal.body = this.journalForm.get('Body').value;
       this.userId = localStorage.getItem('userId');

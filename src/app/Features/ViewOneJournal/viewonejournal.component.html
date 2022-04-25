@@ -1,5 +1,4 @@
-<mat-toolbar>
-
+<mat-toolbar class="header">
   <button class="home" (click)="goToMain()">
     <mat-icon>home</mat-icon>
   </button>
@@ -7,12 +6,9 @@
   <button class="edit" (click)="goToEdit(journal.journalID)">
   <mat-icon>edit</mat-icon>
   </button>
-  </mat-toolbar>
+</mat-toolbar>
 
 <mat-card>
-<button (click)="delete(journal.journalID)"  class="delete">
-  <mat-icon>delete</mat-icon>
-</button>
 <div class="one-journal" *ngIf="isLoaded">
 <mat-card-title>Title</mat-card-title>
 <br>
@@ -24,6 +20,9 @@
 <h2>Entry</h2>
 {{journal.body}}
 <br>
+<button (click)="delete(journal.journalID)"  class="delete">
+  <mat-icon>delete</mat-icon>
+</button>
 </mat-card-content>
 </div>
 </mat-card>
