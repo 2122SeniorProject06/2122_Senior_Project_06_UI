@@ -41,7 +41,6 @@ bottom: 0;
 left: 0%;
 color: white;
 background-color: #E3E7F1;
-
 }
 
 .home {
@@ -60,10 +59,6 @@ color: #52688F;
 border: none;
 background-color: #E3E7F1;
 float: right;  
-}
-
-footer{
-margin-left: 25px;
 }
 
 #section2 {padding-top:50px;height:500px;color: #fff; background-color: #E3E7F1;}
