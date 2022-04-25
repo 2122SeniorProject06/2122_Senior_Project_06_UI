@@ -1,0 +1,21 @@
+<div class="flex-container">
+  <h3>Account Info</h3>
+  <hr class="splitter">
+  <div id="display-values" class="flex-container" *ngIf="!isEdit">
+    <div class="value-holder">
+      <p class="label">Username:</p>
+      <p class="value">{{accountInfo.username}}</p>
+    </div>
+    <div class="value-holder">
+      <p class="label">Email:</p>
+      <p class="value">{{accountInfo.email}}</p>
+    </div>
+    <button mat-raised-button (click)="switchToEdit()">Edit</button>
+  </div>
+  <div id="edit-values" class="flex-container" *ngIf="isEdit">
+    <div class="button-format">
+      <button mat-raised-button (click)="cancelEdit()">Cancel</button>
+      <button mat-raised-button (click)="saveEdits()">Save</button>
+    </div>
+  </div>
+</div>
