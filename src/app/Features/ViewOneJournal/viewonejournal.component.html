@@ -14,8 +14,9 @@
   <mat-icon>delete</mat-icon>
 </button>
 <div class="one-journal" *ngIf="isLoaded">
-<h1>Title</h1>
+<mat-card-title>Title</mat-card-title>
 <br>
+<mat-card-content>
 {{journal.title}}
 <br>
 <h2>Last Updated</h2>
@@ -23,6 +24,7 @@
 <h2>Entry</h2>
 {{journal.body}}
 <br>
+</mat-card-content>
 </div>
 </mat-card>
 
