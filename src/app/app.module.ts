@@ -44,6 +44,7 @@ import { BreathingMeditationComponent } from './Features/breathing-meditation/br
 import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.component';
 import { AboutComponent } from './About/about.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

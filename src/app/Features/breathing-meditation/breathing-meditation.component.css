@@ -57,7 +57,9 @@
     text-align:center;
     justify-content: center;
     align-items: center;
-    width:500px;
+    width:250px;
+    right:0px;
+    bottom:100px;
   }
   .instructions
   {
@@ -67,14 +69,15 @@
   }
   .Breathing {
     position: absolute;
-    top: 80px;
-    left:700px;
-    
+    bottom: 300px;
+    left:75px;
+    -webkit-text-stroke: 2.5px black; /* width and color */
+    font-weight:900;
     text-align: center;
     color:white;
     opacity: 0;
-    font-size: 30px;
-    font-family: "Times New Roman", Times, serif;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
     animation-name: fade-inh1;
     animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */
     animation-timing-function: ease-in-out;
@@ -102,12 +105,15 @@
     .Hold
     {
       position: absolute;
-    top: 120px;
-    left:742px;
+  
+    left:165px;
+    bottom:250px;
       opacity: 0;
+      -webkit-text-stroke: 2.5px black; /* width and color */
+      font-weight:900;
       color:white;
-      font-size: 30px;
-      font-family: "Times New Roman", Times, serif;
+      font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
       animation-delay:4s;
       animation-name: hold-in;
       animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */
@@ -136,12 +142,14 @@
     .Breathe-Out
     {
       position: absolute;
-    top: 160px;
-    left:700px;
+      bottom:200px;
+    left:50px;
       opacity: 0;
+      -webkit-text-stroke: 2.5px black; /* width and color */
+      font-weight:900;
       color:white;
-      font-size: 30px;
-      font-family: "Times New Roman", Times, serif;
+      font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
       animation-delay:8s;
       animation-name: hold-in;
       animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */
@@ -173,12 +181,15 @@
     .Hold2
     {
       position: absolute;
-    top: 200px;
-    left:742px;
+    bottom:150px;
+    left:165px;
       opacity: 0;
+      
+      -webkit-text-stroke: 2.5px black; /* width and color */
+      font-weight:900;
       color:white;
-      font-size: 30px;
-      font-family: "Times New Roman", Times, serif;
+      font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
       animation-delay:12s;
       animation-name: hold-in;
       animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */

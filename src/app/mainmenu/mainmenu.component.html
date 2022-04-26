@@ -23,9 +23,9 @@
 
           <!--Navigates to the Audio Mediation Feature "Relax"-->
           <mat-grid-tile id="/audio-meditation" (click)="routeToChoice($event)">RELAX</mat-grid-tile>
-
+          
           <!--Navigates to the Deep Breathing Feature "Breathe"-->
-          <mat-grid-tile id="/breathing-component" (click)="routeToChoice($event)">BREATHE</mat-grid-tile>
+          <mat-grid-tile  id="/breathing-component" (click)="routeToChoice($event)">BREATHE</mat-grid-tile>
           
           <!--Navigate to the Mantra Feature "Encourage"-->
           <mat-grid-tile id="/mantra" (click)="routeToChoice($event)">ENCOURAGE</mat-grid-tile>
@@ -39,7 +39,7 @@
           <!--Navigates to the About Page-->
           <mat-grid-tile id="/about" (click)="routeToChoice($event)">ABOUT SHARD</mat-grid-tile>
         </mat-grid-list>
-      </mat-card-content>
+      </mat-card-content>\
       <mat-card-content>
         <app-loading-animation *ngIf="showLoading" [targetRoute]=targetEvent></app-loading-animation>
       </mat-card-content>
@@ -49,4 +49,9 @@
   <!-- <mat-toolbar *ngIf="!showLoading" class="footer">
     <i class="footer-text">{{inspireQuote}}</i>
   </mat-toolbar> -->
+  <div class="tooltip">Hover over me
+    <span class="tooltiptext">Tooltip text</span>
+  </div>
+  <div class = "breathingexample">checking </div>
+  
 </div>

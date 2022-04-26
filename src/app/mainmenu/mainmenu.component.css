@@ -20,7 +20,10 @@
   text-align: center;
   justify-content: center;
 }
+.card:hover{
 
+  content:"checking";
+}
 .activity-buttons {
   height: 95%;
 }
@@ -119,5 +122,18 @@ bottom: -150px;
 width: 500px;
 color: #52688F;
 left:600px;
+
+}
+.breathing-component{
+
+background-color: black;
+
+}
+.breathing-component
+{
+visibility: visible;
+background-color:black;
+content:"checking";
+color:black;
 
 }
