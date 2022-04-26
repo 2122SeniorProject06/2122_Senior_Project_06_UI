@@ -66,7 +66,7 @@ export class UserLoginComponent implements OnInit {
     const login = new UserLogin();
     login.Email = this.form.get('Email').value;
     login.Password = this.form.get('Password').value;
-localStorage.clear();
+    localStorage.clear();
     this.UserService.login(login).subscribe((result) => {
       this.data = result;
       let parsed = JSON.parse(this.data);

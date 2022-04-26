@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostListener, OnInit,} from '@angular/core';
 import { Router } from '@angular/router';
 import { JournalModel } from '../../../../Models/JournalModel';
 import { JournalService } from '../../Services/journal.service';
@@ -15,6 +15,7 @@ export class ViewOneJournalComponent {
   journal: JournalModel = new JournalModel();
   isLoaded: boolean = false;
   constructor(private JournalService: JournalService, private router: Router) {}
+
   ngOnInit(){
     console.log(this.data);
     console.log(this.JournalService.viewOneJournalId);
@@ -44,6 +45,15 @@ export class ViewOneJournalComponent {
 
 
   }
+
+      /**
+     * Unblurs the background image on leaving the page.
+     * @param event Event that triggers the unblurring.
+     */
+       @HostListener('window:popstate', ['$event'])
+       onPopState(event : Event) {
+        this.viewJournal(this.data)
+       }
 
   delete(id: any){
     this.JournalService.deleteJournalById(id).subscribe(res => {

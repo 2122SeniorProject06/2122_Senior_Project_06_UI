@@ -36,7 +36,7 @@ return this.http.post(url + '/Login/Authenticate', loginModel, { responseType: '
  }
 
 updateAccount(updatedAcc: AccountEdit){
-  return this.http.get<UserAccount>(url + '/Account/UpdateUser' + updatedAcc, { responseType: 'json'})
+  return this.http.put<UserAccount>(url + '/Account/UpdateUser', updatedAcc, this.httpOptions)
 }
 
 }

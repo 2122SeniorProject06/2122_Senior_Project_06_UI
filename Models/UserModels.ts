@@ -35,6 +35,8 @@ export class AccountEdit {
   public confirmedPassword!: string;
   public verificationResults!: boolean[];
   public verificationErrors!: string[];
+  public darkMode!: boolean;
+  public background!: string;
 
   AccountEdit() {
 
@@ -42,9 +44,10 @@ export class AccountEdit {
 }
 
 export class UserAccount{
-  public userID!: string;
+  public userID!: string | null | undefined;;
   public username!: string;
   public email!: string;
+  public isSetting!: boolean;
   public darkMode!: boolean;
   public background!: string;
 

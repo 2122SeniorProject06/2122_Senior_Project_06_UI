@@ -84,4 +84,8 @@ export class MainMenuComponent implements OnInit {
     localStorage.clear();
     location.reload();
   }
+
+  goToSettings(){
+    this.router.navigateByUrl('/settings');
+  }
 }

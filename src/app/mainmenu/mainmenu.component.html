@@ -11,7 +11,7 @@
         <mat-icon>person</mat-icon>
         <span>ACCOUNT</span>
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="goToSettings()">
         <mat-icon>settings</mat-icon>
         <span>SETTINGS</span>
       </button>
@@ -38,15 +38,15 @@
 
           <!--Navigates to the Deep Breathing Feature "Breathe"-->
           <mat-grid-tile id="/breathing-component" (click)="goToActivity($event)">BREATHE</mat-grid-tile>
-          
+
           <!--Navigate to the Mantra Feature "Encourage"-->
           <mat-grid-tile id="/mantra" (click)="goToActivity($event)">ENCOURAGE</mat-grid-tile>
-          
+
           <!--Navigates to the Checkin Feature "Check In" -->
           <mat-grid-tile id="/check-in" (click)="goToActivity($event)">CHECK IN</mat-grid-tile>
 
           <!--Navigates to the Journaling Feature "Reflect"-->
-          <mat-grid-tile id="/view-journal" (click)="goToActivity($event)">REFLECT</mat-grid-tile>
+          <mat-grid-tile id="/journal" (click)="goToActivity($event)">REFLECT</mat-grid-tile>
 
           <!--Navigates to the About Page-->
           <mat-grid-tile id="/about" (click)="goToActivity($event)">ABOUT SHARD</mat-grid-tile>

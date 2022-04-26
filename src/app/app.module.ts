@@ -1,3 +1,4 @@
+import { SettingComponent } from './settings/setting.component';
 //Modules
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,7 +30,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { NgChartsModule } from 'ng2-charts';
-//import { ChartsModule } from 'ng2-charts/ng2-charts';
+// import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 
 //Components
@@ -75,6 +76,7 @@ import { AccountMetricsComponent } from './Account/account-metrics/account-metri
     AccountComponent,
     AccountInfoComponent,
     AccountMetricsComponent,
+    SettingComponent
   ],
   imports: [
     AppRoutingModule,

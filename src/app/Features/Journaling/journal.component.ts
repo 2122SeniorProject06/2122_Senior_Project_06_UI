@@ -73,7 +73,7 @@ goToMain() {
 }
 
 goToJournals(){
-  this.router.navigateByUrl('/view-journal');
+  this.router.navigate(['..'], {relativeTo: this.route});
 }
 
 }

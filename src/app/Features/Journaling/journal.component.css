@@ -1,28 +1,18 @@
-.home {
-  background-color: #52688F;
-  border: none;
-  color: #E3E7F1;
+.container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 .card {
   width: 65%;
-  height: auto;
+  width: auto;
   display: flex;
   text-align: center;
   justify-content: center;
-  
-}
 
-mat-toolbar.header {
-  z-index: 8888;
-  position: fixed;
-  height: 5%;
-  top: 0;
-  left: 0%;
-  color: white;
-  background-color: #52688F;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
 }
 
 .add {
@@ -41,12 +31,26 @@ mat-toolbar.header {
   height: 100%;
   display: flex;
 }
-.example-spacer {
-  flex: 1 1 auto;
-}
-.journals {
+
+/* Header Styling */
+mat-toolbar.header {
+  z-index: 8888;
+  position: fixed;
+  height: 5%;
+  top: 0;
+  left: 0%;
+  color: white;
   background-color: #52688F;
-  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.home {
   color: #E3E7F1;
-  float: right;
+  border: none;
+  background-color: #52688F;
+  display: flex;
+  align-items: center;
+  height: 100%
 }

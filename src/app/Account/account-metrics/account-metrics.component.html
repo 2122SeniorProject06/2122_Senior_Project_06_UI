@@ -1,3 +1,4 @@
+<!--
 <div class="flex-container">
   <div class="container">
     <p class="label">Username:</p>
@@ -8,8 +9,17 @@
     <p class="value">{{accountInfo.email}}</p>
   </div>
 </div>
-<div style="display: block">
+<div class="most-helpful">
+</div>
+-->
+
   <canvas baseChart
+          [data]="salesData"
+          [type]="'radar'"
+          [options]="chartOptions"
+          width="400"
+          height="400"></canvas>
+  <!-- <canvas baseChart
     [type]="chartType"
     [datasets]="chartDatasets"
     [labels]="chartLabels"
@@ -17,5 +27,4 @@
     [legend]="true"
     (chartHover)="chartHovered($event)"
     (chartClick)="chartClicked($event)">
-  </canvas>
-</div>
+  </canvas> -->

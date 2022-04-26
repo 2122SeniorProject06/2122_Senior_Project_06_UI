@@ -12,6 +12,7 @@
             <mat-card-title *ngIf="!showLoading">Hello {{userAccount.username}}</mat-card-title>
             <mat-card-content *ngIf="!showLoading">
               <app-account-info [accountInfo]="userAccount"></app-account-info>
+              <app-account-metrics></app-account-metrics>
             </mat-card-content>
             <mat-card-content>
               <app-loading-animation *ngIf="showLoading" [targetRoute]=targetEvent></app-loading-animation>

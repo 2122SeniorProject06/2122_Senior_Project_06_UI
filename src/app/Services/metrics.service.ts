@@ -27,12 +27,17 @@ viewOneJournalId?: string;
     ) { console.log("metrics service"); }
 
 getOccurances(userId?: string){
-//get occurances based on the user id
-  return this.http.get(url + '/Metrics/GetOccurances?userID=' + userId,  { responseType: 'json' })
+//get most effective occurances based on the user id
+  return this.http.get(url + '/Metric/GetOccurances?userID=' + userId,  { responseType: 'json' })
 }
 
-getMostHelpful(userId?: string, metrics?: any){
+getTotalOccurances(userId?: string){
+  //get total occurances based on the user id
+  return this.http.get(url + '/Metric/GetTotalOccurances?userID=' + userId, {responseType: 'json'});
+}
+
+getMostHelpful(userId?: string){
   //get an array of top three most effective methods
-  return this.http.get(url + '/Metrics/GetMostHelpful?userID=' + userId, {responseType: 'json'});
+  return this.http.get(url + '/Metric/GetMostHelpful?userID=' + userId, {responseType: 'json'});
 }
 }

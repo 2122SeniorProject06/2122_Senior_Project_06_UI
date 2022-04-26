@@ -1,3 +1,4 @@
+import { SettingComponent } from './settings/setting.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -24,9 +25,14 @@ const routes: Routes = [
   { path: 'main-menu', component: MainMenuComponent },
   { path: 'register', component: UserRegistrationComponent },
   { path: 'login', component: UserLoginComponent },
-  { path: 'view-journal', component: ViewJournalsComponent },
-  { path: 'view-one-journal', component: ViewOneJournalComponent },
-  { path: 'journal', component: JournalComponent },
+  {
+    path:'journal', children:[
+      {path: '', pathMatch: 'full', redirectTo: 'ViewAll'},
+      { path: 'ViewAll', component: ViewJournalsComponent },
+      { path: 'View/:id', component: ViewOneJournalComponent },
+      { path: 'CreateNew', component: JournalComponent },
+    ]
+  },
   { path: 'stepper', component: StepperComponent },
   { path: 'breathing-component', component: BreathingMeditationComponent },
   { path: 'check-in', component: CheckInComponent },
@@ -36,6 +42,7 @@ const routes: Routes = [
   { path: 'loading-animation', component: LoadingAnimationComponent },
   { path: 'about', component: AboutComponent},
   { path: 'account', component: AccountComponent },
+  { path: 'settings', component: SettingComponent}
 ];
 
 @NgModule({

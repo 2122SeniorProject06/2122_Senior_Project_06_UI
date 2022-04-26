@@ -29,8 +29,24 @@ button{
    border: none;
    color: white;
  }
+
+.container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 65%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
  /* Header Styling */
-mat-toolbar.header{
+mat-toolbar.header {
   z-index: 8888;
   position: fixed;
   height: 5%;
@@ -40,29 +56,14 @@ mat-toolbar.header{
   background-color: #52688F;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
- .create {
-   background-color: #52688F;
-   border: none;
-   background-color: #E3E7F1;
-   float: right;
- }
-
- .delete{
-   color: #52688F;
-   border: none;
-   background-color: white;
-   float: right;
- }
-
- .home {
-   background-color: #52688F;
-   border: none;
-   color: #E3E7F1;
- }
-
- .example-spacer {
-   flex: 1 1 auto;
- }
+.home {
+  color: #E3E7F1;
+  border: none;
+  background-color: #52688F;
+  display: flex;
+  align-items: center;
+  height: 100%
+}
