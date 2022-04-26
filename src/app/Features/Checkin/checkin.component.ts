@@ -1,9 +1,11 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import {ThemePalette} from '@angular/material/core';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { Badge } from './Badge/badge.component';
 
 export interface Task {
-  name: string;
+  taskname: string;
   completed: boolean;
   color: ThemePalette;
   subtasks?: Task[];
@@ -19,13 +21,25 @@ export interface Task {
 export class CheckInComponent {
 
   constructor(
+    public dialog: MatDialog,
     private router: Router,
     private route: ActivatedRoute){}
 
+  //Badge
+  openDialog(): void {
+    const dialogRef = this.dialog.open(Badge, {
+      width: '250px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("Test");
+    })
+  }
+
+  //Main Menu
   goToMain() {
     this.router.navigateByUrl('/main-menu');
   }
-
+  //Display Date
   currentDate = new Date();
 
   ngAfterViewInit(): void {
@@ -33,18 +47,20 @@ export class CheckInComponent {
     document.getElementsByClassName('mat-tab-header-pagination-after')[0].remove();
   }
 
+  //Refresh Page
   restartCheckIn() {
     window.location.reload();
   }
 
+  //Task Items Check List
   task: Task = {
-    name: 'Day Completed',
+    taskname: 'Day Completed',
     completed: false,
     color: 'accent',
     subtasks: [
-      {name: 'Make the Bed', completed: false, color: 'primary'},
-      {name: 'Take a walk', completed: false, color: 'primary'},
-      {name: 'Read 10 pages of a book', completed: false, color: 'primary'},
+      {taskname: 'Make the Bed', completed: false, color: 'primary'},
+      {taskname: 'Take a walk', completed: false, color: 'primary'},
+      {taskname: 'Read 10 pages of a book', completed: false, color: 'primary'},
     ],
   };
 

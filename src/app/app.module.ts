@@ -25,6 +25,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 //Components
 import { StepperComponent } from './Features/Stepper/stepper.component';
@@ -44,6 +45,8 @@ import { UserLoginComponent } from './UserLogin/userlogin.component';
 import { BreathingMeditationComponent } from './Features/breathing-meditation/breathing-meditation.component';
 import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.component';
 import { AboutComponent } from './About/about.component';
+import { Badge } from './Features/Checkin/Badge/badge.component';
+import { MantraBadge } from './Features/Mantra/MantraBadge/mantrabadge.componet';
 
 @NgModule({
   declarations: [
@@ -63,6 +66,8 @@ import { AboutComponent } from './About/about.component';
     BreathingMeditationComponent,
     LoadingAnimationComponent,
     AboutComponent,
+    Badge,
+    MantraBadge,
   ],
   imports: [
     AppRoutingModule,
@@ -93,6 +98,7 @@ import { AboutComponent } from './About/about.component';
     MatTabsModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatDialogModule,
   ],
   exports: [
     AppRoutingModule,
@@ -122,6 +128,8 @@ import { AboutComponent } from './About/about.component';
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatIconModule,
+    MatDialogModule,
   ],
   providers: [UserService, JournalService],
   bootstrap: [AppComponent]

@@ -41,9 +41,9 @@ h2 {
 }
 
 .home {
-  color: #52688F;
+  color: #E3E7F1;
   border: none;
-  background-color: #E3E7F1;
+  background-color: #52688F;
 }
 
 .mat-toolbar{
@@ -51,7 +51,7 @@ h2 {
   top: 0;
   left: 0%;
   color: white;
-  background-color: #E3E7F1;
+  background-color: #52688F;
 }
 
 .example-spacer {
@@ -59,8 +59,8 @@ h2 {
 }
 
 .refresh {
-  color: #52688F;
+  color: #E3E7F1;
   border: none;
-  background-color: #E3E7F1;
+  background-color: #52688F;
   float: right;  
 }

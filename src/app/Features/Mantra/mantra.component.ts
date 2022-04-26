@@ -1,6 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import {ThemePalette} from '@angular/material/core';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import { MantraBadge } from './MantraBadge/mantrabadge.componet';
 
 @Component({
   selector: 'Mantra',
@@ -9,10 +12,21 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class MantraComponent {
+
   constructor(
+    public dialog: MatDialog,
     private router: Router,
-    private route: ActivatedRoute,
-  ){}
+    private route: ActivatedRoute){}
+  
+  //Badge
+  openDialog(): void {
+    const dialogRef = this.dialog.open(MantraBadge, {
+      width: '250px',
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      console.log("Test");
+    })
+  }
   
   //Routes to Main Menu
   goToMain() {

@@ -45,13 +45,13 @@ position: fixed;
 top: 0;
 left: 0%;
 color: white;
-background-color: #E3E7F1;
+background-color: #52688F;
 }
 
 .home {
-color: #52688F;
+color: #E3E7F1;
 border: none;
-background-color: #E3E7F1;
+background-color: #52688F;
 top: 25px;
 }
 
@@ -60,9 +60,9 @@ flex: 1 1 auto;
 }
 
 .refresh {
-color: #52688F;
+color: #E3E7F1;
 border: none;
-background-color: #E3E7F1;
+background-color: #52688F;
 float: right;  
 }
 

@@ -24,7 +24,7 @@
               <mat-checkbox [(ngModel)]="subtask.completed"
                             [color]="subtask.color"
                             (ngModelChange)="updateAllComplete()">
-                {{subtask.name}}
+                {{subtask.taskname}}
               </mat-checkbox>
             </li>
           </ul>
@@ -36,7 +36,7 @@
                         [color]="task.color"
                         [indeterminate]="someComplete()"
                         (change)="setAll($event.checked)">
-            <i>{{task.name}}</i>
+            <i>{{task.taskname}}</i>
           </mat-checkbox>
         </span>
 
@@ -65,7 +65,7 @@
 
       </section>
 
-      <button mat-raised-button color="accent" class="btn" (click)="goToMain()">Good Job</button>
+         <button mat-raised-button color="accent" class="btn" mat-raised-button (click)="openDialog()">Pick one</button>
 
     </body>
 
