@@ -33,7 +33,7 @@ export class AccountMetricsComponent implements OnInit {
     plugins: {
       title: {
         display: true,
-        text: 'Monthly Sales Data',
+        text: 'Activity Metrics',
       },
     },
   };

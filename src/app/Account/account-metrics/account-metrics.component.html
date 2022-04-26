@@ -1,24 +1,14 @@
-<!--
-<div class="flex-container">
-  <div class="container">
-    <p class="label">Username:</p>
-    <p class="value">{{accountInfo.username}}</p>
-  </div>
-  <div class="container">
-    <p class="label">Email:</p>
-    <p class="value">{{accountInfo.email}}</p>
-  </div>
-</div>
-<div class="most-helpful">
-</div>
--->
 
+<div class="flex-container">
+  <h3 class="section-title">Activity Metrics</h3>
+  <hr class="splitter">
   <canvas baseChart
           [data]="salesData"
           [type]="'radar'"
           [options]="chartOptions"
-          width="400"
-          height="400"></canvas>
+          ></canvas>
+</div>
+
   <!-- <canvas baseChart
     [type]="chartType"
     [datasets]="chartDatasets"

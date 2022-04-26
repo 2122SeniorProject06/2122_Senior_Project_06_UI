@@ -19,6 +19,16 @@ p {
   justify-content: flex-start;
 }
 
+.card-content{
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card-content::-webkit-scrollbar{
+  display: none;
+}
+
 .mat-cell {
   overflow: hidden;
   white-space: nowrap;

@@ -1,4 +1,5 @@
 .flex-container{
+  margin-top: 2.5%;
   height: 100%;
   width: 100%;
   display: flex;
@@ -36,6 +37,14 @@
   margin-bottom: 2.5%;
 }
 
+.errors{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-size: small;
+}
+
 .new-input{
   width: 100%;
 }
@@ -47,6 +56,11 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.buttons {
+  background-color: #52688F;
+  color: white;
 }
 
 .label{
@@ -68,7 +82,7 @@ and (max-width: 1199px) {
   }
   .section-title{
     font-size: 2.75vw;
-  } 
+  }
 }
 
 @media screen
@@ -76,13 +90,13 @@ and (orientation: landscape)
 and (min-width: 1200px) {
   .value-holder {
     font-size: 2.5vh;
-  } 
+  }
   .value-editor {
     font-size: 2.5vh;
   }
   .section-title{
     font-size: 2.5vh;
-  } 
+  }
 }
 
 @media screen
@@ -96,7 +110,7 @@ and (max-width: 590px) {
   }
   .section-title{
     font-size: 3.5vw;
-  } 
+  }
 }
 
 @media screen
@@ -110,7 +124,7 @@ and (min-width: 591px) {
   }
   .section-title{
     font-size: 3vw;
-  } 
+  }
 }
 
 .button-format{

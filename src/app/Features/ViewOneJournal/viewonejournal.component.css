@@ -67,3 +67,9 @@ mat-toolbar.header {
   align-items: center;
   height: 100%
 }
+
+.delete {
+  color: #52688F;
+  background-color: white;
+  border: none;
+}

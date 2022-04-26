@@ -6,7 +6,17 @@
     align-items: center;
     flex-direction: column;
   }
-  
+
+  .content{
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.content::-webkit-scrollbar{
+    display: none;
+}
+
   .container{
     height: 100%;
     width: 100%;
@@ -14,7 +24,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .card {
     width: 80%;
     max-height: 80%;
@@ -22,11 +32,11 @@
     flex-direction: column;
     justify-content: flex-start;
   }
-  
+
   .activity-buttons {
     height: 95%;
   }
-  
+
   .title{
     text-align: left;
     letter-spacing: .43mm;
@@ -38,7 +48,7 @@ and (orientation: landscape)
 and (max-width: 1199px) {
     .about-us {
         font-size: 2.75vh;
-    }   
+    }
 }
 
 @media screen
@@ -46,7 +56,7 @@ and (orientation: landscape)
 and (min-width: 1200px) {
     .about-us {
         font-size: 3vh;
-    }   
+    }
 }
 
 @media screen
@@ -64,7 +74,7 @@ and (min-width: 591px) {
         font-size: 3vw;
     }
 }
-  
+
   /* Header Styling */
   mat-toolbar.header{
     z-index: 8888;
@@ -86,4 +96,4 @@ and (min-width: 591px) {
     display: flex;
     align-items: center;
     height: 100%
-} 
+}

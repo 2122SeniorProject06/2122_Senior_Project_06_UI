@@ -14,7 +14,7 @@ export class AccountComponent implements OnInit {
     targetEvent: HTMLElement;
     bgImage: HTMLElement | null = document.createElement('br');
     userAccount: UserAccount = new UserAccount();
-  
+
     constructor(
       private router: Router,
       private route: ActivatedRoute,
@@ -23,7 +23,7 @@ export class AccountComponent implements OnInit {
         this.showLoading = false;
         this.targetEvent = document.createElement('br');
      }
-  
+
     ngOnInit() {
         this.bgImage = document.getElementById("bg-image");
         this.bgImage!.style.filter = "blur(8px)";
@@ -33,6 +33,7 @@ export class AccountComponent implements OnInit {
     getAccount(){
         let userID = localStorage.getItem('userId') as string;
         this.accountService.getAccountInfo(userID).subscribe((accountInfo) => {
+            console.log(accountInfo);
             this.userAccount = accountInfo;
         })
     }
@@ -60,7 +61,7 @@ export class AccountComponent implements OnInit {
         this.targetEvent = mainMenuEvent;
         this.showLoading = true;
     }
-  
+
     restartStepper() {
       window.location.reload();
     }

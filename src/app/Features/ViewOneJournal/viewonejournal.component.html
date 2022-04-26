@@ -3,7 +3,7 @@
     <mat-icon>home</mat-icon>
   </button>
   <button class="home" (click)="goToEdit(journal.journalID)">
-    <mat-icon>edit</mat-icon>
+    <mat-icon>undo</mat-icon>
   </button>
 </mat-toolbar>
 
@@ -20,7 +20,7 @@
         <h2>Entry</h2>
         {{journal.body}}
         <br>
-        <button (click)="delete(journal.journalID)"  class="delete">
+        <button class="delete" (click)="delete(journal.journalID)">
           <mat-icon>delete</mat-icon>
         </button>
       </mat-card-content>
