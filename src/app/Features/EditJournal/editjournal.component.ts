@@ -30,7 +30,7 @@ export class EditJournalComponent implements OnInit {
 
     }
 
-    
+
     get f() {
       return this.editJournalForm.controls;
     }
@@ -41,16 +41,16 @@ export class EditJournalComponent implements OnInit {
       journalModel.append('Body', this.editJournalForm.get('Body').value);
 
       const editjournal = new JournalModel();
-      editjournal.Title = this.editJournalForm.get('Title').value;
-      editjournal.Body = this.editJournalForm.get('Body').value;
+      editjournal.title = this.editJournalForm.get('Title').value;
+      editjournal.body = this.editJournalForm.get('Body').value;
       this.userId = localStorage.getItem('userId');
-      editjournal.UserID = this.userId;
+      editjournal.userID = this.userId;
       console.log(editjournal);
       this.JournalService.updateJournal(editjournal).subscribe((res) => {
           console.log(res);
-          
+
           this.goToJournals();
-          
+
       })
 
     }

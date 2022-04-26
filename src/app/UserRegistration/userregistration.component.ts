@@ -74,9 +74,9 @@ export class UserRegistrationComponent implements OnInit {
     registerForm.append('confirmpassword', this.form.get('confirmpassword')?.value);
 
     const registerModel = new UserRegistration();
-    registerModel.Email = this.form.get('Email')?.value;
-    registerModel.Username = this.form.get('Username')?.value;
-    registerModel.Password = this.form.get('Password')?.value;
+    registerModel.email = this.form.get('Email')?.value;
+    registerModel.username = this.form.get('Username')?.value;
+    registerModel.password = this.form.get('Password')?.value;
     registerModel.confirmedPassword = this.form.get('confirmpassword')?.value;
 
     this.UserService.register(registerModel).subscribe((result: any) =>{
