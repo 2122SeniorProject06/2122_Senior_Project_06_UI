@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JournalService } from '../../Services/journal.service';
 import { Component, ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
@@ -15,7 +15,7 @@ import { JournalModel } from '../../../../Models/JournalModel';
 })
 export class ViewJournalsComponent {
 
-  constructor(private JournalService: JournalService, private router: Router) { 
+  constructor(private JournalService: JournalService, private route: ActivatedRoute, private router: Router) {
     if(localStorage.getItem('userId') == null){
       this.router.navigateByUrl('/login');
     }
@@ -79,7 +79,7 @@ export class ViewJournalsComponent {
     }
 
     goToAddJournal(){
-      this.router.navigateByUrl('journal');
+      this.router.navigate(['../CreateNew'], {relativeTo: this.route});
     }
 
   }

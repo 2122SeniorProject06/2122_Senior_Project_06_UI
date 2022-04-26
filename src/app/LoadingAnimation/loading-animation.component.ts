@@ -29,7 +29,7 @@ export class LoadingAnimationComponent implements OnInit, OnChanges {
   }
 
   loadAndSwitch(){
-    var routeName = this.targetRoute.innerHTML.toUpperCase();
+    var routeName = this.targetRoute.innerText.toUpperCase();
     var routeLink = this.targetRoute.parentElement!.id;
     document.getElementById('routeDescription')!.innerHTML = "GOING TO " + routeName;
     setTimeout( () => {
