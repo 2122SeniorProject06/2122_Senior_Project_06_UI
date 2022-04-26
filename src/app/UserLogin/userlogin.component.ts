@@ -66,20 +66,26 @@ export class UserLoginComponent implements OnInit {
     const login = new UserLogin();
     login.Email = this.form.get('Email').value;
     login.Password = this.form.get('Password').value;
-localStorage.clear();
+    localStorage.clear();
     this.UserService.login(login).subscribe((result) => {
       this.data = result;
-      //JSON.parse(this.data);
+      let parsed = JSON.parse(this.data);
       //JSON.stringify(this.data);
       console.log(this.data);
       //clear prior to logging in
       localStorage.clear();
       console.log(localStorage.getItem('userId'));
+      console.log(parsed.userID)
       if (this.data) {
         this.currUser = "";
         this.currUser = this.data;
         //set the local storage user id for easy access
-        localStorage.setItem('userId', this.data);
+        localStorage.setItem('userId', parsed.userID);
+        localStorage.setItem('DarkMode', parsed.darkMode);
+        localStorage.setItem('Background', parsed.background);
+        console.log(localStorage.getItem('userId'));
+        console.log(localStorage.getItem('DarkMode'));
+        console.log(localStorage.getItem('Background'));
         console.log(login);
         console.log("successful login");
         this.snackBar.dismiss();

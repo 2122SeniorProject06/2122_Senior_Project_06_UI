@@ -68,8 +68,8 @@ mat-toolbar.header{
   color: #E3E7F1;
   border: none;
   background-color: #52688F;
-  display: flex;
-  align-items: center;
+  /* display: flex;
+  align-items: center; */
   height: 100%
 }
 
@@ -80,9 +80,9 @@ mat-toolbar.header{
 .signIn{
   border:none;
   background-color: transparent;
-  position: flex;
+  /* position: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
   size: 100%;
 }
 
@@ -90,50 +90,4 @@ p.signIn{
   display: flex;
   color: #E3E7F1;
   margin-bottom: 0%;
-}
-
-/* Footer Styling */
-mat-toolbar.footer{
-  z-index: 8888;
-  position: fixed;
-  height: 5%;
-  bottom: 0;
-  left: 0%;
-  color: white;
-  background-color: #52688F;
-  display: flex;
-  align-items: center;
-  justify-content:flex-start;
-}
-
-.footer-text{
-  width: 100%;
-  animation: horizontal-ticker 10s infinite linear;
-}
-
-body {
-  margin: 0;
-  background-color: white;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.button{
-bottom: -150px;
-  position: absolute;
-width: 500px;
-color: #52688F;
-left:600px;
-
-}
-.breathing-component{
-
-background-color: black;
-
-}
-.breathing-component
-{
-visibility: visible;
-background-color:black;
-content:"checking";
-color:black;
-
 }

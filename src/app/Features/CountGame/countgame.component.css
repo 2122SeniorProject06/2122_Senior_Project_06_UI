@@ -1,39 +1,66 @@
-h2 {
+.count-game-panel {
+  display: flex;
+  flex-direction: column;
+  top: 100px;
+  margin-top: 25px;
+}
+
+.card{
+  max-width: 350px;
+  max-height: 350px;
+  align-self: center;
+  margin: 15px;
+}
+
+h1 {
   font-family: "Roboto";
-  margin-left: 25px;
+  margin-top: 25px;
 }
 
-footer{
+h2 {
+  font-family: "Arial";
   margin-left: 25px;
-}
-.scrolling-space {
-  width: 100%;
-  height: 500px;
-}
-
-.data-form {
-  max-width: 600px;
-  margin: 0 auto;
 }
 
 .countdown-buttons {
   margin-top: 10px;
+  max-width: 100px;
+  align-self: center;
 }
 
 .countdown-buttons button{
-  margin-right: 30px;
+  margin-top: 10px;
 }
-.home {
-  color: #52688F;
-  border: none;
-  background-color: #E3E7F1;
 
+.wrong {
+  background-color: red;
 }
+
+.right{
+  background-color: limegreen;
+}
+
+.home {
+  color: #E3E7F1;
+  border: none;
+  background-color: #52688F;
+}
+
 .mat-toolbar{
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0%;
   color: white;
-  background-color: #E3E7F1;
+  background-color: #52688F;
+}
 
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.refresh {
+  color: #E3E7F1;
+  border: none;
+  background-color: #52688F;
+  float: right;  
 }
