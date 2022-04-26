@@ -23,10 +23,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import {MatTabsModule} from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatTabsModule } from '@angular/material/tabs';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 import { NgChartsModule } from 'ng2-charts';
@@ -51,6 +52,8 @@ import { UserLoginComponent } from './UserLogin/userlogin.component';
 import { BreathingMeditationComponent } from './Features/breathing-meditation/breathing-meditation.component';
 import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.component';
 import { AboutComponent } from './About/about.component';
+import { Badge } from './Features/Checkin/Badge/badge.component';
+import { MantraBadge } from './Features/Mantra/MantraBadge/mantrabadge.componet';
 import { AccountComponent } from './Account/account.component';
 import { AccountInfoComponent } from './Account/account-info/account-info.component';
 import { AccountMetricsComponent } from './Account/account-metrics/account-metrics.component';
@@ -104,8 +107,10 @@ import { AccountMetricsComponent } from './Account/account-metrics/account-metri
     MatRippleModule,
     MatSelectModule,
     MatSnackBarModule,
+    MatTabsModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatDialogModule,
     MatMenuModule,
     MatTabsModule,
     MatDividerModule,
@@ -140,6 +145,8 @@ import { AccountMetricsComponent } from './Account/account-metrics/account-metri
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatIconModule,
+    MatDialogModule,
     MatMenuModule,
     MatDividerModule,
     MatListModule,
