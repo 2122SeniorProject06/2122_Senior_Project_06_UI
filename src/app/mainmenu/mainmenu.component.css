@@ -20,7 +20,10 @@
   text-align: center;
   justify-content: center;
 }
+.card:hover{
 
+  content:"checking";
+}
 .activity-buttons {
   height: 95%;
 }
