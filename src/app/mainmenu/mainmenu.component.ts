@@ -82,6 +82,7 @@ export class MainMenuComponent implements OnInit {
 
   logout(){
     localStorage.clear();
+    document.getElementById("bg-image")!.style.backgroundImage = "url(\"./assets/mountain.jpg\")";
     location.reload();
   }
 
