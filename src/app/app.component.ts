@@ -9,7 +9,8 @@ import { TestBed } from '@angular/core/testing';
 })
 export class AppComponent {
   title = 'SHARD: Here To Pick Up The Pieces';
-  imageUrl: string = "mountain.jpg";
+  imageUrl: string = "other";
+  defaultImageUrl: string = "mountain.jpg";
   darkmode: any;
   constructor()
   {
@@ -33,8 +34,8 @@ export class AppComponent {
     }
     else
     {
-      localStorage.setItem('currBackground', this.imageUrl);
-      document.getElementById("bg-image")!.style.backgroundImage = "url(\"./assets/" + this.imageUrl + "\")";
+      localStorage.setItem('currBackground', this.defaultImageUrl);
+      document.getElementById("bg-image")!.style.backgroundImage = "url(\"./assets/" + this.defaultImageUrl + "\")";
     }
   }
   setColorPallet() {
