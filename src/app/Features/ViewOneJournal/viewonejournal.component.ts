@@ -60,7 +60,7 @@ export class ViewOneJournalComponent {
     if(confirm('Are you sure you want to delete this journal?')){
     this.JournalService.deleteJournalById(id).subscribe(res => {
       console.log(res);
-      this.router.navigateByUrl('ViewAll');
+      this.router.navigate(['..'], {relativeTo: this.router});
     })
   }
   //else {
