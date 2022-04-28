@@ -32,4 +32,14 @@ export class AudioMeditationComponent {
       this.audio.pause();
       this.isPlaying = false;
   }
+  ngOnDestroy()
+  {
+      if(this.audio)
+      {
+          this.audio.pause();
+        
+
+      }
+
+  }
 }
