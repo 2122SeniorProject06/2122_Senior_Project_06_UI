@@ -1,6 +1,6 @@
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import {Component, HostListener, OnInit,} from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { JournalModel } from '../../../../Models/JournalModel';
 import { JournalService } from '../../Services/journal.service';
 
@@ -15,7 +15,7 @@ export class ViewOneJournalComponent {
   data: any;
   journal: JournalModel = new JournalModel();
   isLoaded: boolean = false;
-  constructor(private JournalService: JournalService, private router: Router, private dialog: MatDialog) {}
+  constructor(private JournalService: JournalService, private router: Router, private route: ActivatedRoute, private dialog: MatDialog) {}
 
   ngOnInit(){
     console.log(this.data);
@@ -60,7 +60,7 @@ export class ViewOneJournalComponent {
     if(confirm('Are you sure you want to delete this journal?')){
     this.JournalService.deleteJournalById(id).subscribe(res => {
       console.log(res);
-      this.router.navigate(['..'], {relativeTo: this.router});
+      this.router.navigate(['../..'], {relativeTo: this.route});
     })
   }
   //else {
