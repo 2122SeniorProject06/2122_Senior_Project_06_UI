@@ -10,10 +10,11 @@ import { TestBed } from '@angular/core/testing';
 export class AppComponent {
   title = 'SHARD: Here To Pick Up The Pieces';
   imageUrl: string = "other";
-  defaultImageUrl: string = "mountain.jpg";
+  defaultImageUrl: string;
   darkmode: any;
   constructor()
   {
+    this.defaultImageUrl  = "mountain.jpg";
     this.changeBackground();
   }
 
@@ -28,8 +29,14 @@ export class AppComponent {
       let currBackground = localStorage.getItem('currBackground') as string;
       this.imageUrl = localStorage.getItem('Background') as string;
       if(currBackground != this.imageUrl){
-        localStorage.setItem('currBackground', this.imageUrl);
+        if(this.imageUrl != null){
+          localStorage.setItem('currBackground', this.imageUrl);
+          document.getElementById("bg-image")!.style.backgroundImage = "url(\"./assets/" + this.imageUrl + "\")";
+        }
+        else
+          document.getElementById("bg-image")!.style.backgroundImage = "url(\"./assets/" + currBackground + "\")";
       }
+      else
       document.getElementById("bg-image")!.style.backgroundImage = "url(\"./assets/" + this.imageUrl + "\")";
     }
     else
