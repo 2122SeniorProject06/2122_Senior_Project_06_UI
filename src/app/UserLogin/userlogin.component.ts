@@ -2,11 +2,12 @@ import { UserService } from '../Services/user.service';
 import { UserLogin, UserModel } from '../../../Models/UserModels';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, NavigationStart, Router, RouterEvent, RouterLink } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
 import { Animations } from 'animations';
 import { HostListener } from '@angular/core';
+import { AppComponent } from 'src/app/app.component';
 
 @Component({
   selector: 'app-login',
@@ -32,7 +33,8 @@ export class UserLoginComponent implements OnInit {
     private fb: FormBuilder,
     private snackBar: MatSnackBar,
     private UserService: UserService,
-    private location: Location
+    private location: Location,
+    private backgroundChange: AppComponent,
     ) {
       this.showLoading = false;
       this.targetEvent = document.createElement('br');
@@ -57,7 +59,6 @@ export class UserLoginComponent implements OnInit {
     return this.form.controls;
   }
 
-
   onSubmit() {
     const loginModel = new FormData();
     loginModel.append('Email', this.form.get('Email').value);
@@ -66,36 +67,32 @@ export class UserLoginComponent implements OnInit {
     const login = new UserLogin();
     login.Email = this.form.get('Email').value;
     login.Password = this.form.get('Password').value;
-    localStorage.clear();
     this.UserService.login(login).subscribe((result) => {
       this.data = result;
       let parsed = JSON.parse(this.data);
       //JSON.stringify(this.data);
       console.log(this.data);
+      console.log(parsed);
       //clear prior to logging in
-      localStorage.clear();
+      localStorage.removeItem('userId');
+      localStorage.removeItem('DarkMode');
+      localStorage.removeItem('Background');
       console.log(localStorage.getItem('userId'));
-      console.log(parsed.userID)
-      if (this.data) {
+      if (this.data){
         this.currUser = "";
         this.currUser = this.data;
         //set the local storage user id for easy access
         localStorage.setItem('userId', parsed.userID);
         localStorage.setItem('DarkMode', parsed.darkMode);
         localStorage.setItem('Background', parsed.background);
-        console.log(localStorage.getItem('userId'));
-        console.log(localStorage.getItem('DarkMode'));
-        console.log(localStorage.getItem('Background'));
-        console.log(login);
+        this.backgroundChange.changeBackground();
         console.log("successful login");
-        this.snackBar.dismiss();
-        //this.goToCreateJournal();
-        this.location.back();
+        this.goToActivity();
       }
       //what is the angular function for this
       else if(this.data == null)
       {
-        this.snackBar.open('Username or Password was Incorrect');
+        this.snackBar.open('Username or Password was Incorrect', '', {duration: 2500});
         console.log("unsuccessful login");
         this.router.navigate(['Login']);
       }
@@ -109,8 +106,12 @@ export class UserLoginComponent implements OnInit {
     this.activateLoadingAnimation('/register', 'ACCOUNT CREATION');
   }
 
-  goToJournal(){
-    this.activateLoadingAnimation('/view-journal', 'ALL JOURNALS');
+  goToActivity(){
+     let routerLink = localStorage.getItem("loginRoute") as string;
+     let routerName = localStorage.getItem("loginName") as string;
+     localStorage.removeItem("loginRoute")
+     localStorage.removeItem("loginName")
+    this.activateLoadingAnimation(routerLink, routerName);
   }
 
   goToMainMenu(){

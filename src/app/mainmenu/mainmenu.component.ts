@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationStart, Router } from '@angular/router';
 import {
   trigger,
   state,
@@ -52,6 +52,8 @@ export class MainMenuComponent implements OnInit {
   }
 
   goToSignIn(){
+    localStorage.setItem("loginRoute", this.router.url);
+    localStorage.setItem("loginName", "Main Menu");
     this.activateLoadingAnimation("/login", "Sign In")
   }
 
