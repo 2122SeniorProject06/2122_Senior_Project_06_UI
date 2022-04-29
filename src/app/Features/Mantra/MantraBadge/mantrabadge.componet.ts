@@ -14,20 +14,18 @@ export interface DialogData {
     templateUrl: './mantrabadge.component.html'
   })
   export class MantraBadge {
-  
+  matDialog: any;
+
     constructor(
       public dialogRef: MatDialogRef<MantraBadge>,
       @Inject(MAT_DIALOG_DATA) public data: DialogData,
       private router: Router,
       private route: ActivatedRoute) {}
-  
-    onNoClick(): void {
-      this.dialogRef.close();
-    }
-  
+
       //Main Menu
   goToMain() {
     this.router.navigateByUrl('/main-menu');
+    this.dialogRef.close();
   }
 
   }
