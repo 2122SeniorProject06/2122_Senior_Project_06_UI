@@ -1,3 +1,4 @@
+import { SettingComponent } from './settings/setting.component';
 //Modules
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -26,6 +27,12 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { NgChartsModule } from 'ng2-charts';
+// import { ChartsModule } from 'ng2-charts/ng2-charts';
+
 
 //Components
 import { StepperComponent } from './Features/Stepper/stepper.component';
@@ -47,6 +54,9 @@ import { LoadingAnimationComponent } from './LoadingAnimation/loading-animation.
 import { AboutComponent } from './About/about.component';
 import { Badge } from './Features/Checkin/Badge/badge.component';
 import { MantraBadge } from './Features/Mantra/MantraBadge/mantrabadge.componet';
+import { AccountComponent } from './Account/account.component';
+import { AccountInfoComponent } from './Account/account-info/account-info.component';
+import { AccountMetricsComponent } from './Account/account-metrics/account-metrics.component';
 
 @NgModule({
   declarations: [
@@ -66,8 +76,10 @@ import { MantraBadge } from './Features/Mantra/MantraBadge/mantrabadge.componet'
     BreathingMeditationComponent,
     LoadingAnimationComponent,
     AboutComponent,
-    Badge,
-    MantraBadge,
+    AccountComponent,
+    AccountInfoComponent,
+    AccountMetricsComponent,
+    SettingComponent
   ],
   imports: [
     AppRoutingModule,
@@ -99,6 +111,11 @@ import { MantraBadge } from './Features/Mantra/MantraBadge/mantrabadge.componet'
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatDialogModule,
+    MatMenuModule,
+    MatTabsModule,
+    MatDividerModule,
+    MatListModule,
+    NgChartsModule
   ],
   exports: [
     AppRoutingModule,
@@ -130,6 +147,9 @@ import { MantraBadge } from './Features/Mantra/MantraBadge/mantrabadge.componet'
     MatProgressBarModule,
     MatIconModule,
     MatDialogModule,
+    MatMenuModule,
+    MatDividerModule,
+    MatListModule,
   ],
   providers: [UserService, JournalService],
   bootstrap: [AppComponent]

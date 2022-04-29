@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatCardModule } from "@angular/material/card";
 
 @Component({
   selector: 'app-breathing-meditation',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BreathingMeditationComponent implements OnInit {
 
-  constructor() { }
+  constructor(    private router: Router,) {
+    
+   }
 
   ngOnInit(): void {
+  }
+  
+  goToMain() {
+    this.router.navigateByUrl('/main-menu');
   }
 
 }

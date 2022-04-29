@@ -16,7 +16,7 @@
 }
   
 .card {
-    width: 100%;
+    width: 80%;
     height: auto;
     display: flex;
     text-align: center;
@@ -33,6 +33,16 @@
     line-height: 100%;
     color: #52688F;
     /* color: #7391c8; */
+}
+
+.about-us-text{
+    overflow-y: scroll;   
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.about-us-text::-webkit-scrollbar{
+    display: none;
 }
 
 img.about-us{

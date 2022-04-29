@@ -1,41 +1,36 @@
 #box {
   
-    border: solid 5px #333;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 500px;
-    height: 500px;
+    border: solid 4px #333;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+  }
+
+  .flex-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
   }
   
-  
-  @keyframes ball {
-      0%   {top: 483px; left: -23px;}
-      25%  {top: -23px; left: -23px;}
-      50%  {top: -23px; left: 483px;}
-      75%  {top: 483px; left: 483px;}
-      100% {top: 483px; left: -23px;}
-  }
-  #ball {
-    position: absolute;
-    top: 480px; left: -20px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #ccc;
-    animation: ball 16s linear infinite;
-  }
+
+ 
   @keyframes breath {
-    0%   {background-color: #ccc; top: 240px; left: 240px; width:  20px; height:  20px;}
-    25%  {background-color: #52688F; top:  10px; left:  10px; width: 480px; height: 480px;}
-    50%  {background-color: #7391C8; top:  10px; left:  10px; width: 480px; height: 480px;}
-    75%  {background-color: #BDC6D9; top: 240px; left: 240px; width:  20px; height:  20px;}
-    100% {background-color: #ccc; top: 240px; left: 240px; width:  20px; height:  20px;}
+    
+    0%   {background-color: #e3e7F1; width:  10%; height:  10%;}
+    25%  {background-color: #52688F; width: 100%; height: 100%;}
+    37%  {background-color: #BDC6D9;  width: 100%; height: 100%;}
+    50%  {background-color: #52688F; width: 100%; height: 100%;}
+    75%  {background-color: #e3e7F1;  width:  10%; height:  10%;}
+    100% {background-color: #e3e7F1;  width:  10%; height:  10%;}
   }
   #breath {
-    position: absolute;
+    display: flex;
     background-color: #999;
-    top: 240px; left: 240px; width:  20px; height:  20px;
+    width:  10%; height:  10%;
     animation: breath 16s ease-in-out infinite;
   }
   #breath:hover{
@@ -43,5 +38,172 @@
     animation:breath 16s ease-in-out infinite;
   
   }
+  .home {
+    color: #E3E7F1;
+    border: none;
+    background-color: #52688F;
+  
+  }
+  .mat-toolbar{
+    position: fixed;
+    top: 0;
+    left: 0%;
+    color: white;
+    background-color: #52688F;
+  
+  }
+  .card {
+    display: flex;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+    width:500px;
+  }
+  .instructions
+  {
+
+      text-align: center;
+
+  }
+  .Breathing {
+    position: absolute;
+    top: 80px;
+    left:700px;
+    
+    text-align: center;
+    color:white;
+    opacity: 0;
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+    animation-name: fade-inh1;
+    animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    }
+    @keyframes fade-inh1 {
+      0% {
+        opacity: 0;
+      } /* fade-in */
+      11% {
+        opacity: 1;
+      } /* show */
+      22% {
+        opacity: 1;
+      } /* fade-out */
+      33% { /* <-------------------{ 100% / num(H2) = 33% } */
+        opacity: 0;
+      } /* waiting for the finish animation of other blocks */
+      100% {
+        opacity: 0;
+      }
+      
+    }
+  
+    .Hold
+    {
+      position: absolute;
+    top: 120px;
+    left:742px;
+      opacity: 0;
+      color:white;
+      font-size: 30px;
+      font-family: "Times New Roman", Times, serif;
+      animation-delay:4s;
+      animation-name: hold-in;
+      animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+
+    }
+    @keyframes hold-in {
+      0% {
+        opacity: 0;
+      } /* fade-in */
+      11% {
+        opacity: 1;
+      } /* show */
+      22% {
+        opacity: 1;
+      } /* fade-out */
+      33% { /* <-------------------{ 100% / num(H2) = 33% } */
+        opacity: 0;
+      } /* waiting for the finish animation of other blocks */
+      100% {
+        opacity: 0;
+      }
+      
+    }
+    .Breathe-Out
+    {
+      position: absolute;
+    top: 160px;
+    left:700px;
+      opacity: 0;
+      color:white;
+      font-size: 30px;
+      font-family: "Times New Roman", Times, serif;
+      animation-delay:8s;
+      animation-name: hold-in;
+      animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+
+
+    }
+    @keyframes Breathe-out{
+
+      0% {
+        opacity: 0;
+      } /* fade-in */
+      11% {
+        opacity: 1;
+      } /* show */
+      22% {
+        opacity: 1;
+      } /* fade-out */
+      33% { /* <-------------------{ 100% / num(H2) = 33% } */
+        opacity: 0;
+      } /* waiting for the finish animation of other blocks */
+      100% {
+        opacity: 0;
+      }
+
+
+    }
+    .Hold2
+    {
+      position: absolute;
+    top: 200px;
+    left:742px;
+      opacity: 0;
+      color:white;
+      font-size: 30px;
+      font-family: "Times New Roman", Times, serif;
+      animation-delay:12s;
+      animation-name: hold-in;
+      animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+
+    }
+    @keyframes hold-in {
+      0% {
+        opacity: 0;
+      } /* fade-in */
+      11% {
+        opacity: 1;
+      } /* show */
+      22% {
+        opacity: 1;
+      } /* fade-out */
+      33% { /* <-------------------{ 100% / num(H2) = 33% } */
+        opacity: 0;
+      } /* waiting for the finish animation of other blocks */
+      100% {
+        opacity: 0;
+      }
+      
+    }
+  
  
   

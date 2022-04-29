@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostListener, OnInit,} from '@angular/core';
 import { Router } from '@angular/router';
 import { JournalModel } from '../../../../Models/JournalModel';
 import { JournalService } from '../../Services/journal.service';
@@ -15,12 +15,13 @@ export class ViewOneJournalComponent {
   journal: JournalModel = new JournalModel();
   isLoaded: boolean = false;
   constructor(private JournalService: JournalService, private router: Router) {}
+
   ngOnInit(){
     console.log(this.data);
     console.log(this.JournalService.viewOneJournalId);
     this.data = this.JournalService.viewOneJournalId;
     console.log(this.data);
-    this.journal.JournalID = "ex";
+    this.journal.journalID = "ex";
     this.viewJournal(this.data);
   }
   viewJournal(data: any){
@@ -28,15 +29,15 @@ export class ViewOneJournalComponent {
     this.JournalService.getJournalById(data).subscribe((myjournal) => {
       //myjournal as JournalModel;
       console.log(myjournal);
-      console.log(myjournal.Title?.toString());
-      console.log("Journal Title" + this.journal.Title);
+      console.log(myjournal.title?.toString());
+      console.log("Journal Title" + this.journal.title);
       //getting the journal successfully but after this point everything is null
-      console.log("Updated " + myjournal.LastUpdated);
-      this.journal.LastUpdated = myjournal.LastUpdated;
-      console.log(this.journal.LastUpdated + " " + myjournal.LastUpdated);
-      this.journal.Title = myjournal.Title;
-      this.journal.Body = myjournal.Body;
-      this.journal!.JournalID = myjournal.JournalID;
+      console.log("Updated " + myjournal.lastUpdated);
+      this.journal.lastUpdated = myjournal.lastUpdated;
+      console.log(this.journal.lastUpdated + " " + myjournal.lastUpdated);
+      this.journal.title = myjournal.title;
+      this.journal.body = myjournal.body;
+      this.journal!.journalID = myjournal.journalID;
       this.isLoaded = true;
       console.log(myjournal);
 
@@ -44,6 +45,15 @@ export class ViewOneJournalComponent {
 
 
   }
+
+      /**
+     * Unblurs the background image on leaving the page.
+     * @param event Event that triggers the unblurring.
+     */
+       @HostListener('window:popstate', ['$event'])
+       onPopState(event : Event) {
+        this.viewJournal(this.data)
+       }
 
   delete(id: any){
     this.JournalService.deleteJournalById(id).subscribe(res => {
@@ -65,6 +75,6 @@ export class ViewOneJournalComponent {
   //not needed for this
   }
 
-  
+
 }
 

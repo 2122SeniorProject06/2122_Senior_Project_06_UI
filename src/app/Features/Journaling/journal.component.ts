@@ -1,8 +1,10 @@
+import { getTestBed } from '@angular/core/testing';
 import { JournalModel } from '../../../../Models/JournalModel';
 import { FormsModule, FormGroup, FormControl, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { JournalService } from '../../Services/journal.service';
+import { ActivityMetric } from 'Models/MetricsModel';
 
 @Component({
   selector: 'journal-feature',
@@ -13,6 +15,9 @@ import { JournalService } from '../../Services/journal.service';
 export class JournalComponent implements OnInit {
   journalForm: any;
   userId: any;
+  methodOptions: string[] = ['Focus', 'Ground', 'Relax', 'Breathe', 'Encourage', 'Check In', 'None'];
+  attack: boolean[] = [true, false];
+  effective: boolean[] = [true, false];
 
   constructor(
     private router: Router,
@@ -23,8 +28,12 @@ export class JournalComponent implements OnInit {
 
     ngOnInit(): void {
       this.journalForm = this.formBuilder.group({
+        HadAttack: [''],
+        Method: [''],
+        WasEffective: [''],
         Title: [''],
         Body: ['']
+
       });
     }
 
@@ -34,15 +43,22 @@ export class JournalComponent implements OnInit {
 /*Andrew helped with debugging*/
     onSubmit() {
       const journalModel = new FormData();
+      journalModel.append('HadAttack', this.journalForm.get('HadAttack').value);
+      journalModel.append('Method', this.journalForm.get('Method').value);
+      journalModel.append('WasEffective', this.journalForm.get('WasEffective').value);
       journalModel.append('Title', this.journalForm.get('Title').value);
       journalModel.append('Body', this.journalForm.get('Body').value);
 
       const journal = new JournalModel();
-      journal.Title = this.journalForm.get('Title').value;
-      journal.Body = this.journalForm.get('Body').value;
+      journal.ActivityMetric = new ActivityMetric();
+      journal.ActivityMetric.hadAttack = this.journalForm.get('HadAttack').value;
+      journal.ActivityMetric.activity = this.journalForm.get('Method').value;
+      journal.ActivityMetric.wasEffective = this.journalForm.get('WasEffective').value;
+      journal.title = this.journalForm.get('Title').value;
+      journal.body = this.journalForm.get('Body').value;
       this.userId = localStorage.getItem('userId');
-      journal.UserID = this.userId;
-      console.log(journal.UserID);
+      journal.userID = this.userId;
+      console.log(journal.userID);
       this.JournalService.createJournal(journal).subscribe((res) => {
           console.log(res);
 
@@ -57,7 +73,7 @@ goToMain() {
 }
 
 goToJournals(){
-  this.router.navigateByUrl('/view-journal');
+  this.router.navigate(['..'], {relativeTo: this.route});
 }
 
 }

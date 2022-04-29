@@ -23,7 +23,7 @@
                 required>
             </mat-form-field>
             <!-- <div *ngIf= "ifNull[0]">hello all</div> -->
-            <div *ngIf="!errorResults[2]"> {{errorMessages[2]}}</div>
+            <div class= "errors" *ngIf="!errorResults[2]"> {{errorMessages[2]}}</div>
           </div>
           <div class="field-div">
             <mat-form-field>
@@ -34,7 +34,7 @@
                 formControlName="Email" 
                 required>
             </mat-form-field>
-            <div *ngIf="!errorResults[0]"> {{errorMessages[0]}}</div>
+            <div class= "errors" *ngIf="!errorResults[0]"> {{errorMessages[0]}}</div>
           </div>
           <div class="field-div">
             <mat-form-field>
@@ -45,7 +45,7 @@
                 formControlName="Password" 
                 required>
             </mat-form-field>
-            <div *ngIf="!errorResults[3]" [innerText]="errorMessages[3]"></div>
+            <div class= "errors" *ngIf="!errorResults[3]" [innerText]="errorMessages[3]"></div>
           </div>
           <div class="field-div">
             <mat-form-field>
@@ -56,7 +56,7 @@
                 formControlName="confirmpassword"
                 required>
             </mat-form-field>
-            <div *ngIf="!errorResults[1]"> {{errorMessages[1]}}</div>
+            <div class= "errors" *ngIf="!errorResults[1]"> {{errorMessages[1]}}</div>
           </div>
           <div class="registration-buttons">
             <button class="login" (click)="goToLogin()" mat-raised-button>Login</button>
