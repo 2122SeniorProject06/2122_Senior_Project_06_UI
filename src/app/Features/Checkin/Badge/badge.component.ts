@@ -14,20 +14,18 @@ export interface DialogData {
     templateUrl: './badge.component.html'
   })
   export class Badge {
+  matDialog: any;
   
     constructor(
-      public dialogRef: MatDialogRef<Badge>,
+      private  dialogRef: MatDialogRef<Badge>,
       @Inject(MAT_DIALOG_DATA) public data: DialogData,
       private router: Router,
       private route: ActivatedRoute) {}
   
-    onNoClick(): void {
-      this.dialogRef.close();
-    }
-  
-      //Main Menu
+  //Main Menu
   goToMain() {
     this.router.navigateByUrl('/main-menu');
+    this.dialogRef.close();
   }
 
-  }
+}
