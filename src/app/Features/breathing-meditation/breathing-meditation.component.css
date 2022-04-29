@@ -15,6 +15,9 @@
     height: 100%;
     width: 100%;
   }
+ 
+  
+  
   
 
  
@@ -57,24 +60,25 @@
     text-align:center;
     justify-content: center;
     align-items: center;
-    width:500px;
+    width:250px;
+    right:0px;
+    bottom:100px;
   }
-  .instructions
-  {
-
-      text-align: center;
-
-  }
+ 
   .Breathing {
     position: absolute;
-    top: 80px;
-    left:700px;
-    
+    bottom: -75px;
+    left:30px;
+    display:flex;
+    -webkit-text-stroke: 2.5px black; /* width and color */
+    font-weight:900;
     text-align: center;
+    justify-content: center;
+    align-items: center;
     color:white;
     opacity: 0;
-    font-size: 30px;
-    font-family: "Times New Roman", Times, serif;
+    font-size: 27px;
+    font-family: Arial, Helvetica, sans-serif;
     animation-name: fade-inh1;
     animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */
     animation-timing-function: ease-in-out;
@@ -102,13 +106,18 @@
     .Hold
     {
       position: absolute;
-    top: 120px;
-    left:742px;
+  
+      bottom: -125px;
+      left:70px;
       opacity: 0;
+      display:flex;
+      justify-content: center;
+      -webkit-text-stroke: 2.5px black; /* width and color */
+      font-weight:900;
       color:white;
-      font-size: 30px;
-      font-family: "Times New Roman", Times, serif;
-      animation-delay:4s;
+      font-size: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+      animation-delay:3.75s;
       animation-name: hold-in;
       animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */
       animation-timing-function: ease-in-out;
@@ -136,13 +145,17 @@
     .Breathe-Out
     {
       position: absolute;
-    top: 160px;
-    left:700px;
+      bottom: -175px;
+    left:30px;
       opacity: 0;
+      display:flex;
+      justify-content: center;
+      -webkit-text-stroke: 2.5px black; /* width and color */
+      font-weight:900;
       color:white;
-      font-size: 30px;
-      font-family: "Times New Roman", Times, serif;
-      animation-delay:8s;
+      font-size: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+      animation-delay:7.75s;
       animation-name: hold-in;
       animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */
       animation-timing-function: ease-in-out;
@@ -173,13 +186,17 @@
     .Hold2
     {
       position: absolute;
-    top: 200px;
-    left:742px;
+      bottom: -225px;
+      left:80px;
       opacity: 0;
+         display:flex;
+    justify-content: center;
+      -webkit-text-stroke: 2.5px black; /* width and color */
+      font-weight:900;
       color:white;
-      font-size: 30px;
-      font-family: "Times New Roman", Times, serif;
-      animation-delay:12s;
+      font-size: 27px;
+    font-family: Arial, Helvetica, sans-serif;
+      animation-delay:11.75s;
       animation-name: hold-in;
       animation-duration: 16s; /* <---{ 6sec * num(H2) = 18sec } */
       animation-timing-function: ease-in-out;
