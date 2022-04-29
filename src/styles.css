@@ -9,7 +9,6 @@ body {
 
 #bg-image {
     position: absolute;
-    background-image: url("./assets/mountain.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

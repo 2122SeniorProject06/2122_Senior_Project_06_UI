@@ -1,4 +1,4 @@
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationStart } from '@angular/router';
 import { JournalService } from '../../Services/journal.service';
 import { Component, ViewChild } from '@angular/core';
 import {MatTableDataSource} from '@angular/material/table';
@@ -15,8 +15,12 @@ import { JournalModel } from '../../../../Models/JournalModel';
 })
 export class ViewJournalsComponent {
 
-  constructor(private JournalService: JournalService, private route: ActivatedRoute, private router: Router) {
+  constructor(private JournalService: JournalService,
+              private route: ActivatedRoute,
+              private router: Router) {
     if(localStorage.getItem('userId') == null){
+      localStorage.setItem("loginRoute", router.url);
+      localStorage.setItem("loginName", "REFLECT ACTIVITY");
       this.router.navigateByUrl('/login');
     }
     console.log("help");

@@ -32,9 +32,10 @@ import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
         this.updatedSettings.userID = localStorage.getItem('userId');
         this.updatedSettings.darkMode = localStorage.getItem('DarkMode') == "true";
         console.log(this.updatedSettings);
-        this.UserService.updateAccount(this.updatedSettings).subscribe();
-        localStorage.setItem('Background',background);
-        this.reloadCurrentPage();
+        this.UserService.updateAccount(this.updatedSettings).subscribe(() => {
+            localStorage.setItem('Background',background);
+            this.reloadCurrentPage();
+        });
     }
     reloadCurrentPage() {
         window.location.reload();

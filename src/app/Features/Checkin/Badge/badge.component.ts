@@ -15,13 +15,13 @@ export interface DialogData {
   })
   export class Badge {
   matDialog: any;
-  
+
     constructor(
       private  dialogRef: MatDialogRef<Badge>,
       @Inject(MAT_DIALOG_DATA) public data: DialogData,
       private router: Router,
       private route: ActivatedRoute) {}
-  
+
   //Main Menu
   goToMain() {
     this.router.navigateByUrl('/main-menu');
@@ -29,3 +29,4 @@ export interface DialogData {
   }
 
 }
+
