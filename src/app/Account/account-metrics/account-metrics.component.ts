@@ -10,7 +10,7 @@ import { UserRegistration } from '../../../../Models/UserModels';
     styleUrls: ['./account-metrics.component.css'],
     //imports: [NgChartsModule]
 })
-
+//written by hugo and sarah, with debugging help from andrew
 export class AccountMetricsComponent implements OnInit {
   @Input() accountInfo: UserRegistration;
   totalUses: number[] = [];

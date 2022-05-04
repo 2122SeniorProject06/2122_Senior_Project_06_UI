@@ -7,7 +7,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Animations } from 'animations';
 import { HostListener } from '@angular/core';
 import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
-
+//written by andrew and sarah with debugging help from hugo
 @Component({
     selector: 'settings',
     animations: [Animations.loadingTrigger],
